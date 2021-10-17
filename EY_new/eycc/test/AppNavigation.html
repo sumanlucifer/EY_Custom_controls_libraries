@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eycc.controls.AppNavigation</title>
+      <base href="../../../../">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eycc,sap.m"
+         data-sap-ui-theme="sap_belize"
+         src="resources/sap-ui-core.js">
+      </script>
+      <script type="text/javascript"> 
+      var button = new ey.cc.eycc.controls.Button({ 
+			icon: 'add',
+			enablePropagation: true,
+			press: function(oEvent) {
+                oAppNavigation.open();
+            }
+		 });
+		 var button1 = new ey.cc.eycc.controls.Button({ 
+			icon: 'menu',
+			press: function(oEvent) {
+             debugger;
+            }
+		 });
+      var a = new ey.cc.eycc.controls.AppBar({
+         		content : [
+         				new sap.m.Image({
+         					src : 'https://idi-qmlyiv3xck.dispatcher.eu2.hana.ondemand.com/assets/EYLogo.png',
+         					height : '2.5rem'
+         				}).addStyleClass('sapUiSmallMargin'),
+         				new ey.cc.eycc.controls.VerticalBar({
+         					height: ".5rem",
+        					width:"2px",
+        					color : "#fff"
+         				}).addStyleClass('sapUiSmallMarginTop'),
+         				button,button1
+     			]
+         	});
+         var oAppNavigation = new ey.cc.eycc.controls.AppNavigation({
+                title: "Explore",
+                backgroundColor: 'rgba(46, 46, 56, 0.95)',
+                content:[
+                	new sap.m.List({
+     	 	mode : "SingleSelectMaster",
+     	 	width:"30rem",
+     	 	items : [
+     	 		new ey.cc.eycc.controls.HoverListItem({ 
+     	 			enableHoverHighlight: true,
+					title:'Client Profiling',
+					titleColor: "white"
+				}),
+				new ey.cc.eycc.controls.HoverListItem({ 
+					enableHoverHighlight: true,
+					title:'Workspace',
+					titleColor: "white"
+				}),
+				new ey.cc.eycc.controls.HoverListItem({ 
+					enableHoverHighlight: true,
+					title:'Client Space',
+					titleColor: "white"
+				}),
+				new ey.cc.eycc.controls.HoverListItem({ 
+					enableHoverHighlight: true,
+					title:'Service Catalog',
+					titleColor: "white"
+				})
+				
+ 	 		]
+     	 })
+                	]
+         });
+         oAppNavigation.placeAt("content");
+         a.placeAt('content');
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <div id="content"></div>
+   </body>
+</html>

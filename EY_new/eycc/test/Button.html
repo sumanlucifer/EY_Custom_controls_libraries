@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eycc.controls</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="css/material_v1.css">
+	<style>
+		#content{
+			height : 30rem;
+		}
+	</style>
+	
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eycc,sap.m"
+         src="resources/sap-ui-core.js"
+         ata-sap-ui-bindingSyntax="complex"
+         data-sap-ui-theme="sap_belize">
+      </script>
+      
+      <script type="text/javascript"> 
+      
+    	 var oBadge = new ey.cc.eycc.controls.Badge({
+        	 text: "10",
+        	 press : function(){
+        	 	alert();
+        	 }
+		 }).addStyleClass('sapUiTinyMargin');
+		 
+		 var appBar = new ey.cc.eycc.controls.AppBar({
+        	 text: "10"
+		 }); 
+		 var button = new ey.cc.eycc.controls.Button({ 
+			icon : 'search',
+			type : "miniIcon"
+		 })
+         var oPage = new sap.m.Page({
+         	customHeader : new ey.cc.eycc.controls.AppBar({
+         		content : [
+         				new sap.m.ToolbarSpacer(),
+         				button,
+         				new ey.cc.eycc.controls.Button({ 
+							icon : 'https://b.zmtcdn.com/data/user_profile_pictures/e50/e0606425d27f6c3c00f1566f7a10ae50.jpg?fit=around%7C400%3A400&crop=400%3A400%3B%2A%2C%2A',
+							text : "Search",
+							visible:true,
+							type:"profileView",
+							bgColor : "yellow",
+							textColor : "black"
+						 }).addStyleClass('sapUiSmallMargin'),
+						new ey.cc.eycc.controls.Button({ 
+							icon : 'menu',
+							type : "miniIcon"
+						 }).addStyleClass('sapUiSmallMargin')
+     			]
+         	}),	
+         	content : [
+         		new sap.m.HBox({
+         			items : [
+     					new ey.cc.eycc.controls.Button({ 
+							icon : 'add',
+							type:"miniIcon"
+						 }).addStyleClass('sapUiSmallMargin'),
+						 new ey.cc.eycc.controls.Button({ 
+							icon : 'add',
+							text : "Search",
+							visible:true,
+							type:"textOnly",
+							bgColor : "yellow",
+							textColor : "black"
+						 }),
+						 new ey.cc.eycc.controls.Button({ 
+							icon : 'https://b.zmtcdn.com/data/user_profile_pictures/e50/e0606425d27f6c3c00f1566f7a10ae50.jpg?fit=around%7C400%3A400&crop=400%3A400%3B%2A%2C%2A',
+							text : "Search",
+							type:"profileView",
+							bgColor : "yellow",
+							textColor : "black"
+						 })
+     				]
+         		})
+     		]
+         }).addStyleClass("pageHeaderSpacing");
+         
+     	 oPage.placeAt('content');
+         	
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <div id="content"></div>
+   </body>
+</html>

@@ -1,0 +1,174 @@
+<mvc:View controllerName="eycc.test.flowChart" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:eycc="ey.cc.eycc.controls">
+	<IconTabBar id="idIconTabBarMulti" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter icon="sap-icon://hint">
+				<eycc:ProcessFlowBuilder id="18" showGrid="true" class="sapUiSmallMargin fixedWH" press="nodePress">
+					<eycc:templates>
+						<eycc:ProcessFlowTemplate type="Source" text="Source" shape="Database">
+							<eycc:settingsArea>
+								<VBox class="sapUiLargeMarginBeginEnd sapUiSmallMarginBottom">
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Source'}">
+										<VBox>
+											<Input value="Source" editable="false"/>
+										</VBox>
+									</HBox>
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Projection'}">
+										<VBox>
+											<ComboBox placeholder="Projection" class="comboBox" selectedKey="{target}"
+												items="{path:'viewModel>/Projects', sorter : { path : 'ModifiedAt', descending : true }, filters: [{ path: 'Status', operator: 'EQ', value1: '' }]}">
+												<core:Item text="{viewModel>ProjectName}" key="{viewModel>ReferenceTable}"/>
+											</ComboBox>
+										</VBox>
+									</HBox>
+								</VBox>
+							</eycc:settingsArea>
+						</eycc:ProcessFlowTemplate>
+						<eycc:ProcessFlowTemplate type="Projection" text="Projection" shape="File">
+							<eycc:settingsArea>
+								<VBox class="sapUiLargeMarginBeginEnd sapUiSmallMarginBottom">
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Source'}">
+										<VBox>
+											<Input value="{/ruleBuilderTransaction/projectColumns/0/ProjectName}" editable="false"/>
+										</VBox>
+									</HBox>
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Projection'}">
+										<VBox>
+											<ComboBox placeholder="Projection" class="comboBox" selectedKey="{target}"
+												items="{path:'viewModel>/Projects', sorter : { path : 'ModifiedAt', descending : true }, filters: [{ path: 'Status', operator: 'EQ', value1: '' }]}">
+												<core:Item text="{viewModel>ProjectName}" key="{viewModel>ReferenceTable}"/>
+											</ComboBox>
+										</VBox>
+									</HBox>
+								</VBox>
+							</eycc:settingsArea>
+						</eycc:ProcessFlowTemplate>
+						<eycc:ProcessFlowTemplate type="Function" text="Function" shape="Document">
+							<eycc:settingsArea>
+								<VBox class="sapUiLargeMarginBeginEnd sapUiSmallMarginBottom">
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Source'}">
+										<VBox>
+											<Input value="Source" editable="false"/>
+										</VBox>
+									</HBox>
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Projection'}">
+										<VBox>
+											<ComboBox placeholder="Projection" class="comboBox" selectedKey="{target}"
+												items="{path:'viewModel>/Projects', sorter : { path : 'ModifiedAt', descending : true }, filters: [{ path: 'Status', operator: 'EQ', value1: '' }]}">
+												<core:Item text="{viewModel>ProjectName}" key="{viewModel>ReferenceTable}"/>
+											</ComboBox>
+										</VBox>
+									</HBox>
+								</VBox>
+							</eycc:settingsArea>
+						</eycc:ProcessFlowTemplate>
+						<eycc:ProcessFlowTemplate type="Filter" text="Filter" shape="MicroformRecording">
+							<eycc:settingsArea>
+								<VBox class="sapUiLargeMarginBeginEnd sapUiSmallMarginBottom">
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Source'}">
+										<VBox>
+											<Input value="Source" editable="false"/>
+										</VBox>
+									</HBox>
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Projection'}">
+										<VBox>
+											<ComboBox placeholder="Projection" class="comboBox" selectedKey="{target}"
+												items="{path:'viewModel>/Projects', sorter : { path : 'ModifiedAt', descending : true }, filters: [{ path: 'Status', operator: 'EQ', value1: '' }]}">
+												<core:Item text="{viewModel>ProjectName}" key="{viewModel>ReferenceTable}"/>
+											</ComboBox>
+										</VBox>
+									</HBox>
+								</VBox>
+							</eycc:settingsArea>
+						</eycc:ProcessFlowTemplate>
+						<eycc:ProcessFlowTemplate type="Transformation" text="Transformation" shape="Customer/Supplier">
+							<eycc:settingsArea>
+								<VBox class="sapUiLargeMarginBeginEnd sapUiSmallMarginBottom">
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Source'}">
+										<VBox>
+											<Input value="Source" editable="false"/>
+										</VBox>
+									</HBox>
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Projection'}">
+										<VBox>
+											<ComboBox placeholder="Projection" class="comboBox" selectedKey="{target}"
+												items="{path:'viewModel>/Projects', sorter : { path : 'ModifiedAt', descending : true }, filters: [{ path: 'Status', operator: 'EQ', value1: '' }]}">
+												<core:Item text="{viewModel>ProjectName}" key="{viewModel>ReferenceTable}"/>
+											</ComboBox>
+										</VBox>
+									</HBox>
+								</VBox>
+							</eycc:settingsArea>
+						</eycc:ProcessFlowTemplate>
+						<eycc:ProcessFlowTemplate type="Sink" text="Sink" shape="Cylinder3">
+							<eycc:settingsArea>
+								<VBox class="sapUiLargeMarginBeginEnd sapUiSmallMarginBottom">
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Source'}">
+										<VBox>
+											<Input value="Source" editable="false"/>
+										</VBox>
+									</HBox>
+									<HBox class="sapUiMediumMargin" visible="{= ${/type12} === 'Projection'}">
+										<VBox>
+											<ComboBox placeholder="Projection" class="comboBox" selectedKey="{target}"
+												items="{path:'viewModel>/Projects', sorter : { path : 'ModifiedAt', descending : true }, filters: [{ path: 'Status', operator: 'EQ', value1: '' }]}">
+												<core:Item text="{viewModel>ProjectName}" key="{viewModel>ReferenceTable}"/>
+											</ComboBox>
+										</VBox>
+									</HBox>
+								</VBox>
+							</eycc:settingsArea>
+						</eycc:ProcessFlowTemplate>
+					</eycc:templates>
+				</eycc:ProcessFlowBuilder>
+			</IconTabFilter>
+			<IconTabFilter icon="sap-icon://attachment" count="3">
+				<eycc:ProcessFlowBuilder id="17" class="sapUiSmallMargin" linksTextVisible="false"
+					nodeLinksData='{"class":"GraphLinksModel","modelData":{"position":"-704.5 -270.83427937584605"},"nodeDataArray":[{"text":"Sink","figure":"Rectangle","fill":"#33333363","key":-6,"loc":"-249.5 21"},{"text":"Function","figure":"Rectangle","fill":"#33333363","key":-3,"loc":"70.5 -97"}],"linkDataArray":[{"from":-6,"to":-3,"points":[-221.820607500846,21,-211.820607500846,21,-97.42578124999999,21,-97.42578124999999,-97,16.96904500084603,-97,26.96904500084603,-97]}]}'></eycc:ProcessFlowBuilder>
+			</IconTabFilter>
+			<IconTabFilter icon="sap-icon://notes" count="12">
+				<eycc:ProcessFlowBuilder id="16" edgeTextVisible="true" class="sapUiSmallMargin fixedWH" linksTextVisible="true" isViewOnly="true"
+					nodeLinksData='{ "class": "GraphLinksModel", "nodeDataArray": [ {"text":"Projection", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-2, "loc":"586.5 -309","textSuper":"15"}, {"text":"Function", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-3, "loc":"586.5 -212"}, {"text":"Filter", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-4, "loc":"385.5 -123"}, {"text":"Transformation", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-5, "loc":"586.5 -98"}, {"text":"Sink", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-6, "loc":"586.5 -13"} ], "linkDataArray": [ {"from":-2, "to":-3,"text":"01 Days", "points":[586.5,-288.834279375846,586.5,-278.834279375846,586.5,-260.5,586.5,-260.5,586.5,-242.16572062415398,586.5,-232.16572062415398]}, {"from":-3, "to":-5, "points":[586.5,-191.83427937584605,586.5,-181.83427937584605,586.5,-153.61928812542303,586.5,-153.61928812542303,586.5,-125.404296875,586.5,-115.404296875]}, {"from":-5, "to":-6, "points":[586.5,-80.595703125,586.5,-70.595703125,586.5,-56.88071187457699,586.5,-56.88071187457699,586.5,-43.16572062415397,586.5,-33.16572062415397]}, {"from":-3, "to":-4, "points":[542.969045000846,-212,532.969045000846,-212,385.5,-212,385.5,-182.582860312077,385.5,-153.16572062415398,385.5,-143.16572062415398]}, {"from":-4, "to":-6, "points":[385.5,-102.83427937584604,385.5,-92.83427937584604,385.5,-12.999999999999996,467.160303750423,-12.999999999999996,548.820607500846,-12.999999999999996,558.820607500846,-12.999999999999996]} ]}'></eycc:ProcessFlowBuilder>
+			</IconTabFilter>
+			<IconTabFilter icon="sap-icon://group">
+			<!--	<eycc:ProcessFlowBuilder edgeTextVisible="true" class="sapUiSmallMargin fixedWH" linksTextVisible="true" isViewOnly="true"
+					nodeLinksData='{ "class": "GraphLinksModel", "nodeDataArray": [ {"text":"Projection", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-2, "loc":"586.5 -309","textSuper":"15"}, {"text":"Function", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-3, "loc":"586.5 -212"}, {"text":"Filter", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-4, "loc":"385.5 -123"}, {"text":"Transformation", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-5, "loc":"586.5 -98"}, {"text":"Sink", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-6, "loc":"586.5 -13"} ], "linkDataArray": [ {"from":-2, "to":-3,"text":"01 Days", "points":[586.5,-288.834279375846,586.5,-278.834279375846,586.5,-260.5,586.5,-260.5,586.5,-242.16572062415398,586.5,-232.16572062415398]}, {"from":-3, "to":-5, "points":[586.5,-191.83427937584605,586.5,-181.83427937584605,586.5,-153.61928812542303,586.5,-153.61928812542303,586.5,-125.404296875,586.5,-115.404296875]}, {"from":-5, "to":-6, "points":[586.5,-80.595703125,586.5,-70.595703125,586.5,-56.88071187457699,586.5,-56.88071187457699,586.5,-43.16572062415397,586.5,-33.16572062415397]}, {"from":-3, "to":-4, "points":[542.969045000846,-212,532.969045000846,-212,385.5,-212,385.5,-182.582860312077,385.5,-153.16572062415398,385.5,-143.16572062415398]}, {"from":-4, "to":-6, "points":[385.5,-102.83427937584604,385.5,-92.83427937584604,385.5,-12.999999999999996,467.160303750423,-12.999999999999996,548.820607500846,-12.999999999999996,558.820607500846,-12.999999999999996]} ]}'></eycc:ProcessFlowBuilder>
+			<eycc:ProcessFlowBuilder edgeTextVisible="true" class="sapUiSmallMargin fixedWH" linksTextVisible="true" isViewOnly="true"
+					nodeLinksData='{ "class": "GraphLinksModel", "nodeDataArray": [ {"text":"Projection", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-2, "loc":"586.5 -309","textSuper":"15"}, {"text":"Function", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-3, "loc":"586.5 -212"}, {"text":"Filter", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-4, "loc":"385.5 -123"}, {"text":"Transformation", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-5, "loc":"586.5 -98"}, {"text":"Sink", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-6, "loc":"586.5 -13"} ], "linkDataArray": [ {"from":-2, "to":-3,"text":"01 Days", "points":[586.5,-288.834279375846,586.5,-278.834279375846,586.5,-260.5,586.5,-260.5,586.5,-242.16572062415398,586.5,-232.16572062415398]}, {"from":-3, "to":-5, "points":[586.5,-191.83427937584605,586.5,-181.83427937584605,586.5,-153.61928812542303,586.5,-153.61928812542303,586.5,-125.404296875,586.5,-115.404296875]}, {"from":-5, "to":-6, "points":[586.5,-80.595703125,586.5,-70.595703125,586.5,-56.88071187457699,586.5,-56.88071187457699,586.5,-43.16572062415397,586.5,-33.16572062415397]}, {"from":-3, "to":-4, "points":[542.969045000846,-212,532.969045000846,-212,385.5,-212,385.5,-182.582860312077,385.5,-153.16572062415398,385.5,-143.16572062415398]}, {"from":-4, "to":-6, "points":[385.5,-102.83427937584604,385.5,-92.83427937584604,385.5,-12.999999999999996,467.160303750423,-12.999999999999996,548.820607500846,-12.999999999999996,558.820607500846,-12.999999999999996]} ]}'></eycc:ProcessFlowBuilder>
+			<eycc:ProcessFlowBuilder edgeTextVisible="true" class="sapUiSmallMargin fixedWH" linksTextVisible="true" isViewOnly="true"
+					nodeLinksData='{ "class": "GraphLinksModel", "nodeDataArray": [ {"text":"Projection", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-2, "loc":"586.5 -309","textSuper":"15"}, {"text":"Function", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-3, "loc":"586.5 -212"}, {"text":"Filter", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-4, "loc":"385.5 -123"}, {"text":"Transformation", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-5, "loc":"586.5 -98"}, {"text":"Sink", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-6, "loc":"586.5 -13"} ], "linkDataArray": [ {"from":-2, "to":-3,"text":"01 Days", "points":[586.5,-288.834279375846,586.5,-278.834279375846,586.5,-260.5,586.5,-260.5,586.5,-242.16572062415398,586.5,-232.16572062415398]}, {"from":-3, "to":-5, "points":[586.5,-191.83427937584605,586.5,-181.83427937584605,586.5,-153.61928812542303,586.5,-153.61928812542303,586.5,-125.404296875,586.5,-115.404296875]}, {"from":-5, "to":-6, "points":[586.5,-80.595703125,586.5,-70.595703125,586.5,-56.88071187457699,586.5,-56.88071187457699,586.5,-43.16572062415397,586.5,-33.16572062415397]}, {"from":-3, "to":-4, "points":[542.969045000846,-212,532.969045000846,-212,385.5,-212,385.5,-182.582860312077,385.5,-153.16572062415398,385.5,-143.16572062415398]}, {"from":-4, "to":-6, "points":[385.5,-102.83427937584604,385.5,-92.83427937584604,385.5,-12.999999999999996,467.160303750423,-12.999999999999996,548.820607500846,-12.999999999999996,558.820607500846,-12.999999999999996]} ]}'></eycc:ProcessFlowBuilder>
+			-->
+			<!--	<eycc:ProcessFlowBuilder layout="tree" edgeTextVisible="true" class="sapUiSmallMargin fixedWH" linksTextVisible="true" isViewOnly="true"
+					nodeLinksData='{ "class": "GraphLinksModel", "nodeDataArray": [ {"text":"Projection", "figure":"Rectangle", "key":-2, "textSuper":"15"}, {"text":"Function", "figure":"Rectangle", "key":-3}, {"text":"Filter", "figure":"Rectangle", "key":-4}, {"text":"Transformation", "figure":"Rectangle", "key":-5}, {"text":"Sink", "figure":"Rectangle","key":-6} ], "linkDataArray": [ {"from":-2, "to":-3,"text":"01 Days"}, {"from":-3, "to":-5,"text":"01 Days"}, {"from":-5, "to":-6,"text":"01 Days"}, {"from":-3, "to":-4}, {"from":-4, "to":-6} ]}'></eycc:ProcessFlowBuilder>
+			-->
+			<VBox height="20rem">
+		<VBox >
+				<eycc:ProcessFlowBuilder  id="15" layout="tree" edgeTextVisible="true" class="sapUiSmallMargin fixedWH" linksTextVisible="true" isViewOnly="true"
+					height = "300px"
+					nodeLinksData='{ "class": "GraphLinksModel", "nodeDataArray": [ {"text":"Projection", "figure":"Rectangle", "key":-2, "textSuper":"15"}, {"text":"Function", "figure":"Rectangle", "key":-3}, {"text":"Filter", "figure":"Rectangle", "key":-4}, {"text":"Transformation", "figure":"Rectangle", "key":-5}, {"text":"Sink", "figure":"Rectangle","key":-6} ], "linkDataArray": [ {"from":-2, "to":-3,"text":"01 Days"}, {"from":-3, "to":-5,"text":"01 Days"}, {"from":-5, "to":-6,"text":"01 Days"}, {"from":-3, "to":-4}, {"from":-4, "to":-6} ]}'></eycc:ProcessFlowBuilder>
+	
+		</VBox>
+		
+	</VBox>
+	<VBox>
+				<eycc:ProcessFlowBuilder id="14" layout="tree" edgeTextVisible="true" class="sapUiSmallMargin fixedWH" linksTextVisible="true" isViewOnly="true"
+					height = "300px"
+					nodeLinksData='{ "class": "GraphLinksModel", "nodeDataArray": [ {"text":"Projection", "figure":"Rectangle", "key":-2, "textSuper":"15"}, {"text":"Function", "figure":"Rectangle", "key":-3}, {"text":"Filter", "figure":"Rectangle", "key":-4}, {"text":"Transformation", "figure":"Rectangle", "key":-5}, {"text":"Sink", "figure":"Rectangle","key":-6} ], "linkDataArray": [ {"from":-2, "to":-3,"text":"01 Days"}, {"from":-3, "to":-5,"text":"01 Days"}, {"from":-5, "to":-6,"text":"01 Days"}, {"from":-3, "to":-4}, {"from":-4, "to":-6} ]}'></eycc:ProcessFlowBuilder>
+	
+		</VBox>
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
+	<VBox>
+		<eycc:ProcessFlowBuilder id="11" edgeTextVisible="true" class="sapUiSmallMargin fixedWH" linksTextVisible="true" isViewOnly="true"
+					nodeLinksData='{ "class": "GraphLinksModel", "nodeDataArray": [ {"text":"Projection", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-2, "loc":"586.5 -309","textSuper":"15"}, {"text":"Function", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-3, "loc":"586.5 -212"}, {"text":"Filter", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-4, "loc":"385.5 -123"}, {"text":"Transformation", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-5, "loc":"586.5 -98"}, {"text":"Sink", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-6, "loc":"586.5 -13"} ], "linkDataArray": [ {"from":-2, "to":-3,"text":"01 Days", "points":[586.5,-288.834279375846,586.5,-278.834279375846,586.5,-260.5,586.5,-260.5,586.5,-242.16572062415398,586.5,-232.16572062415398]}, {"from":-3, "to":-5, "points":[586.5,-191.83427937584605,586.5,-181.83427937584605,586.5,-153.61928812542303,586.5,-153.61928812542303,586.5,-125.404296875,586.5,-115.404296875]}, {"from":-5, "to":-6, "points":[586.5,-80.595703125,586.5,-70.595703125,586.5,-56.88071187457699,586.5,-56.88071187457699,586.5,-43.16572062415397,586.5,-33.16572062415397]}, {"from":-3, "to":-4, "points":[542.969045000846,-212,532.969045000846,-212,385.5,-212,385.5,-182.582860312077,385.5,-153.16572062415398,385.5,-143.16572062415398]}, {"from":-4, "to":-6, "points":[385.5,-102.83427937584604,385.5,-92.83427937584604,385.5,-12.999999999999996,467.160303750423,-12.999999999999996,548.820607500846,-12.999999999999996,558.820607500846,-12.999999999999996]} ]}'></eycc:ProcessFlowBuilder>
+		
+			<eycc:ProcessFlowBuilder id="12" edgeTextVisible="true" class="sapUiSmallMargin fixedWH" linksTextVisible="true" isViewOnly="true"
+					nodeLinksData='{ "class": "GraphLinksModel", "nodeDataArray": [ {"text":"Projection", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-2, "loc":"586.5 -309","textSuper":"15"}, {"text":"Function", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-3, "loc":"586.5 -212"}, {"text":"Filter", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-4, "loc":"385.5 -123"}, {"text":"Transformation", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-5, "loc":"586.5 -98"}, {"text":"Sink", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-6, "loc":"586.5 -13"} ], "linkDataArray": [ {"from":-2, "to":-3,"text":"01 Days", "points":[586.5,-288.834279375846,586.5,-278.834279375846,586.5,-260.5,586.5,-260.5,586.5,-242.16572062415398,586.5,-232.16572062415398]}, {"from":-3, "to":-5, "points":[586.5,-191.83427937584605,586.5,-181.83427937584605,586.5,-153.61928812542303,586.5,-153.61928812542303,586.5,-125.404296875,586.5,-115.404296875]}, {"from":-5, "to":-6, "points":[586.5,-80.595703125,586.5,-70.595703125,586.5,-56.88071187457699,586.5,-56.88071187457699,586.5,-43.16572062415397,586.5,-33.16572062415397]}, {"from":-3, "to":-4, "points":[542.969045000846,-212,532.969045000846,-212,385.5,-212,385.5,-182.582860312077,385.5,-153.16572062415398,385.5,-143.16572062415398]}, {"from":-4, "to":-6, "points":[385.5,-102.83427937584604,385.5,-92.83427937584604,385.5,-12.999999999999996,467.160303750423,-12.999999999999996,548.820607500846,-12.999999999999996,558.820607500846,-12.999999999999996]} ]}'></eycc:ProcessFlowBuilder>
+		
+		
+			<eycc:ProcessFlowBuilder id="13" edgeTextVisible="true" class="sapUiSmallMargin fixedWH" linksTextVisible="true" isViewOnly="true"
+					nodeLinksData='{ "class": "GraphLinksModel", "nodeDataArray": [ {"text":"Projection", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-2, "loc":"586.5 -309","textSuper":"15"}, {"text":"Function", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-3, "loc":"586.5 -212"}, {"text":"Filter", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-4, "loc":"385.5 -123"}, {"text":"Transformation", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-5, "loc":"586.5 -98"}, {"text":"Sink", "figure":"Rectangle", "fill":"rgba(196,196,205,0.1)", "key":-6, "loc":"586.5 -13"} ], "linkDataArray": [ {"from":-2, "to":-3,"text":"01 Days", "points":[586.5,-288.834279375846,586.5,-278.834279375846,586.5,-260.5,586.5,-260.5,586.5,-242.16572062415398,586.5,-232.16572062415398]}, {"from":-3, "to":-5, "points":[586.5,-191.83427937584605,586.5,-181.83427937584605,586.5,-153.61928812542303,586.5,-153.61928812542303,586.5,-125.404296875,586.5,-115.404296875]}, {"from":-5, "to":-6, "points":[586.5,-80.595703125,586.5,-70.595703125,586.5,-56.88071187457699,586.5,-56.88071187457699,586.5,-43.16572062415397,586.5,-33.16572062415397]}, {"from":-3, "to":-4, "points":[542.969045000846,-212,532.969045000846,-212,385.5,-212,385.5,-182.582860312077,385.5,-153.16572062415398,385.5,-143.16572062415398]}, {"from":-4, "to":-6, "points":[385.5,-102.83427937584604,385.5,-92.83427937584604,385.5,-12.999999999999996,467.160303750423,-12.999999999999996,548.820607500846,-12.999999999999996,558.820607500846,-12.999999999999996]} ]}'></eycc:ProcessFlowBuilder>
+		</VBox>	
+	<eycc:OverlayPopover id="settingsArea"></eycc:OverlayPopover>
+
+</mvc:View>

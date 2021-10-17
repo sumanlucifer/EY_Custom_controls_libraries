@@ -1,0 +1,333 @@
+
+.eyDPageCustomContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.eyDPageCustomFooterWrapper{
+	margin-top:3rem;
+}
+sapMPage,
+.sapMPage>section {
+	width: 100%
+}
+
+.sapMPage {
+	height: 100%;
+	position: relative;
+	isolation: isolate;
+	z-index: 0
+}
+
+.sapMPage>section {
+	position: absolute;
+	overflow-y: hidden;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0
+}
+
+.sapMPage>section.sapMPageEnableScrolling {
+	overflow-y: auto
+}
+
+.sapMPage>section.sapMPageEnableScrolling .sapMPage>section {
+	overflow-y: visible
+}
+
+html[data-sap-ui-os^="bb"] .sapMPage>section.sapMPageEnableScrolling,
+html[data-sap-ui-os^="iOS"] .sapMPage>section.sapMPageEnableScrolling {
+	overflow-y: scroll
+}
+
+html[data-sap-ui-browser^="ff"].sap-desktop .sapMPage>.sapMBar.sapMPageHeader .sapMBarContainer {
+	display: initial
+}
+
+html[data-sap-ui-browser^="ff"].sap-desktop .sapUiSizeCompact .sapMPage>.sapMBar.sapMPageHeader .sapMBarContainer {
+	vertical-align: -moz-middle-with-baseline
+}
+
+html[data-sap-ui-browser^="ff"].sap-desktop .sapMPage>.sapMTitle {
+	font-size: 1rem
+}
+
+@media (orientation:landscape) {
+	html[data-sap-ui-os^="iOS7"][data-sap-ui-browser^="msf"] {
+		padding: 0;
+		margin: 0;
+		bottom: 0
+	}
+	html[data-sap-ui-os^="iOS7"][data-sap-ui-browser^="msf"] body {
+		position: fixed;
+		top: 0;
+		bottom: 0
+	}
+}
+
+.sapMPageFooter {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%
+}
+
+.sapMPageFooter.sapUiHidden {
+	bottom: auto
+}
+
+.sapMPageFooter .sapMTB.sapMIBar {
+	right: 0;
+	border-bottom-width: 0
+}
+
+.sapMPageFloatingFooter .sapMPageFooter .sapMIBar-CTX.sapMFooter-CTX.sapMTB {
+	border-top-width: 0
+}
+
+.sapMPageSubHeader,
+.sapMPageHeader {
+	z-index: 1
+}
+
+.sapMPage.sapMPageBusyCoversAll>.sapUiLocalBusyIndicator {
+	z-index: 3
+}
+
+.sapMPage.sapUiContentPadding>section {
+	padding: 1rem;
+	box-sizing: border-box
+}
+
+@media (max-width:599px) {
+	.sapMSplitContainerHideMode>.sapMSplitContainerDetail .sapMPage.sapUiResponsiveContentPadding>section,
+	.sapMSplitContainerPortrait>.sapMSplitContainerDetail .sapMPage.sapUiResponsiveContentPadding>section,
+	.sapMPage.sapUiResponsiveContentPadding>section {
+		padding: 0
+	}
+}
+
+@media (min-width:600px) and (max-width:1023px) {
+	.sapMSplitContainerHideMode>.sapMSplitContainerDetail .sapMPage.sapUiResponsiveContentPadding>section,
+	.sapMPage.sapUiResponsiveContentPadding>section {
+		padding: 1rem;
+		box-sizing: border-box
+	}
+}
+
+@media (min-width:1024px) {
+	.sapMSplitContainerHideMode>.sapMSplitContainerDetail .sapMPage.sapUiResponsiveContentPadding>section,
+	.sapMPage.sapUiResponsiveContentPadding>section {
+		padding: 1rem 2rem;
+		box-sizing: border-box
+	}
+}
+
+.sapMSplitContainerMaster .sapMPage.sapUiResponsiveContentPadding>section {
+	padding: 0
+}
+
+.sapMSplitContainerDetail .sapMPage.sapUiResponsiveContentPadding>section {
+	padding: 1rem
+}
+
+.sapMPage.sapUiNoContentPadding>section {
+	padding: 0
+}
+
+.sapF2CollapsedHeader>.sapMPageHeader {
+	display: none
+}
+
+.sapMPage.sapF2CollapsedHeader>.sapMPageHeader+section,
+.sapMPage.sapF2CollapsedHeader>.sapMPageHeader+.sapUiHiddenPlaceholder+section {
+	top: 0
+}
+
+.sapMPage.sapF2CollapsedHeader>.sapMPageHeader+.sapMPageSubHeader+section {
+	top: 3rem
+}
+
+.sapUiSizeCompact .sapF2CollapsedHeader.sapMPageWithHeader>section {
+	top: 0rem
+}
+
+.sapUiSizeCompact .sapF2CollapsedHeader.sapMPageWithHeader.sapMPageWithSubHeader>section {
+	top: 2rem
+}
+
+.sapUiSizeCompact .sapF2CollapsedHeader>.sapMPageHeader .sapMIBar {
+	height: 0rem
+}
+
+.sapMIBar .sapF2AdaptedTitle,
+.sapMIBar .sapF2AdaptedNavigation {
+	display: none
+}
+
+.sapMPageWithFooter>section {
+	bottom: 3rem
+}
+
+.sapMPageFloatingFooter>.sapMPageFooter {
+	border-radius: 0.25rem;
+	margin: 0.5rem;
+	width: calc(100% - 1rem);
+	opacity: 0.9
+}
+
+.sapMPageFloatingFooter>.sapMPageFooter .sapMIBar {
+	border-radius: 0.25rem
+}
+
+.sapMPageFloatingFooter.sapMPageWithFooter>section {
+	bottom: 0
+}
+
+.sapMPageFloatingFooter.sapMPageWithFooter>section:after {
+	content: "";
+	display: block;
+	height: 0;
+	width: 100%;
+	margin-bottom: 4rem
+}
+
+.sapUiSizeCompact .sapMPageWithFooter.sapMPageFloatingFooter>section {
+	bottom: 0;
+	padding-bottom: 3.5rem
+}
+
+html[data-sap-ui-animation='on'] .sapMPageFloatingFooter .sapMPageFooterControlShow {
+	-webkit-animation: bounceShow 0.35s forwards ease-in-out;
+	animation: bounceShow 0.35s forwards ease-in-out
+}
+
+html[data-sap-ui-animation='on'] .sapMPageFloatingFooter .sapMPageFooterControlHide {
+	-webkit-animation: bounceHide 0.35s forwards ease-in-out;
+	animation: bounceHide 0.35s forwards ease-in-out
+}
+
+@-webkit-keyframes bounceShow {
+	0% {
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+		opacity: 0
+	}
+	100% {
+		opacity: 0.9
+	}
+}
+
+@keyframes bounceShow {
+	0% {
+		transform: translateY(100%);
+		opacity: 0
+	}
+	100% {
+		opacity: 0.9
+	}
+}
+
+@-webkit-keyframes bounceHide {
+	0% {
+		-webkit-transform: translateY(-5%);
+		transform: translateY(-5%);
+		opacity: 1
+	}
+	100% {
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+		opacity: 0
+	}
+}
+
+@keyframes bounceHide {
+	0% {
+		transform: translateY(-5%);
+		opacity: 0.9
+	}
+	100% {
+		transform: translateY(100%);
+		opacity: 0
+	}
+}
+
+.sapMPageBgSolid {
+	background-color: #fafafa
+}
+
+.sapMPage>.sapMPageHeader+.sapMPageSubHeader+section {
+	top: 6rem
+}
+
+.sapMPage>.sapMPageHeader+section,
+.sapMPage>.sapMPageSubHeader+section,
+.sapMPage>.sapMPageHeader+.sapUiHiddenPlaceholder+section {
+	top: 3rem
+}
+
+.sapMBar-CTX .sapMBarLeft>.sapMImg.sapMPageAppIcon {
+	max-height: 1.375rem;
+	max-width: 1.375rem;
+	margin: 0.8125rem
+}
+
+.sapMPage .sapMScrollbarV>div {
+	background-color: #b2b2b2;
+	border-color: #b2b2b2
+}
+
+@media (min-height:3401px) {
+	.sap-desktop .sapMShell .sapMPage.sapMPageHideHeaderWhenShellHeader header.sapMIBar {
+		display: none
+	}
+}
+
+html.sap-tablet .sapUiFioriObjectPage>section,
+html.sap-desktop .sapUiFioriObjectPage>section {
+	padding-bottom: 1rem
+}
+
+.sapUiSizeCompact {}
+
+.sapUiSizeCompact .sapMPageWithHeader>section {
+	top: 2.5rem
+}
+
+.sapUiSizeCompact .sapMPageHeader .sapMIBar,
+.sapUiSizeCompact .sapMPageFooter .sapMIBar {
+	height: 2.5rem
+}
+
+.sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarLeft,
+.sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarLeft,
+.sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarRight,
+.sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarRight,
+.sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarPH,
+.sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarPH {
+	height: 2.5rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem
+}
+
+.sapUiSizeCompact .sapMPageWithFooter>section {
+	bottom: 2.5rem
+}
+
+.sapUiSizeCompact .sapMPageWithSubHeader>section {
+	top: 2rem
+}
+
+.sapUiSizeCompact .sapMPageWithHeader.sapMPageWithSubHeader>section {
+	top: 4.5rem
+}
+
+.sapUiSizeCompact .sapMBar-CTX .sapMBarLeft>.sapMImg.sapMPageAppIcon {
+	max-height: 1rem;
+	max-width: 1rem;
+	margin: 0.5rem
+}

@@ -1,0 +1,220 @@
+.sapRULTExample {
+    color: red;
+    border: 6px solid orange;
+    border-radius: 10px;
+    background-color: grey;
+    opacity: 0.8;
+    padding: 10px;
+    margin: 10px 40px;
+    text-align: center;
+    font-size: 2em;
+    font-family: Papyrus, Arial;
+    line-height: 3em;
+}
+
+.positionBadge {
+    top: 5px;
+    right: 10px;
+}
+
+.mdl-layout__header-row {
+    padding: 0 20px 0 20px;
+}
+
+.pageHeaderSpacing > .sapMPageHeader + section,
+.pageHeaderSpacing > .sapMPageSubHeader + section,
+.pageHeaderSpacing > .sapMPageHeader + .sapUiHiddenPlaceholder + section {
+    top: 5rem ! important;
+}
+
+.sapContrast.sapRULTExample,
+.sapContrast .sapRULTExample {
+    color: red;
+    border: 6px solid orange;
+    background-color: grey;
+}
+
+.sapRULTOverlayPopover {
+    position: fixed;
+    width: 95%;
+    padding: 1rem;
+    height: 100%;
+    top: 0;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+
+/* Inline theming parameters */
+
+#sap-ui-theme-ey\.cc\.eycc {
+    background-image: url('data:text/plain;utf-8,%7B%22default%22%3A%7B%7D%2C%22scopes%22%3A%7B%22sapContrast%22%3A%7B%7D%7D%7D')
+}
+
+
+/*TBDDDDDDDdd*/
+
+.textMeasure {
+    font-family: EYInterstate ! important;
+    font-size: 30px! important;
+    font-weight: bold! important;
+    font-style: normal! important;
+    font-stretch: normal! important;
+    letter-spacing: normal! important;
+    text-align: left! important;
+    color: #2e2e38! important;
+}
+
+.textMeasureLabel {
+    font-family: EYInterstate! important;
+    font-size: 14px! important;
+    font-weight: 300! important;
+    font-style: normal! important;
+    font-stretch: normal! important;
+    letter-spacing: normal! important;
+    text-align: left! important;
+    color: #737384! important;
+}
+
+.measureBlockText {
+    font-family: EYInterstate! important;
+    font-size: 14px! important;
+    font-weight: normal! important;
+    font-style: normal! important;
+    font-stretch: normal! important;
+    line-height: 1.14! important;
+    letter-spacing: normal! important;
+    text-align: left! important;
+    color: #9b9b9b! important;
+}
+
+.measureBlockKPI {
+    font-family: EYInterstate! important;
+    font-size: 30px! important;
+    font-weight: normal! important;
+    font-style: normal! important;
+    font-stretch: normal! important;
+    line-height: 1.2! important;
+    letter-spacing: normal! important;
+    text-align: left! important;
+    color: #4a4a4a! important;
+}
+
+
+/*TBD for Hover List Item*/
+
+.container {
+    border: solid 0.9px #e6e6ec;
+    height: auto;
+    width: inherit;
+}
+
+.textContent {
+    display: inline-block;
+}
+
+.label {
+    text-overflow: ellipsis;
+    max-width: 200px;
+    word-wrap: break-word;
+    font-family: EYInterstate;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2e2e38;
+    margin: 10px 0 0 10px;
+}
+.labelModify {
+text-overflow: ellipsis;
+max-width: 200px;
+word-wrap: break-word;
+font-family: EYInterstate;
+font-size: 18px;
+font-weight: 400;
+color: #2e2e38;
+margin: 15px 0 10px 10px;
+}
+.info {
+    margin: 5px 0 5px 10px;
+    font-family: EYInterstate;
+    font-size: 12px;
+    color: #2e2e38;
+}
+
+.actions {
+    float: right;
+    opacity: 0;
+    margin: 10px 5px 0 10px;
+    transition: .5s;
+}
+
+.container:hover .actions {
+    opacity: 1;
+}
+.containerBorder:hover {
+    border-left: 10px solid #ffe600;
+    padding-left: 0.5rem;
+    margin-left: -1rem;
+}
+.containerBorder {
+	border-bottom: solid 0.9px rgba(128,128,128,0.8);
+	height: auto;
+    width: 25rem;
+}
+.container:hover {
+    cursor: pointer;
+}
+
+.borderLeft {
+    border-left: 10px solid #ffe600;
+}
+.borderModify {
+    border-left: 10px solid #ffe600;
+    margin-left: -1rem;
+}
+
+
+
+/*Text Field Design*/
+
+.editor{
+  font-size : 1rem;
+  font-family:EYInterstate;
+  padding:10px;
+  width:auto;
+  color : #2e2e38C0;
+  min-width:10rem;
+  max-width : 30rem;
+  display:inline-block;
+  outline: 0px solid transparent;
+  border : 3px solid #2e2e3820 ;
+  border-radius:20px;
+}
+.editor:focus{
+  font-size : 1rem;
+  font-family:EYInterstate;
+  border : 2px solid #2e2e3850 ;
+}
+.editor:hover{
+/*   background:#ececec; */
+}
+
+[placeholder]:empty:focus::before {
+    content: "";
+}
+.placeholder{
+  display:block;
+  position:relative;
+  top : .75rem;
+  left : 2rem;
+  padding : 0px 5px 0px 5px ;
+  font-size : .90rem;
+  color : #2e2e38F0;
+  background : linear-gradient(transparent,transparent,white,transparent,transparent);
+  width:max-content;
+  font-family:EYInterstate;
+}

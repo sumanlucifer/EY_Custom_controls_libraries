@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eydcc.controls.EYInput</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eydcc,sap.m"
+         data-sap-ui-theme="sap_belize"
+         src="resources/sap-ui-core.js">
+      </script>
+      
+      <script type="text/javascript"> 
+         var oApp = new sap.m.App("myApp", {initialPage:"myPage1"});
+
+ 
+
+	var oPage1 = new sap.m.Page("myPage1", {
+		title: "Custom Input Control"
+	 
+	});
+	
+	var example1Title = new sap.m.Text({
+		text:"Input with Label Text"
+	});
+	
+		var example2Title = new sap.m.Text({
+		text:"Input without Label Text"
+	});
+	
+         var oInput1 = new ey.cc.eydcc.controls.EYInput({
+                         labeltext: "Example",
+                         placeholder:"muthu"
+                        
+         });
+         
+         var example1=new sap.m.VBox({
+		alignItems:"Center",
+		justifyContent:"Center",
+		items:[
+			example1Title,
+			oInput1
+			]
+	}).addStyleClass("sapUiResponsiveMargin");
+	
+	
+	 var oInput2  = new ey.cc.eydcc.controls.EYInput({
+                      
+         });
+	 var example2=new sap.m.VBox({
+		alignItems:"Center",
+		justifyContent:"Center",
+		items:[
+			example2Title,
+			oInput2
+			]
+	}).addStyleClass("sapUiResponsiveMargin");
+	
+	
+	
+	
+		var example3Title = new sap.m.Text({
+		text:"Input liveChangeEvent"
+	});
+	
+		 var oInput3  = new ey.cc.eydcc.controls.EYInput({
+                 livechange:function(oEvent){
+                         		alert("LiveChangeEvent:"+oEvent.getSource().getValue());
+                 }         
+         });
+	 var example3=new sap.m.VBox({
+		alignItems:"Center",
+		justifyContent:"Center",
+		items:[
+			example3Title,
+			oInput3
+			]
+	}).addStyleClass("sapUiResponsiveMargin");
+	
+		var example4Title = new sap.m.Text({
+		text:"Input with ChangeEvent"
+	});
+		 var oInput4  = new ey.cc.eydcc.controls.EYInput({
+                 change:function(oEvent){
+                         		alert("ChangeEvent:"+oEvent.getSource().getValue());
+                 }         
+         });
+	 var example4=new sap.m.VBox({
+		alignItems:"Center",
+		justifyContent:"Center",
+		items:[
+			example4Title,
+			oInput4
+			]
+	}).addStyleClass("sapUiResponsiveMargin");
+	
+	 var container=new sap.m.VBox({
+		alignItems:"Center",
+		justifyContent:"Center",
+		items:[
+			example1,
+			example2,
+			example3,
+			example4
+			]
+	}).addStyleClass("sapUiResponsiveMargin");
+	
+	
+	
+         
+         oPage1.addContent(container);
+         oApp.addPage(oPage1);
+	oApp.placeAt("content");
+         
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <h1 id="header">Test Page for <code> ey.cc.eydcc.controls.EYInput</code></h1>
+      <div id="content"></div>
+   </body>
+</html>

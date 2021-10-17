@@ -1,0 +1,115 @@
+/*.eyDArrowCrl {
+    position:relative;
+    width:69px;
+     
+    height:5px;
+    	border-bottom: 1.5px solid #747480;
+     
+}
+.eyDArrowCrl::before {
+ 
+content:'';
+display: block;
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  margin-left:-5px;
+  
+  border-radius: 10px;
+  border: 1.5px solid #747480;
+   
+  
+  }
+.eyDArrowCrl::after {	
+  content: '';
+  width: 0; 
+	height: 0; 
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-left: 10px solid #747480;
+  position: absolute;
+  right: -10px;
+  top: 0px;
+}
+.eyDArrowCrlWrapper{
+ 
+flex-direction: column;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.eyDArrowCrlTxt{
+	
+height: 18px;	
+width: 48px;	
+border-radius: 9px;	
+background-color: #1776CE;
+	color: #FFFFFF;
+	 	font-family: EYInterstate;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 18px;
+	text-align: center;
+     
+    
+
+}*/
+
+.eyDArrowWrapper {text-align:center;width:8rem !important;}
+.eyDArrowTxtWrpper {
+    
+     text-align:center;
+    height:20px;
+    /*width: 53px;*/
+    width: 40%;
+    border-radius: 10px;
+   /* margin: 0px -5px 0px -5px;*/
+    display: inline-block;
+    background: #1776CE;
+    font-family: EYInterstate;	font-size: 10px;	font-weight: bold;
+    cursor: pointer;
+    color:#fff;
+      line-height: 20px;
+        vertical-align: middle;
+     
+}
+
+ .eyDPAArrowMargin{
+ 	width:8rem !important;
+ }
+ 
+.eyDArrowSeprator {
+    /*width: 28px;*/
+    width: 30%;
+    height: 2px;
+    	 
+    background-color: #747480;
+    margin: 0px auto;
+    display: inline-block;
+    vertical-align: middle;
+    position:relative;
+}
+.eyDArrowSeprator:first-child:before {
+    content: '';
+    position: absolute;
+    width: 11.5px;
+    height: 11.5px;
+    background: #ffffff;
+    	border: 1.5px solid #747480;
+    left: 0;
+    
+    border-radius: 100%;
+    top: -6px;
+}
+.eyDArrowSeprator:last-child:after {
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 12px solid #747480;
+    position: absolute;
+    right: -2px;
+    top: -9px;
+}

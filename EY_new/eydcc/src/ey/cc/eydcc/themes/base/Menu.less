@@ -1,0 +1,161 @@
+.ey-popup-vertical-menu {
+    width: 100%;
+    /* Set a width if you like */
+}
+
+.ey-popup-vertical-menu a {
+    border-bottom: 1px solid rgba(250, 250, 246, 0.2);
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #2E2E38;
+    /* Grey background color */
+    font-family: "EYInterstate" !important;
+    font-size: 20px !important;
+    color: #ffffff !important;
+    /* Black text color */
+    display: block;
+    /* Make the links appear below each other */
+    padding: 12px;
+    /* Add some padding */
+    text-decoration: none;
+    /* Remove underline from links */
+}
+
+.ey-popup-vertical-menu .ey-popup-vertical-menu-item {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ey-popup-vertical-menu .ey-popup-vertical-menu-itemFirst {
+    width: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "EYInterstateLight" !important;
+    font-size: 16px !important;
+    color: rgba(246, 246, 250, 0.35);
+    /* Black text color */
+    display: block;
+    /* Make the links appear below each other */
+    padding: 12px;
+    /* Add some padding */
+    text-decoration: none;
+}
+
+.ey-popup-vertical-menu div {
+    /* Dark grey background on mouse-over */
+    border-left: 4px solid #2E2E38;
+}
+
+.ey-popup-vertical-menu div:hover {
+    /* Dark grey background on mouse-over */
+    border-left: 4px solid #FFE500;
+}
+
+.ey_menu-popup__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* padding: 70px 5%;*/
+    overflow: auto;
+    /* smooth scrolling on touch devices */
+    -webkit-overflow-scrolling: touch;
+}
+
+ 
+
+@media only screen and (min-width: 1170px) {
+    .cd-main-content h1 {
+        font-size: 3.2rem;
+    }
+}
+
+.ey_menu-popup {
+    top: 0;
+    left: 0;
+    /* height: 100%;
+    width: 100%;*/
+    visibility: hidden;
+    -webkit-transition: visibility 0s 0.6s;
+    transition: visibility 0s 0.6s;
+}
+
+.ey_menu-popup::after {
+    /* overlay layer */
+    content: '';
+    /* position: absolute;*/
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    /* height: 648px;*/
+    height: 100%;
+    background: transparent;
+    -webkit-transition: background 0.3s 0.3s;
+    transition: background 0.3s 0.3s;
+}
+
+.ey_menu-popup.ey_menu-popup--is-visible {
+    visibility: visible;
+    -webkit-transition: visibility 0s 0s;
+    transition: visibility 0s 0s;
+}
+
+.ey_menu-popup.ey_menu-popup--is-visible::after {
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-transition: background 0.3s 0s;
+    transition: background 0.3s 0s;
+}
+
+.ey_menu-popup__container {
+    position: fixed;
+    width: 90%;
+    height: 100%;
+    top: 0;
+    display: none;
+    background: #2E2E38;
+    z-index: 2;
+    -webkit-transition: -webkit-transform 0.3s 0.3s;
+    transition: -webkit-transform 0.3s 0.3s;
+    transition: transform 0.3s 0.3s;
+    transition: transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s;
+}
+
+.ey_menu-popup--from-right .ey_menu-popup__container {
+    right: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}
+
+.ey_menu-popup--is-visible .ey_menu-popup__container {
+    display: block;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+@media only screen and (min-width: 1170px) {
+    .ey_menu-popup__container {
+        width: 294px;
+        margin-top: 60px;
+        height: 100%;
+    }
+}
+
+.ey_menu-popup__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* padding: 70px 5%;*/
+    overflow: auto;
+    /* smooth scrolling on touch devices */
+    -webkit-overflow-scrolling: touch;
+}

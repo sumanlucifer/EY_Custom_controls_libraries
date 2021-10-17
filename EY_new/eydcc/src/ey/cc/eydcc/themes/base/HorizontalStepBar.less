@@ -1,0 +1,111 @@
+.eyDHztPrsBarWrapper {
+    width: 78rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.eyDHztPrsBar li {
+    float: left;
+    width: 12.5%;
+    position: relative;
+    text-align: center;
+    list-style: none;
+}
+
+.eyDHztPrsBar {
+    counter-reset: step;
+}
+
+.eyDHztPrsBar li div:nth-child(2):after {
+  content: '';
+  position: absolute;
+  width: 54%;
+  height: 3px;
+  background-image: linear-gradient(90deg, #808080, #808080 65%, transparent 65%, transparent 100%);
+  background-size: 10px 1px;
+  top: 48px;
+  left: -27%; 
+  /* z-index: -1; */
+}
+
+.eyDHztPrsBar li:first-child div:nth-child(2):after {
+    content: none;
+}
+
+.eyDHztPrsBar li:nth-child(even) .eyDHztPrsBarItem {
+    cursor: pointer;
+    width: 69px;
+    height: 69px;
+    border: 2px solid #bebebe;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    line-height: 69px;
+    background: #FFE500;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+ 
+
+ 
+
+.eyDHztPrsBar li:nth-child(odd) .eyDHztPrsBarItem {
+    cursor: pointer;
+    width: 69px;
+    height: 69px;
+    border: 2px solid #bebebe;
+    display: block;
+    margin: 15px auto 10px auto;
+    border-radius: 50%;
+    line-height: 69px;
+    background: #FFE500;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.eyDHztPrsBar .eyDHztPrsBarItemBottomWrapper{
+	cursor: pointer;
+    width: 28px;
+    height: 28px;
+    /* display: block; */
+    margin: 35px 0 10px 0;
+    border-radius: 50%;
+    line-height: 28px;
+    background: #FFE500;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+.eyDHztPrsBar li:first-child div.eyDHztInlineBarBottomItem:nth-child(2):after {
+  content: none;
+}
+.eyDHztPrsBar li div.eyDHztInlineBarBottomItem:nth-child(2):after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(90deg, #808080, #808080 65%, transparent 65%, transparent 100%);
+  background-size: 10px 1px;
+  top: 48px;
+  left: -100%;
+  z-index: -1;
+}
+.eyDHztPrsBottomBarItemBtmTitle{
+	font-family: "EYInterstateLight" !important;
+    font-size: 16px !important;
+    color: #2E2E38 !important;
+    line-height: 19px;
+    margin-top: 9px;
+    text-align: left;
+   
+    
+}
+.eyDHztPrsBottomBarItemBtmSubTitle{
+	font-family: "EYInterstateLight" !important;
+    font-size: 14px !important;
+    color: #2E2E38 !important;
+    line-height: 16px;
+    margin-top: 5px;
+    text-align: left;
+}

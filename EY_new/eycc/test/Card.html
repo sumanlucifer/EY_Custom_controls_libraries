@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eycc.controls</title>
+      <base href="../../../../">
+      
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eycc,sap.m"
+         src="resources/sap-ui-core.js"
+         data-sap-ui-theme="sap_belize">
+      </script>
+      
+      <script type="text/javascript"> 
+         
+        new sap.m.ScrollContainer({
+     	 	justifyContent  : "Center",
+     	 	content : [
+				new ey.cc.eycc.controls.Card({
+					title : 'Rule Set',
+					description: 'Lorem ipsum',
+					valueB: "52 MB",
+					valueR: "10",
+					labelB: "Size",
+					labelR: "No of Rule(s)",
+					press : function(e){
+							alert("welcome");
+							},
+					actionItems: [
+                         
+					new ey.cc.eycc.controls.Button({ 
+							icon : 'delete',
+							type:"miniIcon",
+							press : function(e){
+							alert("hi");
+							}
+						 }),
+						 	new ey.cc.eycc.controls.Button({ 
+							icon : 'edit',
+							type:"miniIcon",
+							press : function(e){
+							alert("welcome");
+							}
+						 })
+                         	]
+				}),
+				new ey.cc.eycc.controls.Card({
+					title : 'Rule Set',
+					description: 'Lorem ipsum, or lipsum as it is sometimes known for lipsum as it is sometimes known for lipsum as it is sometimes known for',
+					valueB: "Vineela, 6 min ago",
+					valueR: "Vineela, 6 min ago",
+					press : function(e){
+							alert("second card");
+							},
+					actionItems: [
+                         		
+				new ey.cc.eycc.controls.Button({ 
+							icon : 'delete',
+							type:"miniIcon"
+						 }),
+						 	new ey.cc.eycc.controls.Button({ 
+							icon : 'edit',
+							type:"miniIcon"
+						 })
+				
+                         	]
+				}),
+				new ey.cc.eycc.controls.Card({
+				title : 'Rule Set',
+				description: 'Lorem ipsum',
+				valueB: "Vineela, 6 min ago",
+				valueR: "Vineela, 6 min ago",
+				actionItems: [
+                     	
+				new ey.cc.eycc.controls.Button({ 
+						icon : 'delete',
+						type:"miniIcon"
+					 }),
+					 	new ey.cc.eycc.controls.Button({ 
+						icon : 'edit',
+						type:"miniIcon"
+					 })
+			
+                     	]
+				}),
+				new ey.cc.eycc.controls.Card({
+				title : 'Rule Set',
+				description: 'Lorem ipsum',
+				valueB: "Vineela, 6 min ago",
+				valueR: "Vineela, 6 min ago",
+				actionItems: [
+                     	
+				new ey.cc.eycc.controls.Button({ 
+						icon : 'delete',
+						type:"miniIcon"
+					 }),
+					 	new ey.cc.eycc.controls.Button({ 
+						icon : 'edit',
+						type:"miniIcon"
+					 })
+			
+                     	]
+				})
+				
+ 	 		]
+     	 }).addStyleClass('sapUiLargeMargin').placeAt('content');
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <div id="content"></div>
+   </body>
+</html>

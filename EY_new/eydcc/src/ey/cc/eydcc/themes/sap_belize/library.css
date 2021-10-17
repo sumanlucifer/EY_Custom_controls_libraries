@@ -1,0 +1,3812 @@
+@import "/resources/sap/ui/core/themes/base/global.css";
+@font-face {
+    font-family: 'EYInterstate';
+    src: url('../../fonts/EYInterstate/EYInterstate-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'EYInterstateLight';
+    src: url('../../fonts/EYInterstate/EYInterstate-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'EYInterstateBold';
+    src: url('../../fonts/EYInterstate/EYInterstate-Bold.ttf') format('truetype');
+}
+
+.sapRULTExample {
+    color: red;
+    border: 6px solid orange;
+    border-radius: 10px;
+    background-color: grey;
+    opacity: 0.8;
+    padding: 10px;
+    margin: 10px 40px;
+    text-align: center;
+    font-size: 2em;
+    font-family: Papyrus, Arial;
+    line-height: 3em;
+}
+
+.eyDInputWrapperWithoutLabel {
+    line-height: 45px;
+    text-align: center;
+}
+
+.eyDInputWrapper {
+    background: #F6F6FA;
+    display: flex;
+}
+
+.eyDInputInnerWrapper {
+    padding: 5px !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.eyDInput {
+    font-family: 'EYInterstateLight' !important;
+    font-size: 14px !important;
+    color: #2E2E38 !important;
+    background: transparent;
+    width: 100%;
+    flex: 1;
+    border: none;
+    outline: none;
+}
+
+.eyDInputLabelText {
+    font-family: 'EYInterstateLight' !important;
+    font-size: 12px !important;
+    color: #747480 !important;
+    display: block;
+    width: 100%;
+}
+
+.eyDRoundCheckBox {
+    position: relative;
+    margin-left: -20px;
+}
+
+.eyDRoundCheckBox label {
+    background-color: #131313;
+    border: 1px solid #75758B;
+    border-radius: 50%;
+    height: 22px;
+    /* left: 0;*/
+    position: absolute;
+    top: 0;
+    width: 22px;
+}
+
+.eyDRoundCheckBox label:after {
+    border: 4px solid #FAE539;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 5px;
+    bottom: 4px;
+    opacity: 0;
+    position: absolute;
+    top: 2px;
+    transform: rotate(-45deg);
+    width: 14px;
+}
+
+.eyDRoundCheckBox input[type="checkbox"] {
+    /* visibility: hidden;*/
+    display: none;
+}
+
+.eyDRoundCheckBoxTransLabel {
+    cursor: default;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+
+/*.eyDRoundCheckBox input[type="checkbox"]:checked + label {
+    background-color: #131313;
+    border-color: #75758B;
+}*/
+
+.eyDRoundCheckBox input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+.ey-popup-vertical-menu {
+    width: 100%;
+    /* Set a width if you like */
+}
+
+.ey-popup-vertical-menu a {
+    border-bottom: 1px solid rgba(250, 250, 246, 0.2);
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #2E2E38;
+    /* Grey background color */
+    font-family: "EYInterstate" !important;
+    font-size: 20px !important;
+    color: #ffffff !important;
+    /* Black text color */
+    display: block;
+    /* Make the links appear below each other */
+    padding: 12px;
+    /* Add some padding */
+    text-decoration: none;
+    /* Remove underline from links */
+}
+
+.ey-popup-vertical-menu .ey-popup-vertical-menu-item {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ey-popup-vertical-menu .ey-popup-vertical-menu-itemFirst {
+    width: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "EYInterstateLight" !important;
+    font-size: 16px !important;
+    color: rgba(246, 246, 250, 0.35);
+    /* Black text color */
+    display: block;
+    /* Make the links appear below each other */
+    padding: 12px;
+    /* Add some padding */
+    text-decoration: none;
+}
+
+.ey-popup-vertical-menu div {
+    /* Dark grey background on mouse-over */
+    border-left: 4px solid #2E2E38;
+}
+
+.ey-popup-vertical-menu div:hover {
+    /* Dark grey background on mouse-over */
+    border-left: 4px solid #FFE500;
+}
+
+.ey_menu-popup__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* padding: 70px 5%;*/
+    overflow: auto;
+    /* smooth scrolling on touch devices */
+    -webkit-overflow-scrolling: touch;
+}
+
+@media only screen and (min-width: 1170px) {
+    .cd-main-content h1 {
+        font-size: 3.2rem;
+    }
+}
+
+.ey_menu-popup {
+    top: 0;
+    left: 0;
+    /* height: 100%;
+    width: 100%;*/
+    visibility: hidden;
+    -webkit-transition: visibility 0s 0.6s;
+    transition: visibility 0s 0.6s;
+}
+
+.ey_menu-popup::after {
+    /* overlay layer */
+    content: '';
+    /* position: absolute;*/
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    /* height: 648px;*/
+    height: 100%;
+    background: transparent;
+    -webkit-transition: background 0.3s 0.3s;
+    transition: background 0.3s 0.3s;
+}
+
+.ey_menu-popup.ey_menu-popup--is-visible {
+    visibility: visible;
+    -webkit-transition: visibility 0s 0s;
+    transition: visibility 0s 0s;
+}
+
+.ey_menu-popup.ey_menu-popup--is-visible::after {
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-transition: background 0.3s 0s;
+    transition: background 0.3s 0s;
+}
+
+.ey_menu-popup__container {
+    position: fixed;
+    width: 90%;
+    height: 100%;
+    top: 0;
+    display: none;
+    background: #2E2E38;
+    z-index: 2;
+    -webkit-transition: -webkit-transform 0.3s 0.3s;
+    transition: -webkit-transform 0.3s 0.3s;
+    transition: transform 0.3s 0.3s;
+    transition: transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s;
+}
+
+.ey_menu-popup--from-right .ey_menu-popup__container {
+    right: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}
+
+.ey_menu-popup--is-visible .ey_menu-popup__container {
+    display: block;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+@media only screen and (min-width: 1170px) {
+    .ey_menu-popup__container {
+        width: 294px;
+        margin-top: 60px;
+        height: 100%;
+    }
+}
+
+.ey_menu-popup__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* padding: 70px 5%;*/
+    overflow: auto;
+    /* smooth scrolling on touch devices */
+    -webkit-overflow-scrolling: touch;
+}
+
+.eyDVrtStepPrsBarWrapper {
+    padding: 10px;
+    font-family: 'Helvetica';
+    font-size: 14px;
+}
+
+.eyDVrtStepPrsBar {
+    position: relative;
+    padding: 0px;
+    list-style: none;
+    counter-reset: step;
+}
+
+.eyDVrtStepPrsBarItmLink {
+    float: right;
+    text-decoration: none;
+    color: #155CB4;
+    text-align: left;
+    width: 6rem;
+    font-family: 'EYInterstateBold';
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.eyDVrtStepPrsBarStandardItmDsrContainer {
+    padding-top: 5px !important;
+    height: 3rem;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.eyDVrtStepPrsBarLightItmDsrContainer {
+    padding-top: 5px !important;
+    height: 1rem;
+    display: flex;
+}
+
+.eyDVrtStepPrsBarItmDsr {
+    display: inline-flex;
+    width: 80%;
+    padding-left: 30px;
+    font-family: 'EYInterstateLight' !important;
+    font-size: 14px !important;
+    color: #747480 !important;
+}
+
+.eyDVrtStepPrsBarStandrdItemTtl {
+    font-family: 'EYInterstate' !important;
+    font-size: 14px !important;
+    color: #2E2E38 !important;
+    display: inline-flex;
+    padding-left: 30px;
+    display: flex;
+}
+
+.eyDVrtStepPrsBarLightItemTtl {
+    font-family: 'EYInterstate' !important;
+    font-size: 16px !important;
+    color: #747480 !important;
+    display: inline-flex;
+    padding-left: 30px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.eyDVrtStepPrsBar-item {
+    position: relative;
+    counter-increment: list;
+}
+
+.eyDVrtStepPrsBar-item:not(:last-child) {
+    padding-bottom: 10px;
+}
+
+.eyDVrtStepPrsBar-item::before {
+    width: 19px;
+    height: 19px;
+    line-height: 30px;
+    border: 1px solid #2E2E38;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+    content: '';
+    left: 0;
+    position: absolute;
+}
+
+.eyDVrtStepPrsBar-item:not(:last-child):after {
+    width: 2px;
+    height: 100%;
+    content: '';
+    position: absolute;
+    background: linear-gradient(to bottom, #2e2e38 50%, #ffffff 0%);
+    background-position: 50%;
+    background-repeat: repeat-y;
+    background-size: 1px 14px;
+    top: 15px;
+    left: 10px;
+    z-index: -1;
+}
+
+.eyDVrtStepPrsBar-item.is-done::before {
+    content: "";
+    font-size: 10px;
+    color: #FFF;
+    text-align: center;
+    border: 1px solid #2E2E38;
+    padding: 1px;
+    box-shadow: inset 0px 0px 0px 2px white;
+    background-color: #2EB757;
+}
+
+.eyDVrtStepPrsBar-item.current::before {
+    /*	  
+    content:'';
+    width: 19px;
+    height: 18px;*/
+    /* content: url(../../images/Path.png);*/
+    background-image: url(../../images/Path.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* padding-top: 1px;*/
+    width: 19px;
+    height: 18px;
+    /*  top: -2px;
+    left: -40px;*/
+    /* font-size: 14px; */
+    font-size: 16px;
+    text-align: center;
+    /* color: green; */
+    color: #2E2E38;
+    border: 1px solid #2E2E38;
+    /* border: 2px solid green; */
+    background-color: white;
+    /*     background: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='19' height='19' viewBox='0 0 1792 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z'/></svg>") no-repeat;
+*/
+    /* 
+    font-size: 16px;
+    text-align: center;
+     
+    color: #2E2E38;
+    border: 1px solid #2E2E38;*/
+}
+
+.eyDVrtStepPrsBar-Lightitem {
+    position: relative;
+    counter-increment: list;
+}
+
+.eyDVrtStepPrsBar-Lightitem:not(:last-child) {
+    padding-bottom: 10px;
+}
+
+.eyDVrtStepPrsBar-Lightitem::before {
+    width: 19px;
+    height: 19px;
+    line-height: 30px;
+    border: 1px solid #C4C4CD;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+    content: '';
+    left: 0;
+    position: absolute;
+}
+
+.eyDVrtStepPrsBar-Lightitem:not(:last-child):after {
+    width: 2px;
+    height: 100%;
+    content: '';
+    position: absolute;
+    background: linear-gradient(to bottom, #c4c4cd 50%, #ffffff 0%);
+    background-position: 50%;
+    background-repeat: repeat-y;
+    background-size: 1.2px 10px;
+    top: 15px;
+    left: 10px;
+    z-index: -1;
+}
+
+.eyDVrtStepPrsBar-Lightitem.is-done::before {
+    content: "";
+    font-size: 10px;
+    color: #FFF;
+    text-align: center;
+    border: 1px solid #2E2E38;
+    padding: 1px;
+    box-shadow: inset 0px 0px 0px 2px white;
+    background-color: #2EB757;
+}
+
+.eyDVrtStepPrsBar-Lightitem.current::before {
+    content: '';
+    width: 19px;
+    height: 18px;
+    background: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='19' height='19' viewBox='0 0 1792 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z'/></svg>") no-repeat;
+    font-size: 16px;
+    text-align: center;
+    color: #2E2E38;
+    border: 1px solid #2E2E38;
+}
+
+.eyDRb {
+    height: 3rem;
+    float: left;
+    clear: left;
+    outline: none;
+    text-overflow: ellipsis;
+    position: relative;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.eyDRb > .eyDLabel {
+    max-width: calc(97%);
+    padding-right: 1px;
+}
+
+.eyDILI-CTX .eyDRb {
+    float: right;
+}
+
+.eyDRb .eyDRbB {
+    height: 3rem;
+    width: 3rem;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.eyDRb .eyDRbB:focus {
+    outline: none;
+}
+
+.eyDRb .eyDRbB .eyDRbBOut {
+    height: 100%;
+    width: 100%;
+    transform: translate(50%, 50%);
+    margin: 0.825rem;
+    padding: 1px;
+    stroke: #000000;
+    fill: #ffffff;
+}
+
+html[data-sap-ui-browser^="ie"].sap-desktop .eyDRbSvg,
+html[data-sap-ui-browser^="ed"].sap-desktop .eyDRbSvg {
+    position: relative;
+    left: 0.6875rem;
+    top: 0.6875rem;
+}
+
+html[data-sap-ui-browser^="ie"].sap-desktop .sapUiSizeCompact .eyDRbSvg,
+html[data-sap-ui-browser^="ed"].sap-desktop .sapUiSizeCompact .eyDRbSvg {
+    left: 0.5rem;
+    top: 0.5rem;
+}
+
+.eyDRbSvg {
+    height: 1.375rem;
+    width: 1.375rem;
+    margin: 0.825rem;
+    overflow: visible;
+}
+
+.eyDRbBLabel {
+    vertical-align: top;
+    height: 3rem;
+    line-height: 3rem;
+    cursor: default;
+    font-family: 'EYInterstateLight' !important;
+    font-size: 12px !important;
+    color: #2E2E38 !important;
+}
+
+.eyDRbB input {
+    margin: 0;
+    -webkit-appearance: none;
+    visibility: hidden;
+}
+
+.eyDRb:focus:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: .625rem;
+    bottom: .625rem;
+    left: .625rem;
+    right: .625rem;
+    pointer-events: none;
+}
+
+.eyDRbB .eyDRbBInn {
+    transform: translate(50%, 50%);
+    stroke: transparent;
+    fill: none;
+    -webkit-user-select: none;
+    align-self: center;
+}
+
+.eyDRbHasLabel.eyDRb:focus:before {
+    right: 0;
+}
+
+.eyDRbDis:focus:before {
+    display: none;
+}
+
+.eyDRbSel .eyDRbBInn {
+    fill: #000000;
+    stroke: none;
+}
+
+.eyDLIBActive .eyDRbSel .eyDRbBInn {
+    fill: #ffffff;
+}
+
+.eyDRb.eyDRbRo .eyDRbBOut {
+    stroke: #cccccc;
+    fill: rgba(242, 242, 242, 0.5);
+}
+
+.eyDRb.eyDRbRo.eyDRbSel .eyDRbBInn {
+    fill: #878787;
+    stroke: none;
+}
+
+.sapUiSizeCompact .eyDRb {
+    height: 2rem;
+}
+
+.sapUiSizeCompact .eyDRb > .eyDLabel {
+    max-width: calc(99%);
+}
+
+.sapUiSizeCompact .eyDRbSvg {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    overflow: visible;
+    margin: 0.5rem;
+}
+
+.sapUiSizeCompact .eyDRb:focus:before {
+    top: .375rem;
+    bottom: .375rem;
+    left: .375rem;
+    right: 0.325rem;
+}
+
+.sapUiSizeCompact .eyDRbB {
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
+}
+
+.sapUiSizeCompact .eyDRbB .eyDRbBOut {
+    height: 100%;
+    width: 100%;
+    border-width: 0.125rem;
+    margin: 0.5rem;
+    box-sizing: border-box;
+}
+
+.sapUiSizeCompact .eyDRbB .eyDRbBInn {
+    height: 0.375rem;
+    width: 0.375rem;
+}
+
+.sapUiSizeCompact .eyDRbBLabel {
+    line-height: 2rem;
+    height: 2rem;
+}
+
+.sapUiSizeCompact .eyDRbHasLabel.eyDRb:focus:before {
+    right: 0;
+}
+
+.sapUiSizeCondensed.sapUiTable .eyDRb,
+.sapUiSizeCondensed .sapUiTable .eyDRb {
+    height: 1.5rem;
+    vertical-align: top;
+}
+
+.sapUiSizeCondensed.sapUiTable .eyDRbB,
+.sapUiSizeCondensed .sapUiTable .eyDRbB {
+    font-size: 1rem;
+    height: 1.375rem;
+    width: 1.375rem;
+}
+
+.sapUiSizeCondensed.sapUiTable .eyDRbB .eyDRbBOut,
+.sapUiSizeCondensed .sapUiTable .eyDRbB .eyDRbBOut {
+    height: 0.75rem;
+    width: 0.75rem;
+    border-width: 1px;
+    margin: 0.375rem;
+}
+
+.sapUiSizeCondensed.sapUiTable .eyDRbB .eyDRbBInn,
+.sapUiSizeCondensed .sapUiTable .eyDRbB .eyDRbBInn {
+    height: 0.25rem;
+    width: 0.25rem;
+    margin: 0.0625rem;
+}
+
+.sapUiSizeCondensed.sapUiTable .sapUiTableDataCell > .sapUiTableCellInner > .eyDRb > .eyDRbB,
+.sapUiSizeCondensed .sapUiTable .sapUiTableDataCell > .sapUiTableCellInner > .eyDRb > .eyDRbB {
+    margin: 0 0.25rem;
+}
+
+.sapUiSizeCondensed.sapUiTable .eyDRbBLabel,
+.sapUiSizeCondensed .sapUiTable .eyDRbBLabel {
+    line-height: 1.5rem;
+    height: 1.5rem;
+}
+
+.eyDHztPrsBarWrapper {
+    width: 78rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.eyDHztPrsBar li {
+    float: left;
+    width: 12.5%;
+    position: relative;
+    text-align: center;
+    list-style: none;
+}
+
+.eyDHztPrsBar {
+    counter-reset: step;
+}
+
+.eyDHztPrsBar li div:nth-child(2):after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-image: linear-gradient(90deg, #808080, #808080 65%, transparent 65%, transparent 100%);
+    background-size: 10px 1px;
+    top: 48px;
+    left: -50%;
+    z-index: -1;
+}
+
+.eyDHztPrsBar li:first-child div:nth-child(2):after {
+    content: none;
+}
+
+.eyDHztPrsBar li:nth-child(even) .eyDHztPrsBarItem {
+    cursor: pointer;
+    width: 69px;
+    height: 69px;
+    border: 2px solid #bebebe;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    line-height: 69px;
+    background: #FFE500;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.eyDHztPrsBar .eyDHztPrsBarItemBottomWrapper {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    /* display: block; */
+    margin: 35px 0 10px 0;
+    border-radius: 50%;
+    line-height: 28px;
+    background: #FFE500;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.eyDHztPrsBar li:first-child div.eyDHztInlineBarBottomItem:nth-child(2):after {
+    content: none;
+}
+
+.eyDHztPrsBar li div.eyDHztInlineBarBottomItem:nth-child(2):after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(90deg, #808080, #808080 65%, transparent 65%, transparent 100%);
+    background-size: 10px 1px;
+    top: 48px;
+    left: -100%;
+    z-index: -1;
+}
+
+.eyDHztPrsBottomBarItemBtmTitle {
+    font-family: "EYInterstateLight" !important;
+    font-size: 16px !important;
+    color: #2E2E38 !important;
+    line-height: 19px;
+    margin-top: 9px;
+    text-align: left;
+}
+
+.eyDHztPrsBottomBarItemBtmSubTitle {
+    font-family: "EYInterstateLight" !important;
+    font-size: 14px !important;
+    color: #2E2E38 !important;
+    line-height: 16px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.eyDHztPrsBar li:nth-child(odd) .eyDHztPrsBarItem {
+    cursor: pointer;
+    width: 69px;
+    height: 69px;
+    border: 2px solid #bebebe;
+    display: block;
+    margin: 15px auto 10px auto;
+    border-radius: 50%;
+    line-height: 69px;
+    background: #FFE500;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.eyDHztPrsBarItemIconWrapper {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    line-height: 69px;
+    background: #FFE500;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.eyDHztPrsBarItemIcon {
+    margin-top: -3px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    object-fit: cover;
+    /*   width: 27px;
+    height: 27px;*/
+    text-align: center;
+    /* Other styles here */
+}
+
+.eyDHztPrsBarItemTopSnglTitle {
+    font-family: "EYInterstateBold" !important;
+    font-size: 22px !important;
+    color: #2E2E38 !important;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.eyDHztPrsBarItemTopDblTitle {
+    font-family: "EYInterstateBold" !important;
+    font-size: 22px !important;
+    color: #2E2E38 !important;
+    margin-top: -40px;
+    margin-bottom: 5px;
+    width: 12rem;
+}
+
+.eyDHztPrsBarItemBtmTitle {
+    font-family: "EYInterstateBold" !important;
+    font-size: 22px !important;
+    color: #2E2E38 !important;
+}
+
+.eyDNavLI {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.eyDNavLI ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.eyDNavUploadIcon {
+    /* width: 24px !important;
+        height: 24px;*/
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+}
+
+.eyDNavUploadIcon .sapMBtnIcon {
+    line-height: 13px !important;
+    max-height: 13px !important;
+    width: 16px !important;
+}
+
+.eyDNavUploadIcon span:first-child {
+    height: 13px !important;
+}
+
+.eyDNavLIItem {
+    width: 100%;
+    min-height: 57px;
+    /*	height: 57px;*/
+    /*	height: 3rem;*/
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.eyDNavLIItem > span {
+    cursor: pointer;
+}
+
+.eyDNavLIItemSelected .eyDNavLIItem > .sapMText {
+    font-family: 'EYInterstateBold' !important;
+    font-size: 16px !important;
+    font-weight: bold;
+    color: #000000 !important;
+}
+
+.eyDNavLIItem.eyDNavLIItemDisabled {
+    cursor: auto;
+}
+
+.eyDNavLIItem.eyDNavLIItemDisabled > span {
+    cursor: auto;
+}
+
+.eyDNavLIItem > .sapUiIcon {
+    color: #000000;
+}
+
+.eyDNavLIText {
+    width: 100%;
+    display: block;
+}
+
+.eyDNavLIGroupItem > .sapMText {
+    padding-left: 3rem;
+}
+
+.eyDNavLIPopup .eyDNavLIGroupItem > .sapMText {
+    padding: 0 1rem;
+}
+
+.eyDNavLIPopup .eyDNavLIGroup > .sapMText {
+    margin: 0 1rem 0 0;
+}
+
+.eyDNavLI span.eyDNavLIGroupIcon {
+    min-width: 3rem;
+    padding: 0.6875rem 0;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.eyDNavLI img.eyDNavLIGroupIcon {
+    height: 1.125rem;
+    width: 1.125rem;
+    padding: 0.6875rem 0.9375rem;
+}
+
+.eyDNavLIPopup span.eyDNavLIGroupIcon {
+    width: 1rem;
+    visibility: hidden;
+    min-width: 1rem;
+}
+
+.eyDNavLIPopup img.eyDNavLIGroupIcon {
+    width: 1rem;
+    visibility: hidden;
+    min-width: 1rem;
+    padding: 0;
+}
+
+.eyDNavLI .eyDNavLIExpandIcon {
+    min-width: 2rem;
+    padding: 0.75rem 0;
+    font-size: 0.875rem;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.eyDNavLIHiddenGroupItems {
+    display: none;
+}
+
+.eyDNavLICollapsed {
+    width: 3rem;
+}
+
+.eyDNavLI li,
+.eyDNavLIItem {
+    position: relative;
+}
+
+.eyDNavLI li:first-child {
+    border-top: 1px solid #E6E6EC;
+}
+
+.eyDNavLIGroup {
+    border-bottom: 1px solid #e6e6ec;
+}
+
+.eyDNavLIItem:not(.eyDNavLIItemDisabled):hover {
+    background-color: #f0f0f0;
+}
+
+
+/*.eyDNavLI .eyDNavLIGroup.eyDNavLIItem:not(.eyDNavLIItemDisabled):active,
+.eyDNavLI .eyDNavLIGroupItem.eyDNavLIItem:not(.eyDNavLIItemDisabled):active {
+	background-color: #427cac
+}
+
+.eyDNavLI .eyDNavLIGroup.eyDNavLIItem:not(.eyDNavLIItemDisabled):active>.sapMText,
+.eyDNavLI .eyDNavLIGroupItem.eyDNavLIItem:not(.eyDNavLIItemDisabled):active>.sapMText {
+	color: #ffffff
+}
+
+.eyDNavLI .eyDNavLIGroup.eyDNavLIItem:not(.eyDNavLIItemDisabled):active>.sapUiIcon,
+.eyDNavLI .eyDNavLIGroupItem.eyDNavLIItem:not(.eyDNavLIItemDisabled):active>.sapUiIcon {
+	color: #ffffff
+}*/
+
+.eyDNavLIItemSelected.eyDNavLIItem,
+.eyDNavLIItemSelected.eyDNavLIGroupItem.eyDNavLIGroupItem {
+    /*	background-color: #e8eff6*/
+    background-color: rgba(246, 246, 250, 0.6) !important;
+    border-right: 1px solid #C4C4CD!important;
+    border-top: 1px solid #C4C4CD!important;
+    border-bottom: 1px solid #C4C4CD!important;
+    border-left: 1px solid #C4C4CD!important;
+    font-family: 'EYInterstateBold' !important;
+    font-size: 12px !important;
+    color: #2E2E38 !important;
+}
+
+.eyDNavLIItemSelected .eyDNavLIGroup {
+    background-color: rgba(246, 246, 250, 0.6) !important;
+    /* border-right: 1px solid #C4C4CD!important;
+    border-top: 1px solid #C4C4CD!important;
+    border-bottom: 1px solid #C4C4CD!important;*/
+    border-left: 6px solid #FFE600;
+    font-family: 'EYInterstateBold' !important;
+    font-size: 12px !important;
+    color: #2E2E38 !important;
+}
+
+.eyDNavLIItemSelected .eyDNavLIItem:hover,
+.eyDNavLIItemSelected.eyDNavLIGroupItem.eyDNavLIGroupItem:hover {
+    background-color: #dde8f1;
+}
+
+.eyDNavLIGroupItem.eyDNavLIItem:last-child {
+    border-bottom: 1px solid #e6e6ec;
+}
+
+.eyDNavLI li:focus,
+.eyDNavLIItem:focus {
+    outline: none;
+}
+
+.eyDNavLIItem > .sapMText {
+    font-family: 'EYInterstate' !important;
+    font-size: 16px !important;
+    color: #000000 !important;
+}
+
+
+/*.eyDNavLI li:focus>.eyDNavLIItem::before,
+.eyDNavLIItem:focus::before {
+	border: 1px dotted #000000;
+	position: absolute;
+	content: " ";
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	left: 1px;
+	z-index: 2;
+	pointer-events: none
+}*/
+
+
+/*html[data-sap-ui-browser^="ie"].sap-desktop .eyDNavLI li:focus>.eyDNavLIItem::before,
+html[data-sap-ui-browser^="ed"].sap-desktop .eyDNavLI li:focus>.eyDNavLIItem::before,
+html[data-sap-ui-browser^="ie"].sap-desktop .eyDNavLIItem:focus::before,
+html[data-sap-ui-browser^="ed"].sap-desktop .eyDNavLIItem:focus::before {
+	border: 1px dashed #000000
+}*/
+
+.sapUiSizeCompact .eyDNavLIItem {
+    height: 2rem;
+}
+
+.sapUiSizeCompact .eyDNavLIPopup .eyDNavLIGroupItem > .sapMText {
+    padding: 0 0.5rem;
+}
+
+.sapUiSizeCompact .eyDNavLIPopup .eyDNavLIGroup > .sapMText {
+    margin: 0 0.5rem 0 0;
+}
+
+.sapUiSizeCompact .eyDNavLI span.eyDNavLIGroupIcon {
+    min-width: 2rem;
+    padding: 0.5rem;
+}
+
+.sapUiSizeCompact .eyDNavLI.eyDNavLIPopup span.eyDNavLIGroupIcon {
+    padding: 0.5rem 0;
+}
+
+.sapUiSizeCompact .eyDNavLI img.eyDNavLIGroupIcon {
+    padding: 0.5rem 0.4375rem;
+}
+
+.sapUiSizeCompact .eyDNavLIPopup span.eyDNavLIGroupIcon {
+    width: 0.5rem;
+    min-width: 0.5rem;
+}
+
+.eyDNavLIGroupItem > .sapMSubItemText {
+    padding-left: 60px;
+}
+
+.eyDNavLIPopup .eyDNavLIGroupItem > .sapMSubItemText {
+    padding: 0 1rem;
+}
+
+.eyDNavLIPopup .eyDNavLIGroup > .sapMSubItemText {
+    margin: 0 1rem 0 0;
+}
+
+.eyDNavLIItem > .sapMSubItemText {
+    color: #747480;
+    font-family: EYInterstate;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.eyDNavLstTextBreakWord {
+    word-break: break-all;
+}
+
+.eyDList {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.eyDList ul {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #E8E8ED;
+    border-right: 1px solid #E8E8ED;
+    border-left: 1px solid #E8E8ED;
+}
+
+.eyDList ul li {
+    background: transparent;
+    padding: 12px;
+    border-bottom: 1px solid #E8E8ED;
+}
+
+.eyDPanel {
+    /*	overflow: hidden;*/
+    box-sizing: border-box;
+    position: relative;
+    border-left: 1px solid rgba(196, 196, 205, 0.35);
+    border-right: 1px solid rgba(196, 196, 205, 0.35);
+    border-top: 1px solid rgba(196, 196, 205, 0.35);
+}
+
+.eyDPanelHdr {
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: none;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    margin: 0;
+    -webkit-text-size-adjust: none;
+    font-weight: normal;
+    font-size: 1.125rem;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    color: #333333;
+    background-color: transparent;
+}
+
+.eyDPanelContent {
+    /*	padding: 0.625rem 1rem 1.375rem 1rem;*/
+    padding: 0 1rem 1.375rem 1rem;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: normal;
+}
+
+.eyDPanelContent:focus {
+    outline: none;
+}
+
+.eyDPanelExpandablePart {
+    clear: both;
+}
+
+.eyDPanelExpandableIcon {
+    outline: none !important;
+    color: #000000 !important;
+    float: right;
+    /* position: absolute; */
+    width: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    margin: 0 0.75rem;
+    /* margin-bottom: 2rem; */
+    /* top: 50%; */
+    -webkit-transform: translateY(-150%);
+    transform: translateY(-150%);
+    color: #346187;
+    /*	position: absolute;
+	width: 1.5rem;
+	line-height: 1.5rem;
+	font-size: 1rem;
+	margin: 0 0.75rem;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	color: #346187*/
+}
+
+.eyDPanelExpandableIconExpanded {
+    display: inline-block;
+    -webkit-transform: translateY(-150%) rotate(90deg);
+    transform: translateY(-150%) rotate(90deg);
+    /*	display: inline-block;
+	-webkit-transform: translateY(-50%) rotate(90deg);
+	transform: translateY(-50%) rotate(90deg)*/
+}
+
+html[data-sap-ui-animation='on'] .eyDPanelExpandableIcon {
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+}
+
+html[data-sap-ui-animation='on'] .eyDPanelExpandableIconExpanded {
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+.eyDPanelContent:not(.eyDPanelBGTransparent) {
+    border-bottom: 1px solid rgba(196, 196, 205, 0.35);
+    /*  border-bottom: 1px solid rgba(196, 196, 205, 0.35);
+     border-left: 1px solid rgba(196, 196, 205, 0.35);
+      border-right: 1px solid rgba(196, 196, 205, 0.35);*/
+}
+
+.eyDPanelWrappingDiv,
+.eyDPanelWrappingDivTb {
+    position: relative;
+    /*	border:1px solid rgba(196, 196, 205, 0.35);
+*/
+    background: #FBFBFD;
+    border-bottom: 1px solid rgba(196, 196, 205, 0.35);
+}
+
+.eyDPanelWrappingDivTb > .sapMTB {
+    border-width: 0;
+}
+
+
+/*.eyDPanelWrappingDiv.eyDPanelWrappingDivExpanded {
+	border-bottom-width: 0
+}*/
+
+
+/*.eyDPanelWrappingDivTb.eyDPanelWrappingDivTbExpanded {
+	border-bottom-width: 0
+}*/
+
+html.sap-tablet .sapUiFioriObjectPage > section > .eyDPanel,
+html.sap-desktop .sapUiFioriObjectPage > section > .eyDPanel {
+    margin: 1rem 0;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.eyDPanel .eyDPanelWrappingDiv .eyDPanelHdr,
+.eyDPanel .eyDPanelWrappingDivTb .sapMIBar.sapMTB {
+    padding-left: 0;
+    margin-left: 1rem;
+    margin-right: 3rem;
+}
+
+.eyDPanel .eyDPanelWrappingDiv .eyDPanelHdr >:first-child,
+.eyDPanel .eyDPanelWrappingDivTb .sapMIBar.sapMTB >:first-child {
+    margin-left: 0;
+}
+
+.eyDPanel.sapUiContentPadding > .eyDPanelContent {
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+
+/* TODO remove after 1.62 version */
+
+
+/* workaround for drawing issue in IE - ensures that the content will be redrawn */
+
+html[data-sap-ui-animation='on'][data-sap-ui-browser^="ie"] .eyDPanelContent {
+    transform: translate(0, 0);
+}
+
+
+/* workaround for drawing issue in Edge - ensures that the content will be redrawn */
+
+html[data-sap-ui-animation='on'][data-sap-ui-browser^="ed"] .eyDPanelContent {
+    transform: translate(0, 0);
+}
+
+.eyDDialog,
+.eyDMessageDialog .eyDDialogScrollCont,
+.eyDDialogSection {
+    box-sizing: border-box;
+}
+
+.eyDDialog {
+    background-clip: padding-box;
+    min-height: 6rem;
+    outline: none;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity .15s, transform 0.2s;
+    transition: opacity .15s, transform 0.2s;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1) translateZ(0px);
+    /*	 border-radius: 0.25rem;*/
+    box-shadow: 0 1.25rem 5rem 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.eyDDialog:not(.eyDDialogHighPixelDensity) {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+}
+
+[dir="rtl"] .eyDDialog {
+    left: 50%;
+}
+
+[dir="rtl"] .eyDDialog.eyDDialogTouched {
+    left: auto;
+}
+
+.eyDDialog {
+    max-width: 90%;
+}
+
+.eyDDialog > .eyDDialogSection {
+    max-width: 100%;
+}
+
+.eyDDialog.eyDDialogWithSubHeader:not(.eyDDialog-NoHeader):not(.eyDDialog-NoFooter) {
+    max-height: calc(84%);
+}
+
+.eyDDialog:not(.eyDDialog-NoHeader):not(.eyDDialog-NoFooter):not(.eyDDialogWithSubHeader) {
+    max-height: calc(87%);
+}
+
+.eyDDialog.eyDDialog-NoHeader:not(.eyDDialog-NoFooter):not(.eyDDialogWithSubHeader) {
+    max-height: calc(90%);
+}
+
+.eyDDialog:not(.eyDDialog-NoHeader).eyDDialog-NoFooter.eyDDialogWithSubHeader {
+    max-height: calc(90%);
+}
+
+.eyDDialog.eyDDialog-NoHeader.eyDDialog-NoFooter.eyDDialogWithSubHeader {
+    max-height: calc(90%);
+}
+
+.eyDDialog:not(.eyDDialog-NoHeader).eyDDialog-NoFooter:not(.eyDDialogWithSubHeader) {
+    max-height: calc(90%);
+}
+
+.eyDDialog.eyDDialog-NoHeader.eyDDialog-NoFooter:not(.eyDDialogWithSubHeader) {
+    max-height: calc(97%);
+}
+
+.sapUiSizeCompact .eyDDialog.eyDDialogWithSubHeader:not(.eyDDialog-NoHeader):not(.eyDDialog-NoFooter) {
+    max-height: calc(85.5%);
+}
+
+.sapUiSizeCompact .eyDDialog:not(.eyDDialog-NoHeader):not(.eyDDialog-NoFooter):not(.eyDDialogWithSubHeader) {
+    max-height: calc(88%);
+}
+
+.sapUiSizeCompact .eyDDialog.eyDDialog-NoHeader:not(.eyDDialog-NoFooter):not(.eyDDialogWithSubHeader) {
+    max-height: calc(90.5%);
+}
+
+.sapUiSizeCompact .eyDDialog:not(.eyDDialog-NoHeader).eyDDialog-NoFooter.eyDDialogWithSubHeader {
+    max-height: calc(90.5%);
+}
+
+.sapUiSizeCompact .eyDDialog.eyDDialog-NoHeader.eyDDialog-NoFooter.eyDDialogWithSubHeader {
+    max-height: calc(90.5%);
+}
+
+.sapUiSizeCompact .eyDDialog:not(.eyDDialog-NoHeader).eyDDialog-NoFooter:not(.eyDDialogWithSubHeader) {
+    max-height: calc(90.5%);
+}
+
+.sapUiSizeCompact .eyDDialog.eyDDialog-NoHeader.eyDDialog-NoFooter:not(.eyDDialogWithSubHeader) {
+    max-height: calc(97.5%);
+}
+
+.eyDDialog .eyDDialogScrollCont > * {
+    vertical-align: middle;
+}
+
+.eyDDialog.eyDDialogStretched {
+    transform: none;
+    -webkit-transform: scale(1) translateZ(0px);
+    top: 5% !important;
+    bottom: 5% !important;
+    left: 3.5% !important;
+    right: 3.5% !important;
+    max-height: none !important;
+    max-width: none !important;
+    height: auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+}
+
+html.sap-phone .eyDDialog.eyDDialogStretched {
+    border: none;
+    box-shadow: 0;
+    border-radius: 0;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+html.sap-phone .eyDDialog {
+    min-width: 18rem;
+    overflow: hidden;
+}
+
+html.sap-phone .eyDDialog > footer .sapMFooter-CTX {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    padding: 0 0.25rem;
+}
+
+html.sap-phone .eyDDialog > footer .sapMFooter-CTX .sapMTBSpacer {
+    display: none;
+}
+
+html.sap-phone .eyDDialog > footer .sapMFooter-CTX .sapMBtn {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    min-width: 31%;
+}
+
+html.sap-tablet .eyDDialog,
+html.sap-desktop .eyDDialog {
+    min-width: 20rem;
+}
+
+.eyDDialog .sapMIBar {
+    position: relative;
+    width: auto;
+}
+
+.eyDDialog .eyDDialogSection {
+    overflow: hidden;
+    position: relative;
+}
+
+.eyDDialogScroll {
+    display: inline-block;
+    height: auto;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.eyDDialog.eyDDialogVerticalScrollIncluded .eyDDialogScroll {
+    width: auto;
+}
+
+html[data-sap-ui-browser^="sf"] .eyDDialog.eyDDialogVerticalScrollIncluded .eyDDialogSection {
+    overflow-y: overlay !important;
+}
+
+.eyDDialogVerScrollDisabled .eyDDialogScroll {
+    height: 100%;
+}
+
+.eyDDialogHorScrollDisabled .eyDDialogScroll {
+    display: block;
+    width: 100%;
+}
+
+.eyDDialogHidden {
+    visibility: hidden;
+}
+
+.eyDDialogBlockLayer {
+    opacity: 0.6;
+}
+
+.eyDDialogTransparent {
+    opacity: 0;
+}
+
+.eyDDialog.sapUiPopupWithPadding:not(.sapUiNoContentPadding).eyDDialogWithScrollCont .eyDDialogScrollCont {
+    height: 100%;
+}
+
+.eyDDialog.sapUiPopupWithPadding:not(.sapUiNoContentPadding) .eyDDialogScrollCont {
+    padding: 1rem;
+}
+
+.eyDDialog.sapUiPopupWithPadding:not(.sapUiNoContentPadding) .eyDDialogScrollCont.eyDDialogStretchContent {
+    height: calc(98%);
+}
+
+.eyDDialogScrollCont.eyDDialogStretchContent {
+    height: 100%;
+}
+
+.eyDMessageDialog .eyDDialogScrollCont {
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.eyDDialogWithScrollCont .eyDDialogScroll {
+    position: relative;
+}
+
+.eyDDialogWithScrollCont .eyDDialogScrollCont {
+    height: 100%;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.sapMActionSheetDialog .eyDDialogScrollCont {
+    padding: 0;
+}
+
+.eyDDialogOpen {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1) translateZ(0px);
+}
+
+.eyDDialogBlockLayerAnimation {
+    position: absolute;
+    transition: opacity 0.2s linear;
+    -webkit-transition: opacity 0.2s linear;
+}
+
+.eyDDialog.eyDMessageDialog {
+    font-size: 0.875rem;
+}
+
+.eyDDialog > header.eyDDialogTitle,
+.eyDDialog > header.eyDDialogSubHeader {
+    font-size: 1rem;
+}
+
+.eyDDialog:not(.eyDDialogWithSubHeader) .eyDDialogSubHeader {
+    display: none;
+}
+
+.eyDDialogIcon ~ .eyDDialogTitle {
+    display: inline;
+}
+
+.eyDDialog .sapMIBar.sapMPageHeader::before {
+    border-top: none;
+}
+
+.eyDMessageDialog.sapMPopup-CTX > header.eyDDialogTitle {
+    background-image: none;
+    filter: none;
+}
+
+.eyDDialog.sapMPopup-CTX > header .sapMHeader-CTX,
+.eyDDialog.sapMPopup-CTX > header .sapMSubHeader-CTX {
+    background-color: #fff !important;
+}
+
+.eyDDialog:not(.eyDDialogWithSubHeader) > header > .sapMIBar,
+.eyDDialog > header:last-of-type .sapMIBar {
+    box-shadow: none;
+}
+
+.eyDDialog > header.eyDDialogTitle .sapMTitle {
+    color: #666666;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.eyDDialog > header.eyDDialogTitle .sapMImg {
+    height: 2.25rem;
+    margin-right: 0.625rem;
+    vertical-align: middle;
+    width: 2.25rem;
+}
+
+.eyDDialog > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.sapMTB.sapMTBNoBorders {
+    border-bottom: none;
+}
+
+.eyDDialog > footer #dialogWithManyButtons-footer-overflowButton-inner {
+    padding-left: 0;
+}
+
+.eyDDialog > footer #dialogWithManyButtons-footer-overflowButton-img {
+    position: static;
+}
+
+.sapUiSizeCompact.eyDDialog,
+.sapUiSizeCompact .eyDDialog {
+    min-height: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-top: 2.5rem;
+}
+
+.sapUiSizeCompact.eyDDialog.eyDDialogWithSubHeader,
+.sapUiSizeCompact .eyDDialog.eyDDialogWithSubHeader {
+    padding-top: 5rem;
+}
+
+.sapUiSizeCompact.eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader,
+.sapUiSizeCompact .eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader {
+    padding-top: 2.5rem;
+}
+
+.sapUiSizeCompact.eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader > .eyDDialogSubHeader,
+.sapUiSizeCompact .eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader > .eyDDialogSubHeader {
+    top: 0;
+}
+
+.sapUiSizeCompact.eyDDialog > .eyDDialogTitle,
+.sapUiSizeCompact .eyDDialog > .eyDDialogTitle {
+    height: 2.5rem;
+}
+
+.sapUiSizeCompact.eyDDialog > .eyDDialogTitle .sapMHeader-CTX,
+.sapUiSizeCompact.eyDDialog > .eyDDialogTitle .sapMSubHeader-CTX,
+.sapUiSizeCompact .eyDDialog > .eyDDialogTitle .sapMHeader-CTX,
+.sapUiSizeCompact .eyDDialog > .eyDDialogTitle .sapMSubHeader-CTX {
+    height: 2.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    box-sizing: border-box;
+}
+
+.sapUiSizeCompact.eyDDialog > .eyDDialogSection,
+.sapUiSizeCompact .eyDDialog > .eyDDialogSection {
+    min-height: 2.5rem;
+}
+
+.sapUiSizeCompact.eyDDialog > footer,
+.sapUiSizeCompact .eyDDialog > footer {
+    height: 2.5rem;
+}
+
+.sapUiSizeCompact.eyDDialog > footer .sapMFooter-CTX,
+.sapUiSizeCompact .eyDDialog > footer .sapMFooter-CTX {
+    height: 2.5rem;
+}
+
+.sapUiSizeCompact.eyDDialog header.eyDDialogSubHeader,
+.sapUiSizeCompact .eyDDialog header.eyDDialogSubHeader {
+    height: 2.5rem;
+    top: 2.5rem;
+}
+
+.sapUiSizeCompact.eyDDialog header.eyDDialogSubHeader .sapMIBar,
+.sapUiSizeCompact .eyDDialog header.eyDDialogSubHeader .sapMIBar {
+    height: 2.5rem;
+}
+
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapUiIcon,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapUiIcon {
+    font-size: 1rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    width: 1rem;
+}
+
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header:first-of-type .sapMHeader-CTX,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > footer:last-of-type .sapMFooter-CTX,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header:first-of-type .sapMHeader-CTX,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > footer:last-of-type .sapMFooter-CTX {
+    height: 2.5rem;
+}
+
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarLeft,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarRight,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarPH,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarLeft,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarRight,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarPH,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarLeft,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarRight,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarPH,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarLeft,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarRight,
+.sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarPH {
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+}
+
+.eyDDialogResizing,
+.eyDDialogResizing * {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.eyDDialogTouched {
+    transform: scale(1);
+    -webkit-transform: scale(1) translateZ(0px);
+}
+
+.sapDialogDisableTransition {
+    transition: none;
+    -webkit-transition: none;
+}
+
+.eyDDialogResizeHandler {
+    bottom: 0rem;
+    cursor: se-resize;
+    position: absolute;
+    right: 0;
+    width: .5rem;
+    z-index: 2;
+    line-height: 1rem;
+}
+
+.eyDDialogResizeHandler:before {
+    left: 0;
+    position: relative;
+    top: 0;
+}
+
+.eyDDialog {
+    box-sizing: content-box;
+    min-height: 3rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.eyDDialog.eyDDialog-NoFooter {
+    padding-bottom: 0;
+}
+
+.eyDDialog.eyDDialog-NoHeader {
+    padding-top: 0;
+}
+
+.eyDDialog.eyDDialogWithSubHeader {
+    padding-top: 6rem;
+}
+
+.eyDDialog.eyDDialogWithSubHeader.eyDDialogSubHeaderInfoBar {
+    padding-top: 5rem;
+}
+
+.eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader {
+    padding-top: 3rem;
+}
+
+.eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader > .eyDDialogSubHeader {
+    top: 0;
+}
+
+.eyDDialog > .eyDDialogTitle {
+    height: 3rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.eyDDialog > .eyDDialogSection {
+    height: 100%;
+    min-height: 3rem;
+}
+
+.eyDDialog > footer {
+    bottom: 0;
+    height: 3rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+.eyDDialog.eyDDialogDraggable > header {
+    cursor: move;
+}
+
+.eyDDialog header.eyDDialogSubHeader {
+    cursor: default;
+    height: 3rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 3rem;
+    z-index: 2;
+}
+
+html[data-sap-ui-animation='off'] .eyDDialog,
+html[data-sap-ui-animation='off'] .eyDDialogBlockLayerAnimation {
+    transition: none;
+}
+
+.eyDDialog > .eyDDialogSection {
+    background: #ffffff;
+}
+
+.eyDDialogWarning > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+    color: #e78c07;
+}
+
+.eyDDialogWarning > header:last-of-type .sapMIBar.sapMIBar {
+    box-shadow: inset 0 -0.125rem #f9a429;
+}
+
+.eyDDialogError > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+    color: #bb0000;
+}
+
+.eyDDialogError > header:last-of-type .sapMIBar.sapMIBar {
+    box-shadow: inset 0 -0.125rem #ee0000;
+}
+
+.eyDDialogSuccess > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+    color: #2b7c2b;
+}
+
+.eyDDialogSuccess > header:last-of-type .sapMIBar.sapMIBar {
+    box-shadow: inset 0 -0.125rem #38a238;
+}
+
+.eyDDialogInformation > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+    color: #427cac;
+}
+
+.eyDDialogInformation > header:last-of-type .sapMIBar.sapMIBar {
+    box-shadow: inset 0 -0.125rem #427cac;
+}
+
+.eyDDialog .eyDDialogFirstFE,
+.eyDDialog .eyDDialogLastFE {
+    font-size: 0;
+}
+
+.eyText {
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    font-size: 0.875rem;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+}
+
+
+/*.eyDTile {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 16rem;
+  height:9rem;
+  background:#60E6E1;
+  border-radius:0.25rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  cursor:pointer;
+  
+}
+
+.eyDTile div{
+color:#ffffff;
+padding-left:10px;
+
+}
+.eyDTile div:first-child{
+padding-top:15px;
+font-weight:bold;
+font-size:18px;
+
+}
+.eyDTile div:first-child:after
+{
+  border-bottom: 3px solid #FFFFFF !important;
+    content: '';
+    display: block;
+    
+    margin-left: 0;
+    margin-right: auto;
+     
+    height: 6px;
+    width: 40px;
+    }
+.eyDTile div:nth-child(2){
+font-size:40px;
+font-weight:bold;
+
+
+}
+.eyDTile div:nth-child(3){
+font-size:18px;
+font-weight:bold;
+padding-bottom:15px;
+
+}
+.eyDTile:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+*/
+
+.eyDTileIcon {
+    margin: 1rem !important;
+    width: 4.3rem !important;
+    height: 4.3rem !important;
+}
+
+.eyDTileTypeFour {
+    background: white !important;
+    width: 16em;
+    height: 18rem;
+    /* margin-right: 3rem !important;*/
+    cursor: pointer;
+    box-shadow: 0 0 30px 10px rgba(210, 210, 210, 0.5);
+    border: none !important;
+    transition: margin-bottom 1s !important;
+    transition: margin-top 1s !important;
+    border-radius: 5px !important;
+}
+
+.eyDTileTypeFour:hover {
+    margin-top: -10px !important;
+    margin-bottom: 10px !important;
+    box-shadow: 0 0 30px 10px rgba(210, 210, 210, 0.5);
+    transition: margin-bottom 1s !important;
+    transition: margin-top 1s !important;
+}
+
+.eyDTileTypeFourDescr {
+    margin: 1rem !important;
+    cursor: pointer;
+    font-family: 'EYInterstateLight';
+    font-size: 15px !important;
+    color: #737384 !important;
+}
+
+.eyDTileTypeFourTitle {
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'EYInterstateLight';
+    font-size: 18px !important;
+    /* margin-top: 20px !important; */
+    margin-left: 1rem !important;
+}
+
+.eyDTileTypeFourTitle:after {
+    border-bottom: 6px solid #FFE500;
+    content: '';
+    display: block;
+    /* margin-top: 10px !important; */
+    width: 50px;
+    height: 6px;
+}
+
+.eyDTileSelected {
+    border: 1px solid #2E2E38 !important;
+}
+
+.eyDTileSelected .eyDTileCheckMark {
+    cursor: pointer;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    -ms-transform: rotate(45deg);
+    /* IE 9 */
+    -webkit-transform: rotate(45deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+
+.eyDTileSelected .eyDTileCheckMark_circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 12px;
+    left: 0;
+    top: 0;
+    border: 1px solid #C4C4CD;
+}
+
+.eyDTileSelected .eyDTileCheckMark_stem {
+    position: absolute;
+    width: 2px;
+    height: 13px;
+    background-color: #fff;
+    left: 11px;
+    top: 4px;
+}
+
+.eyDTileSelected .eyDTileCheckMark_kick {
+    position: absolute;
+    width: 6px;
+    height: 2px;
+    background-color: #fff;
+    left: 6px;
+    top: 15px;
+}
+
+.eyDTileCheckMark {
+    cursor: pointer;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: 11px;
+    margin-right: 11px;
+    -ms-transform: rotate(45deg);
+    /* IE 9 */
+    -webkit-transform: rotate(45deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+
+.eyDTileCheckMark_circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #C4C4CD;
+    left: 0;
+    top: 0;
+}
+
+.eyDTileTypeSecond {
+    transition: 0.3s;
+    width: 225px;
+    height: 144px;
+    border: solid 1px #e5e5e5;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.eyDTile {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 16rem;
+    height: 9rem;
+    background: #60E6E1;
+    /* border-radius:0.25rem;*/
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.eyDTileCheckMarkWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.eyDTileTitle {
+    padding-top: 15px;
+    font-family: EYInterstate;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+.eyDTileTitleNoPadding {
+    font-family: EYInterstate;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2e2e38;
+    margin-left: 15px;
+    margin-top: 16px;
+}
+
+.eyDTileTitleNoPadding:after {
+    border-bottom: 3px solid #fae539 !important;
+    content: '';
+    display: block;
+    /*  margin-top: 10px !important;*/
+    margin-left: 0;
+    margin-right: auto;
+    /* width: 3rem;*/
+    height: 3px;
+    width: 33px;
+}
+
+.eyDTileTitle:after {
+    border-bottom: 3px solid #ffffff !important;
+    content: '';
+    display: block;
+    /*  margin-top: 10px !important;*/
+    margin-left: 0;
+    margin-right: auto;
+    /* width: 3rem;*/
+    width: 33px;
+    height: 3px;
+}
+
+.eyDTileNumer {
+    font-family: EYInterstate;
+    font-size: 42px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.67;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.eyDTileTypeSecondNumer {
+    font-family: EYInterstate;
+    font-size: 42px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.67;
+    margin-left: 15px;
+    margin-bottom: 17px;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.eyDTileInfoText {
+    font-family: EYInterstate;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+
+.eyDTileTypeSecond:hover {
+    box-shadow: 0 8px 16px 0 rgba(197, 187, 187, 0.2);
+}
+
+.eyDTile:hover {
+    box-shadow: 0 8px 16px 0 rgba(197, 187, 187, 0.2);
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);*/
+}
+
+.eyDITWrapper {
+    border: 1px solid #DADADA;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 20px 1px rgba(216, 216, 216, 0.42);
+}
+
+.eyDITBSelected.eyDITBFilter .eyDITBText {
+    color: #2E2E38 !important;
+    font-family: EYInterstate !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+
+
+/*.eyDITBSelected .eyDITBText{
+  color: #2E2E38 !important;
+	font-family: EYInterstate !important;
+	font-size: 16px !important;
+	font-weight: bold !important;
+}*/
+
+.eyDITH {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent !important;
+    /*	border: 1px solid #E2E2E2;*/
+    border-bottom: 1px solid #E2E2E2 !important;
+    box-shadow: none !important;
+}
+
+.eyDTabBarIconRotate {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+}
+
+.eyDITHBlack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2E2E38 !important;
+    border-bottom: 1px solid #747480 !important;
+    box-shadow: none !important;
+}
+
+.eyDITHBlack .sapMBtnIcon {
+    color: #ffffff !important;
+    cursor: pointer;
+}
+
+.eyDITH .sapMBtnIcon {
+    color: #000000 !important;
+    cursor: pointer;
+}
+
+.eyDITBHead {
+    position: relative;
+    white-space: nowrap;
+    display: inline-block;
+    /*  margin: 1rem 0.75rem 0 0.25rem;*/
+    margin: 1rem 0.75rem 0 0;
+    /*    padding: 0 1px;*/
+    vertical-align: top;
+    font-size: 0.75rem;
+}
+
+.eyDITCustomHeader {
+    display: flex;
+    align-items: center;
+}
+
+.eyDTabBarContentNoDsply {
+    margin: 0;
+    padding: 0;
+}
+
+.eyDTabBarContentNoDsply .eyDITBContainerContent {
+    display: none;
+}
+
+.eyDTabBarContentDsply .eyDITBContainerContent {
+    display: block;
+}
+
+.eyDITBContainerContent {
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+}
+
+.eyDITBContent {
+    /* border-bottom: 1px solid rgba(196, 196, 205, 0.5) !important;
+    border-right: 1px solid rgba(196, 196, 205, 0.5) !important;
+    border-left: 1px solid rgba(196, 196, 205, 0.5) !important;*/
+    /*  padding: 1rem;*/
+    position: relative;
+    background-color: #ffffff;
+}
+
+.eyDITBContentBlack {
+    border-bottom: 1px solid rgba(196, 196, 205, 0.5) !important;
+    /* border-right: 1px solid rgba(196, 196, 205, 0.5) !important;
+    border-left: 1px solid rgba(196, 196, 205, 0.5) !important;*/
+    /*  padding: 1rem;*/
+    position: relative;
+    background-color: #2E2E38;
+}
+
+.eyDITBFilter {
+    /* padding: 0 0.25rem;*/
+    /*  margin:0 0.5rem;*/
+    cursor: pointer;
+}
+
+.eyDITBVertical {
+    height: 3rem;
+}
+
+.eyDITBItem {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    color: #333333;
+}
+
+.eyDITBFilter .eyDITBText {
+    margin: 0.7rem 0 0.1875rem 0;
+    /*  line-height: 0.9375rem;*/
+    line-height: 1.2rem;
+    overflow: hidden;
+    padding: 0 1rem;
+    position: relative;
+    text-overflow: ellipsis;
+    width: 5rem;
+    color: #2E2E38;
+    font-family: EYInterstate;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    text-align: left;
+    width: auto;
+}
+
+.eyDITBFilterBlack {
+    /* padding: 0 0.25rem;*/
+    /*  margin:0 0.5rem;*/
+    cursor: pointer;
+}
+
+.eyDITBFilterBlack .eyDITBText {
+    margin: 0.7rem 0 0.1875rem 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    position: relative;
+    text-overflow: ellipsis;
+    width: 5rem;
+    color: #FFFFFF;
+    font-family: EYInterstate;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 1.3rem;
+    width: auto;
+    /*margin: 1rem 0 0.1875rem 0;
+    
+    overflow: hidden;
+        padding: 0 1rem;
+    position: relative;
+    text-overflow: ellipsis;
+    width: 5rem;
+   
+    
+        color: #FFFFFF;
+	font-family: EYInterstate;
+	font-size: 16px;
+	font-weight: bold;
+         cursor: pointer;
+           line-height: 1rem;
+    
+    text-align: left;
+    width: auto;*/
+}
+
+.eyDITBSelected > .eyDITBContentArrow {
+    border-bottom-color: #FFE500;
+}
+
+.eyDITBSelected.eyDITBFilterBlack .eyDITBText {
+    font-weight: bold;
+}
+
+.eyDITBContentArrow {
+    /*border-bottom: 0.125rem solid transparent;
+    box-sizing: border-box;
+    height: 1rem;*/
+    height: 0.8125rem;
+    margin-top: 3px;
+    border-bottom: 5px solid transparent;
+    box-sizing: border-box;
+    height: 1rem;
+    width: 100%;
+}
+
+.eyDITBContentArrow {
+    height: 0.8125rem;
+    margin-top: 3px;
+    border-bottom: 5px solid transparent;
+    box-sizing: border-box;
+    height: 1rem;
+    width: 100%;
+    /*height: 0.8125rem;
+margin-top:3px;
+    border-bottom: 0.125rem solid transparent;
+    box-sizing: border-box;
+    height: 1rem;
+    width:100%;*/
+}
+
+.eyDTileContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eyDOverLayPopOver {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+    /* background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);*/
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.eyDOverLayPopOver-innerContent {
+    background-color: #fff;
+    border-right: 1px solid #e0dbdb;
+    /* background-color: rgba(0,0,0, 0.9);	*/
+    height: 100%;
+    /*width:18rem;*/
+}
+
+.eyDOverLayPopOverWrapper {
+    /*height: 100%;*/
+    /* width: 0; */
+    position: fixed;
+    z-index: 1;
+    top: 200px;
+    left: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.eyDOverLayPopOver-content {
+    position: relative;
+    /*top: 25%;*/
+    width: 100%;
+    height: 100%;
+    top: 2rem;
+    text-align: center;
+    /* margin-top: 30px;*/
+}
+
+
+/* .eyDOverLayPopOver-content a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.eyDOverLayPopOver a:hover, .eyDOverLayPopOver a:focus {
+    color: #f1f1f1;
+}*/
+
+.eyDOverLayPopOver .eyDOverLayPopOverClosebtn {
+    position: absolute;
+    top: 60px;
+    left: 18rem;
+}
+
+
+/*.eyDOverLayPopOverClosebtn {
+    transition: 0.5s;
+    
+   
+}*/
+
+.eyDOverLayPopOverClosebtn {
+    background: #AFAFBB !important;
+    height: 59px !important;
+    /* background-color: grey; */
+    border: 0px !important;
+    width: 25px !important;
+    border-radius: 0 5px 5px 0 !important;
+    outline: none !important;
+    cursor: pointer !important;
+    transition: 0.5s;
+}
+
+.eyDOverLayPopOverClosebtn .sapMBtnIcon {
+    font-size: 13px;
+    line-height: 2.375rem;
+    width: 10px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    max-height: 2.375rem;
+    color: #fff;
+}
+
+.eyDOverLayPopOverClosebtnExpand {
+    margin-left: 276px !important;
+}
+
+.eyDOverLayPopOverExpand {
+    width: 276px !important;
+}
+
+.eyDOverLayPopOverClosebtnRotate .sapMBtnIcon {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+}
+
+.eyDPageCustomContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.eyDPageCustomFooterWrapper {
+    margin-top: 3rem;
+}
+
+sapMPage,
+.sapMPage > section {
+    width: 100%;
+}
+
+.sapMPage {
+    height: 100%;
+    position: relative;
+    isolation: isolate;
+    z-index: 0;
+}
+
+.sapMPage > section {
+    position: absolute;
+    overflow-y: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sapMPage > section.sapMPageEnableScrolling {
+    overflow-y: auto;
+}
+
+.sapMPage > section.sapMPageEnableScrolling .sapMPage > section {
+    overflow-y: visible;
+}
+
+html[data-sap-ui-os^="bb"] .sapMPage > section.sapMPageEnableScrolling,
+html[data-sap-ui-os^="iOS"] .sapMPage > section.sapMPageEnableScrolling {
+    overflow-y: scroll;
+}
+
+html[data-sap-ui-browser^="ff"].sap-desktop .sapMPage > .sapMBar.sapMPageHeader .sapMBarContainer {
+    display: initial;
+}
+
+html[data-sap-ui-browser^="ff"].sap-desktop .sapUiSizeCompact .sapMPage > .sapMBar.sapMPageHeader .sapMBarContainer {
+    vertical-align: -moz-middle-with-baseline;
+}
+
+html[data-sap-ui-browser^="ff"].sap-desktop .sapMPage > .sapMTitle {
+    font-size: 1rem;
+}
+
+@media (orientation: landscape) {
+    html[data-sap-ui-os^="iOS7"][data-sap-ui-browser^="msf"] {
+        padding: 0;
+        margin: 0;
+        bottom: 0;
+    }
+    html[data-sap-ui-os^="iOS7"][data-sap-ui-browser^="msf"] body {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+.sapMPageFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+}
+
+.sapMPageFooter.sapUiHidden {
+    bottom: auto;
+}
+
+.sapMPageFooter .sapMTB.sapMIBar {
+    right: 0;
+    border-bottom-width: 0;
+}
+
+.sapMPageFloatingFooter .sapMPageFooter .sapMIBar-CTX.sapMFooter-CTX.sapMTB {
+    border-top-width: 0;
+}
+
+.sapMPageSubHeader,
+.sapMPageHeader {
+    z-index: 1;
+}
+
+.sapMPage.sapMPageBusyCoversAll > .sapUiLocalBusyIndicator {
+    z-index: 3;
+}
+
+.sapMPage.sapUiContentPadding > section {
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 599px) {
+    .sapMSplitContainerHideMode > .sapMSplitContainerDetail .sapMPage.sapUiResponsiveContentPadding > section,
+    .sapMSplitContainerPortrait > .sapMSplitContainerDetail .sapMPage.sapUiResponsiveContentPadding > section,
+    .sapMPage.sapUiResponsiveContentPadding > section {
+        padding: 0;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+    .sapMSplitContainerHideMode > .sapMSplitContainerDetail .sapMPage.sapUiResponsiveContentPadding > section,
+    .sapMPage.sapUiResponsiveContentPadding > section {
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sapMSplitContainerHideMode > .sapMSplitContainerDetail .sapMPage.sapUiResponsiveContentPadding > section,
+    .sapMPage.sapUiResponsiveContentPadding > section {
+        padding: 1rem 2rem;
+        box-sizing: border-box;
+    }
+}
+
+.sapMSplitContainerMaster .sapMPage.sapUiResponsiveContentPadding > section {
+    padding: 0;
+}
+
+.sapMSplitContainerDetail .sapMPage.sapUiResponsiveContentPadding > section {
+    padding: 1rem;
+}
+
+.sapMPage.sapUiNoContentPadding > section {
+    padding: 0;
+}
+
+.sapF2CollapsedHeader > .sapMPageHeader {
+    display: none;
+}
+
+.sapMPage.sapF2CollapsedHeader > .sapMPageHeader + section,
+.sapMPage.sapF2CollapsedHeader > .sapMPageHeader + .sapUiHiddenPlaceholder + section {
+    top: 0;
+}
+
+.sapMPage.sapF2CollapsedHeader > .sapMPageHeader + .sapMPageSubHeader + section {
+    top: 3rem;
+}
+
+.sapUiSizeCompact .sapF2CollapsedHeader.sapMPageWithHeader > section {
+    top: 0rem;
+}
+
+.sapUiSizeCompact .sapF2CollapsedHeader.sapMPageWithHeader.sapMPageWithSubHeader > section {
+    top: 2rem;
+}
+
+.sapUiSizeCompact .sapF2CollapsedHeader > .sapMPageHeader .sapMIBar {
+    height: 0rem;
+}
+
+.sapMIBar .sapF2AdaptedTitle,
+.sapMIBar .sapF2AdaptedNavigation {
+    display: none;
+}
+
+.sapMPageWithFooter > section {
+    bottom: 3rem;
+}
+
+.sapMPageFloatingFooter > .sapMPageFooter {
+    border-radius: 0.25rem;
+    margin: 0.5rem;
+    width: calc(99%);
+    opacity: 0.9;
+}
+
+.sapMPageFloatingFooter > .sapMPageFooter .sapMIBar {
+    border-radius: 0.25rem;
+}
+
+.sapMPageFloatingFooter.sapMPageWithFooter > section {
+    bottom: 0;
+}
+
+.sapMPageFloatingFooter.sapMPageWithFooter > section:after {
+    content: "";
+    display: block;
+    height: 0;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.sapUiSizeCompact .sapMPageWithFooter.sapMPageFloatingFooter > section {
+    bottom: 0;
+    padding-bottom: 3.5rem;
+}
+
+html[data-sap-ui-animation='on'] .sapMPageFloatingFooter .sapMPageFooterControlShow {
+    -webkit-animation: bounceShow 0.35s forwards ease-in-out;
+    animation: bounceShow 0.35s forwards ease-in-out;
+}
+
+html[data-sap-ui-animation='on'] .sapMPageFloatingFooter .sapMPageFooterControlHide {
+    -webkit-animation: bounceHide 0.35s forwards ease-in-out;
+    animation: bounceHide 0.35s forwards ease-in-out;
+}
+
+@-webkit-keyframes bounceShow {
+    0% {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+
+@keyframes bounceShow {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+
+@-webkit-keyframes bounceHide {
+    0% {
+        -webkit-transform: translateY(-5%);
+        transform: translateY(-5%);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes bounceHide {
+    0% {
+        transform: translateY(-5%);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+.sapMPageBgSolid {
+    background-color: #fafafa;
+}
+
+.sapMPage > .sapMPageHeader + .sapMPageSubHeader + section {
+    top: 6rem;
+}
+
+.sapMPage > .sapMPageHeader + section,
+.sapMPage > .sapMPageSubHeader + section,
+.sapMPage > .sapMPageHeader + .sapUiHiddenPlaceholder + section {
+    top: 3rem;
+}
+
+.sapMBar-CTX .sapMBarLeft > .sapMImg.sapMPageAppIcon {
+    max-height: 1.375rem;
+    max-width: 1.375rem;
+    margin: 0.8125rem;
+}
+
+.sapMPage .sapMScrollbarV > div {
+    background-color: #b2b2b2;
+    border-color: #b2b2b2;
+}
+
+@media (min-height: 3401px) {
+    .sap-desktop .sapMShell .sapMPage.sapMPageHideHeaderWhenShellHeader header.sapMIBar {
+        display: none;
+    }
+}
+
+html.sap-tablet .sapUiFioriObjectPage > section,
+html.sap-desktop .sapUiFioriObjectPage > section {
+    padding-bottom: 1rem;
+}
+
+.sapUiSizeCompact .sapMPageWithHeader > section {
+    top: 2.5rem;
+}
+
+.sapUiSizeCompact .sapMPageHeader .sapMIBar,
+.sapUiSizeCompact .sapMPageFooter .sapMIBar {
+    height: 2.5rem;
+}
+
+.sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarLeft,
+.sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarLeft,
+.sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarRight,
+.sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarRight,
+.sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarPH,
+.sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarPH {
+    height: 2.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.sapUiSizeCompact .sapMPageWithFooter > section {
+    bottom: 2.5rem;
+}
+
+.sapUiSizeCompact .sapMPageWithSubHeader > section {
+    top: 2rem;
+}
+
+.sapUiSizeCompact .sapMPageWithHeader.sapMPageWithSubHeader > section {
+    top: 4.5rem;
+}
+
+.sapUiSizeCompact .sapMBar-CTX .sapMBarLeft > .sapMImg.sapMPageAppIcon {
+    max-height: 1rem;
+    max-width: 1rem;
+    margin: 0.5rem;
+}
+
+
+/*.eyDArrowCrl {
+    position:relative;
+    width:69px;
+     
+    height:5px;
+    	border-bottom: 1.5px solid #747480;
+     
+}
+.eyDArrowCrl::before {
+ 
+content:'';
+display: block;
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  margin-left:-5px;
+  
+  border-radius: 10px;
+  border: 1.5px solid #747480;
+   
+  
+  }
+.eyDArrowCrl::after {	
+  content: '';
+  width: 0; 
+	height: 0; 
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-left: 10px solid #747480;
+  position: absolute;
+  right: -10px;
+  top: 0px;
+}
+.eyDArrowCrlWrapper{
+ 
+flex-direction: column;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.eyDArrowCrlTxt{
+	
+height: 18px;	
+width: 48px;	
+border-radius: 9px;	
+background-color: #1776CE;
+	color: #FFFFFF;
+	 	font-family: EYInterstate;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 18px;
+	text-align: center;
+     
+    
+
+}*/
+
+.eyDArrowWrapper {
+    text-align: center;
+}
+
+.eyDArrowTxtWrpper {
+    text-align: center;
+    height: 20px;
+    width: 53px;
+    border-radius: 10px;
+    /* margin: 0px -5px 0px -5px;*/
+    display: inline-block;
+    background: #1776CE;
+    font-family: EYInterstate;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+.eyDArrowSeprator {
+    width: 28px;
+    height: 2px;
+    background-color: #747480;
+    margin: 0px auto;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.eyDArrowSeprator:first-child:before {
+    content: '';
+    position: absolute;
+    width: 11.5px;
+    height: 11.5px;
+    background: #ffffff;
+    border: 1.5px solid #747480;
+    left: 0;
+    border-radius: 100%;
+    top: -6px;
+}
+
+.eyDArrowSeprator:last-child:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 12px solid #747480;
+    position: absolute;
+    right: -2px;
+    top: -9px;
+}
+
+.eyMapDiv .sapUiVbmAnalyticMap {
+    width: 100% !important;
+}
+
+.eyMapDiv .viz-plot-background {
+    fill: transparent !important;
+}
+
+.eyMapDiv li {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 19px;
+    padding-right: 20px;
+}
+
+.eyMapDiv h2 {
+    padding-inline-start: 40px;
+    height: 19px;
+    /* width: 98px; */
+    color: #2E2E38;
+    font-family: EYInterstate;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+}
+
+.eyMapDiv .decriptionText {
+    color: #2E2E38;
+    font-family: EYInterstate;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.eyMapDiv .rectangle {
+    height: 21px;
+    width: 39px;
+    border-radius: 11.5px;
+    background-color: #60E6E1;
+    text-align: center;
+    color: #fff;
+    line-height: 21px;
+    margin-top: 5px;
+}
+
+.eyMapDiv .checkmark {
+    cursor: pointer;
+    display: inline-block;
+    /*width: 22px;*/
+    height: 22px;
+    -ms-transform: rotate(45deg);
+    /* IE 9 */
+    -webkit-transform: rotate(45deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    padding-right: 10px;
+    margin-right: 20px;
+}
+
+.eyMapDiv .checkmark_circle {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: black;
+    border-radius: 12px;
+    border: 1px solid black;
+    left: 0;
+    top: 0;
+}
+
+.eyMapDiv .uncheck_circle {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #C4C4CD;
+    left: 0;
+    top: 0;
+}
+
+.eyMapDiv .checkmark_stem {
+    position: absolute;
+    width: 2px;
+    height: 13px;
+    background-color: #fff;
+    left: 11px;
+    top: 4px;
+}
+
+.eyMapDiv .checkmark_kick {
+    position: absolute;
+    width: 6px;
+    height: 2px;
+    background-color: #fff;
+    left: 6px;
+    top: 15px;
+}
+
+.eyHeaderText {
+    font-family: EYInterstate !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+}
+
+.footerVBox {
+    border-top: 1px solid #E5E5E5
+}
+
+.eyFooterText {
+    font-family: EYInterstate !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+}
+
+.eymarkedText::before {
+    content: "";
+    width: 60%;
+    border-bottom: solid 3px #FFE500;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1;
+    margin-top: 2px;
+}
+
+.sapContrast.sapRULTExample,
+.sapContrast .sapRULTExample {
+    color: red;
+    border: 6px solid orange;
+    background-color: grey;
+}
+
+.sapContrast.eyDInputWrapper,
+.sapContrast .eyDInputWrapper {
+    background: #F6F6FA;
+}
+
+.sapContrast.eyDInput,
+.sapContrast .eyDInput {
+    color: #2E2E38 !important;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.sapContrast.eyDInputLabelText,
+.sapContrast .eyDInputLabelText {
+    color: #747480 !important;
+}
+
+.sapContrast.eyDRoundCheckBox label,
+.sapContrast .eyDRoundCheckBox label {
+    background-color: #131313;
+    border: 1px solid #75758B;
+}
+
+.sapContrast.eyDRoundCheckBox label:after,
+.sapContrast .eyDRoundCheckBox label:after {
+    border: 4px solid #FAE539;
+    border-top: none;
+    border-right: none;
+}
+
+.sapContrast.eyDRoundCheckBoxTransLabel,
+.sapContrast .eyDRoundCheckBoxTransLabel {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.sapContrast.ey-popup-vertical-menu a,
+.sapContrast .ey-popup-vertical-menu a {
+    border-bottom: 1px solid rgba(250, 250, 246, 0.2);
+    background-color: #2E2E38;
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+.sapContrast.ey-popup-vertical-menu .ey-popup-vertical-menu-itemFirst,
+.sapContrast .ey-popup-vertical-menu .ey-popup-vertical-menu-itemFirst {
+    color: rgba(246, 246, 250, 0.35);
+    text-decoration: none;
+}
+
+.sapContrast.ey-popup-vertical-menu div,
+.sapContrast .ey-popup-vertical-menu div {
+    border-left: 4px solid #2E2E38;
+}
+
+.sapContrast.ey-popup-vertical-menu div:hover,
+.sapContrast .ey-popup-vertical-menu div:hover {
+    border-left: 4px solid #FFE500;
+}
+
+.sapContrast.ey_menu-popup::after,
+.sapContrast .ey_menu-popup::after {
+    background: transparent;
+}
+
+.sapContrast.ey_menu-popup.ey_menu-popup--is-visible::after,
+.sapContrast .ey_menu-popup.ey_menu-popup--is-visible::after {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.sapContrast.ey_menu-popup__container,
+.sapContrast .ey_menu-popup__container {
+    background: #2E2E38;
+}
+
+.sapContrast.eyDVrtStepPrsBarItmLink,
+.sapContrast .eyDVrtStepPrsBarItmLink {
+    text-decoration: none;
+    color: #155CB4;
+}
+
+.sapContrast.eyDVrtStepPrsBarItmDsr,
+.sapContrast .eyDVrtStepPrsBarItmDsr {
+    color: #747480 !important;
+}
+
+.sapContrast.eyDVrtStepPrsBarStandrdItemTtl,
+.sapContrast .eyDVrtStepPrsBarStandrdItemTtl {
+    color: #2E2E38 !important;
+}
+
+.sapContrast.eyDVrtStepPrsBarLightItemTtl,
+.sapContrast .eyDVrtStepPrsBarLightItemTtl {
+    color: #747480 !important;
+}
+
+.sapContrast.eyDVrtStepPrsBar-item::before,
+.sapContrast .eyDVrtStepPrsBar-item::before {
+    border: 1px solid #2E2E38;
+    background-color: white;
+}
+
+.sapContrast.eyDVrtStepPrsBar-item:not(:last-child):after,
+.sapContrast .eyDVrtStepPrsBar-item:not(:last-child):after {
+    background: linear-gradient(to bottom, #2e2e38 50%, #ffffff 0%);
+    background-position: 50%;
+    background-repeat: repeat-y;
+    background-size: 1px 14px;
+}
+
+.sapContrast.eyDVrtStepPrsBar-item.is-done::before,
+.sapContrast .eyDVrtStepPrsBar-item.is-done::before {
+    color: #FFF;
+    border: 1px solid #2E2E38;
+    background-color: #2EB757;
+}
+
+.sapContrast.eyDVrtStepPrsBar-item.current::before,
+.sapContrast .eyDVrtStepPrsBar-item.current::before {
+    background-image: url(../../images/Path.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #2E2E38;
+    border: 1px solid #2E2E38;
+    background-color: white;
+}
+
+.sapContrast.eyDVrtStepPrsBar-Lightitem::before,
+.sapContrast .eyDVrtStepPrsBar-Lightitem::before {
+    border: 1px solid #C4C4CD;
+    background-color: white;
+}
+
+.sapContrast.eyDVrtStepPrsBar-Lightitem:not(:last-child):after,
+.sapContrast .eyDVrtStepPrsBar-Lightitem:not(:last-child):after {
+    background: linear-gradient(to bottom, #c4c4cd 50%, #ffffff 0%);
+    background-position: 50%;
+    background-repeat: repeat-y;
+    background-size: 1.2px 10px;
+}
+
+.sapContrast.eyDVrtStepPrsBar-Lightitem.is-done::before,
+.sapContrast .eyDVrtStepPrsBar-Lightitem.is-done::before {
+    color: #FFF;
+    border: 1px solid #2E2E38;
+    background-color: #2EB757;
+}
+
+.sapContrast.eyDVrtStepPrsBar-Lightitem.current::before,
+.sapContrast .eyDVrtStepPrsBar-Lightitem.current::before {
+    background: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='19' height='19' viewBox='0 0 1792 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z'/></svg>") no-repeat;
+    color: #2E2E38;
+    border: 1px solid #2E2E38;
+}
+
+.sapContrast.eyDRb,
+.sapContrast .eyDRb {
+    outline: none;
+}
+
+.sapContrast.eyDRb .eyDRbB:focus,
+.sapContrast .eyDRb .eyDRbB:focus {
+    outline: none;
+}
+
+.sapContrast.eyDRbBLabel,
+.sapContrast .eyDRbBLabel {
+    color: #2E2E38 !important;
+}
+
+.sapContrast.eyDHztPrsBar li div:nth-child(2):after,
+.sapContrast .eyDHztPrsBar li div:nth-child(2):after {
+    background-image: linear-gradient(90deg, #808080, #808080 65%, transparent 65%, transparent 100%);
+    background-size: 10px 1px;
+}
+
+.sapContrast.eyDHztPrsBar li:nth-child(even) .eyDHztPrsBarItem,
+.sapContrast .eyDHztPrsBar li:nth-child(even) .eyDHztPrsBarItem {
+    border: 2px solid #bebebe;
+    background: #FFE500;
+    color: black;
+}
+
+.sapContrast.eyDHztPrsBar li:nth-child(odd) .eyDHztPrsBarItem,
+.sapContrast .eyDHztPrsBar li:nth-child(odd) .eyDHztPrsBarItem {
+    border: 2px solid #bebebe;
+    background: #FFE500;
+    color: black;
+}
+
+.sapContrast.eyDHztPrsBarItemIconWrapper,
+.sapContrast .eyDHztPrsBarItemIconWrapper {
+    background: #FFE500;
+    color: black;
+}
+
+.sapContrast.eyDHztPrsBarItemTopSnglTitle,
+.sapContrast .eyDHztPrsBarItemTopSnglTitle {
+    color: #2E2E38 !important;
+}
+
+.sapContrast.eyDHztPrsBarItemTopDblTitle,
+.sapContrast .eyDHztPrsBarItemTopDblTitle {
+    color: #2E2E38 !important;
+}
+
+.sapContrast.eyDHztPrsBarItemBtmTitle,
+.sapContrast .eyDHztPrsBarItemBtmTitle {
+    color: #2E2E38 !important;
+}
+
+.sapContrast.eyDNavUploadIcon,
+.sapContrast .eyDNavUploadIcon {
+    background: transparent !important;
+}
+
+.sapContrast.eyDNavLIItem,
+.sapContrast .eyDNavLIItem {
+    background-color: #ffffff;
+}
+
+.sapContrast.eyDNavLIItemSelected .eyDNavLIItem > .sapMText,
+.sapContrast .eyDNavLIItemSelected .eyDNavLIItem > .sapMText {
+    color: #000000 !important;
+}
+
+.sapContrast.eyDNavLIItem > .sapUiIcon,
+.sapContrast .eyDNavLIItem > .sapUiIcon {
+    color: #000000;
+}
+
+.sapContrast.eyDNavLI span.eyDNavLIGroupIcon,
+.sapContrast .eyDNavLI span.eyDNavLIGroupIcon {
+    outline: none;
+}
+
+.sapContrast.eyDNavLI .eyDNavLIExpandIcon,
+.sapContrast .eyDNavLI .eyDNavLIExpandIcon {
+    outline: none;
+}
+
+.sapContrast.eyDNavLI li:first-child,
+.sapContrast .eyDNavLI li:first-child {
+    border-top: 1px solid #E6E6EC;
+}
+
+.sapContrast.eyDNavLIGroup,
+.sapContrast .eyDNavLIGroup {
+    border-bottom: 1px solid #e6e6ec;
+}
+
+.sapContrast.eyDNavLIItem:not(.eyDNavLIItemDisabled):hover,
+.sapContrast .eyDNavLIItem:not(.eyDNavLIItemDisabled):hover {
+    background-color: #f0f0f0;
+}
+
+.sapContrast.eyDNavLIItemSelected.eyDNavLIItem,
+.sapContrast .eyDNavLIItemSelected.eyDNavLIItem,
+.sapContrast.eyDNavLIItemSelected.eyDNavLIGroupItem.eyDNavLIGroupItem,
+.sapContrast .eyDNavLIItemSelected.eyDNavLIGroupItem.eyDNavLIGroupItem {
+    background-color: rgba(246, 246, 250, 0.6) !important;
+    border-right: 1px solid #C4C4CD!important;
+    border-top: 1px solid #C4C4CD!important;
+    border-bottom: 1px solid #C4C4CD!important;
+    border-left: 1px solid #C4C4CD!important;
+    color: #2E2E38 !important;
+}
+
+.sapContrast.eyDNavLIItemSelected .eyDNavLIGroup,
+.sapContrast .eyDNavLIItemSelected .eyDNavLIGroup {
+    background-color: rgba(246, 246, 250, 0.6) !important;
+    border-left: 6px solid #FFE600;
+    color: #2E2E38 !important;
+}
+
+.sapContrast.eyDNavLIItemSelected .eyDNavLIItem:hover,
+.sapContrast .eyDNavLIItemSelected .eyDNavLIItem:hover,
+.sapContrast.eyDNavLIItemSelected.eyDNavLIGroupItem.eyDNavLIGroupItem:hover,
+.sapContrast .eyDNavLIItemSelected.eyDNavLIGroupItem.eyDNavLIGroupItem:hover {
+    background-color: #dde8f1;
+}
+
+.sapContrast.eyDNavLIGroupItem.eyDNavLIItem:last-child,
+.sapContrast .eyDNavLIGroupItem.eyDNavLIItem:last-child {
+    border-bottom: 1px solid #e6e6ec;
+}
+
+.sapContrast.eyDNavLI li:focus,
+.sapContrast .eyDNavLI li:focus,
+.sapContrast.eyDNavLIItem:focus,
+.sapContrast .eyDNavLIItem:focus {
+    outline: none;
+}
+
+.sapContrast.eyDNavLIItem > .sapMText,
+.sapContrast .eyDNavLIItem > .sapMText {
+    color: #000000 !important;
+}
+
+.sapContrast.eyDNavLIItem > .sapMSubItemText,
+.sapContrast .eyDNavLIItem > .sapMSubItemText {
+    color: #747480;
+}
+
+.sapContrast.eyDList ul,
+.sapContrast .eyDList ul {
+    border-top: 1px solid #E8E8ED;
+    border-right: 1px solid #E8E8ED;
+    border-left: 1px solid #E8E8ED;
+}
+
+.sapContrast.eyDList ul li,
+.sapContrast .eyDList ul li {
+    background: transparent;
+    border-bottom: 1px solid #E8E8ED;
+}
+
+.sapContrast.eyDPanel,
+.sapContrast .eyDPanel {
+    border-left: 1px solid rgba(196, 196, 205, 0.35);
+    border-right: 1px solid rgba(196, 196, 205, 0.35);
+    border-top: 1px solid rgba(196, 196, 205, 0.35);
+}
+
+.sapContrast.eyDPanelHdr,
+.sapContrast .eyDPanelHdr {
+    -webkit-text-size-adjust: none;
+    color: #333333;
+    background-color: transparent;
+}
+
+.sapContrast.eyDPanelContent:focus,
+.sapContrast .eyDPanelContent:focus {
+    outline: none;
+}
+
+.sapContrast.eyDPanelExpandableIcon,
+.sapContrast .eyDPanelExpandableIcon {
+    outline: none !important;
+    color: #000000 !important;
+    color: #346187;
+}
+
+.sapContrast.eyDPanelContent:not(.eyDPanelBGTransparent),
+.sapContrast .eyDPanelContent:not(.eyDPanelBGTransparent) {
+    border-bottom: 1px solid rgba(196, 196, 205, 0.35);
+}
+
+.sapContrast.eyDPanelWrappingDiv,
+.sapContrast .eyDPanelWrappingDiv,
+.sapContrast.eyDPanelWrappingDivTb,
+.sapContrast .eyDPanelWrappingDivTb {
+    background: #FBFBFD;
+    border-bottom: 1px solid rgba(196, 196, 205, 0.35);
+}
+
+.sapContrast.eyDDialog,
+.sapContrast .eyDDialog {
+    background-clip: padding-box;
+    outline: none;
+}
+
+html.sap-phone .sapContrast .eyDDialog.eyDDialogStretched,
+html.sap-phone .sapContrast.eyDDialog.eyDDialogStretched {
+    border: none;
+}
+
+.sapContrast.eyDDialog .sapMIBar.sapMPageHeader::before,
+.sapContrast .eyDDialog .sapMIBar.sapMPageHeader::before {
+    border-top: none;
+}
+
+.sapContrast.eyDMessageDialog.sapMPopup-CTX > header.eyDDialogTitle,
+.sapContrast .eyDMessageDialog.sapMPopup-CTX > header.eyDDialogTitle {
+    background-image: none;
+}
+
+.sapContrast.eyDDialog.sapMPopup-CTX > header .sapMHeader-CTX,
+.sapContrast .eyDDialog.sapMPopup-CTX > header .sapMHeader-CTX,
+.sapContrast.eyDDialog.sapMPopup-CTX > header .sapMSubHeader-CTX,
+.sapContrast .eyDDialog.sapMPopup-CTX > header .sapMSubHeader-CTX {
+    background-color: #fff !important;
+}
+
+.sapContrast.eyDDialog > header.eyDDialogTitle .sapMTitle,
+.sapContrast .eyDDialog > header.eyDDialogTitle .sapMTitle {
+    color: #666666;
+}
+
+.sapContrast.sapMTB.sapMTBNoBorders,
+.sapContrast .sapMTB.sapMTBNoBorders {
+    border-bottom: none;
+}
+
+.sapContrast.eyDDialog > .eyDDialogSection,
+.sapContrast .eyDDialog > .eyDDialogSection {
+    background: #ffffff;
+}
+
+.sapContrast.eyDDialogWarning > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon,
+.sapContrast .eyDDialogWarning > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+    color: #e78c07;
+}
+
+.sapContrast.eyDDialogError > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon,
+.sapContrast .eyDDialogError > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+    color: #bb0000;
+}
+
+.sapContrast.eyDDialogSuccess > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon,
+.sapContrast .eyDDialogSuccess > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+    color: #2b7c2b;
+}
+
+.sapContrast.eyDDialogInformation > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon,
+.sapContrast .eyDDialogInformation > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+    color: #427cac;
+}
+
+.sapContrast.eyDTileTypeFour,
+.sapContrast .eyDTileTypeFour {
+    background: white !important;
+    border: none !important;
+}
+
+.sapContrast.eyDTileTypeFourDescr,
+.sapContrast .eyDTileTypeFourDescr {
+    color: #737384 !important;
+}
+
+.sapContrast.eyDTileTypeFourTitle:after,
+.sapContrast .eyDTileTypeFourTitle:after {
+    border-bottom: 6px solid #FFE500;
+}
+
+.sapContrast.eyDTileSelected,
+.sapContrast .eyDTileSelected {
+    border: 1px solid #2E2E38 !important;
+}
+
+.sapContrast.eyDTileSelected .eyDTileCheckMark_circle,
+.sapContrast .eyDTileSelected .eyDTileCheckMark_circle {
+    background-color: black;
+    border: 1px solid #C4C4CD;
+}
+
+.sapContrast.eyDTileSelected .eyDTileCheckMark_stem,
+.sapContrast .eyDTileSelected .eyDTileCheckMark_stem {
+    background-color: #fff;
+}
+
+.sapContrast.eyDTileSelected .eyDTileCheckMark_kick,
+.sapContrast .eyDTileSelected .eyDTileCheckMark_kick {
+    background-color: #fff;
+}
+
+.sapContrast.eyDTileCheckMark_circle,
+.sapContrast .eyDTileCheckMark_circle {
+    background-color: white;
+    border: 1px solid #C4C4CD;
+}
+
+.sapContrast.eyDTileTypeSecond,
+.sapContrast .eyDTileTypeSecond {
+    border: solid 1px #e5e5e5;
+    background-color: #ffffff;
+}
+
+.sapContrast.eyDTile,
+.sapContrast .eyDTile {
+    background: #60E6E1;
+}
+
+.sapContrast.eyDTileTitle,
+.sapContrast .eyDTileTitle {
+    color: #ffffff;
+}
+
+.sapContrast.eyDTileTitleNoPadding,
+.sapContrast .eyDTileTitleNoPadding {
+    color: #2e2e38;
+}
+
+.sapContrast.eyDTileTitleNoPadding:after,
+.sapContrast .eyDTileTitleNoPadding:after {
+    border-bottom: 3px solid #fae539 !important;
+}
+
+.sapContrast.eyDTileTitle:after,
+.sapContrast .eyDTileTitle:after {
+    border-bottom: 3px solid #ffffff !important;
+}
+
+.sapContrast.eyDTileNumer,
+.sapContrast .eyDTileNumer {
+    color: #ffffff;
+}
+
+.sapContrast.eyDTileTypeSecondNumer,
+.sapContrast .eyDTileTypeSecondNumer {
+    color: #000000;
+}
+
+.sapContrast.eyDTileInfoText,
+.sapContrast .eyDTileInfoText {
+    color: #ffffff;
+}
+
+.sapContrast.eyDITWrapper,
+.sapContrast .eyDITWrapper {
+    border: 1px solid #DADADA;
+    background-color: #FFFFFF;
+}
+
+.sapContrast.eyDITBSelected.eyDITBFilter .eyDITBText,
+.sapContrast .eyDITBSelected.eyDITBFilter .eyDITBText {
+    color: #2E2E38 !important;
+}
+
+.sapContrast.eyDITH,
+.sapContrast .eyDITH {
+    background-color: transparent !important;
+    border-bottom: 1px solid #E2E2E2 !important;
+}
+
+.sapContrast.eyDITHBlack,
+.sapContrast .eyDITHBlack {
+    background-color: #2E2E38 !important;
+    border-bottom: 1px solid #747480 !important;
+}
+
+.sapContrast.eyDITHBlack .sapMBtnIcon,
+.sapContrast .eyDITHBlack .sapMBtnIcon {
+    color: #ffffff !important;
+}
+
+.sapContrast.eyDITH .sapMBtnIcon,
+.sapContrast .eyDITH .sapMBtnIcon {
+    color: #000000 !important;
+}
+
+.sapContrast.eyDITBContent,
+.sapContrast .eyDITBContent {
+    background-color: #ffffff;
+}
+
+.sapContrast.eyDITBContentBlack,
+.sapContrast .eyDITBContentBlack {
+    border-bottom: 1px solid rgba(196, 196, 205, 0.5) !important;
+    background-color: #2E2E38;
+}
+
+.sapContrast.eyDITBItem,
+.sapContrast .eyDITBItem {
+    color: #333333;
+}
+
+.sapContrast.eyDITBFilter .eyDITBText,
+.sapContrast .eyDITBFilter .eyDITBText {
+    color: #2E2E38;
+}
+
+.sapContrast.eyDITBFilterBlack .eyDITBText,
+.sapContrast .eyDITBFilterBlack .eyDITBText {
+    color: #FFFFFF;
+}
+
+.sapContrast.eyDITBSelected > .eyDITBContentArrow,
+.sapContrast .eyDITBSelected > .eyDITBContentArrow {
+    border-bottom-color: #FFE500;
+}
+
+.sapContrast.eyDITBContentArrow,
+.sapContrast .eyDITBContentArrow {
+    border-bottom: 5px solid transparent;
+}
+
+.sapContrast.eyDITBContentArrow,
+.sapContrast .eyDITBContentArrow {
+    border-bottom: 5px solid transparent;
+}
+
+.sapContrast.eyDOverLayPopOver-innerContent,
+.sapContrast .eyDOverLayPopOver-innerContent {
+    background-color: #fff;
+    border-right: 1px solid #e0dbdb;
+}
+
+.sapContrast.eyDOverLayPopOverClosebtn,
+.sapContrast .eyDOverLayPopOverClosebtn {
+    background: #AFAFBB !important;
+    border: 0px !important;
+    outline: none !important;
+}
+
+.sapContrast.eyDOverLayPopOverClosebtn .sapMBtnIcon,
+.sapContrast .eyDOverLayPopOverClosebtn .sapMBtnIcon {
+    color: #fff;
+}
+
+.sapContrast.sapMPageFooter .sapMTB.sapMIBar,
+.sapContrast .sapMPageFooter .sapMTB.sapMIBar {
+    border-bottom-width: 0;
+}
+
+.sapContrast.sapMPageFloatingFooter .sapMPageFooter .sapMIBar-CTX.sapMFooter-CTX.sapMTB,
+.sapContrast .sapMPageFloatingFooter .sapMPageFooter .sapMIBar-CTX.sapMFooter-CTX.sapMTB {
+    border-top-width: 0;
+}
+
+.sapContrast.sapMPageBgSolid,
+.sapContrast .sapMPageBgSolid {
+    background-color: #fafafa;
+}
+
+.sapContrast.sapMPage .sapMScrollbarV > div,
+.sapContrast .sapMPage .sapMScrollbarV > div {
+    background-color: #b2b2b2;
+    border-color: #b2b2b2;
+}
+
+.sapContrast.eyDArrowTxtWrpper,
+.sapContrast .eyDArrowTxtWrpper {
+    background: #1776CE;
+    color: #fff;
+}
+
+.sapContrast.eyDArrowSeprator,
+.sapContrast .eyDArrowSeprator {
+    background-color: #747480;
+}
+
+.sapContrast.eyDArrowSeprator:first-child:before,
+.sapContrast .eyDArrowSeprator:first-child:before {
+    background: #ffffff;
+    border: 1.5px solid #747480;
+}
+
+.sapContrast.eyDArrowSeprator:last-child:after,
+.sapContrast .eyDArrowSeprator:last-child:after {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 12px solid #747480;
+}
+
+.sapContrast.eyMapDiv h2,
+.sapContrast .eyMapDiv h2 {
+    color: #2E2E38;
+}
+
+.sapContrast.eyMapDiv .decriptionText,
+.sapContrast .eyMapDiv .decriptionText {
+    color: #2E2E38;
+}
+
+.sapContrast.eyMapDiv .rectangle,
+.sapContrast .eyMapDiv .rectangle {
+    background-color: #60E6E1;
+    color: #fff;
+}
+
+.sapContrast.eyMapDiv .checkmark_circle,
+.sapContrast .eyMapDiv .checkmark_circle {
+    background-color: black;
+    border: 1px solid black;
+}
+
+.sapContrast.eyMapDiv .uncheck_circle,
+.sapContrast .eyMapDiv .uncheck_circle {
+    background-color: white;
+    border: 1px solid #C4C4CD;
+}
+
+.sapContrast.eyMapDiv .checkmark_stem,
+.sapContrast .eyMapDiv .checkmark_stem {
+    background-color: #fff;
+}
+
+.sapContrast.eyMapDiv .checkmark_kick,
+.sapContrast .eyMapDiv .checkmark_kick {
+    background-color: #fff;
+}
+
+
+/* Inline theming parameters */
+
+#sap-ui-theme-ey\.cc\.eydcc {
+    background-image: url('data:text/plain;utf-8,%7B%22default%22%3A%7B%7D%2C%22scopes%22%3A%7B%22sapContrast%22%3A%7B%7D%7D%7D')
+}

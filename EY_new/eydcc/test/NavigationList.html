@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eydcc.controls.NavigationList</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eydcc"
+         data-sap-ui-theme="sap_belize"
+         src="resources/sap-ui-core.js">
+      </script>
+      
+      <script type="text/javascript"> 
+      
+        var oNavigationList = new ey.cc.eydcc.controls.NavigationList({
+         	selectedKey:"subItem3",
+                       items:[
+                      	new ey.cc.eydcc.controls.NavigationListItem({
+                         text: "Example",
+                         key:"subItem3",
+                         expanded:false,
+                         uploadIcon:'resources/ey/cc/eydcc/images/Execution.png',
+                         select:function(oEvent){
+                         alert("muthu");	
+                         },
+                         upload:function(oEvent){
+                         alert("raj");	
+                         },
+                         items:[
+                      	new ey.cc.eydcc.controls.NavigationListItem({
+                         text: "Example",
+                          key:"subItem4"
+                         
+                       
+                       
+         })
+         ]
+                       
+                       
+         }),
+         
+                      	new ey.cc.eydcc.controls.NavigationListItem({
+                         text: "Example",
+                         key:"subItem5",
+                         items:[
+                      	new ey.cc.eydcc.controls.NavigationListItem({
+                         text: "Example",
+                          key:"subItem7"
+                         
+                       
+                       
+         })
+         ]
+                       
+                       
+         })
+         
+         ]
+         });
+         oNavigationList.placeAt("content");
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <h1 id="header">Test Page for <code> ey.cc.eydcc.controls.NavigationList</code></h1>
+      <div id="content"></div>
+   </body>
+</html>

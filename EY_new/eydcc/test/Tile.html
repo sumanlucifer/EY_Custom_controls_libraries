@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eydcc.controls.Tile</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eydcc,sap.m"
+         data-sap-ui-theme="sap_belize"
+         src="resources/sap-ui-core.js">
+      </script>
+      <style>
+      	
+      	.eyDTile2 {
+  
+  background:red !important;
+   
+  
+  
+}
+
+.eyDInfoDesc{
+    font-size: 0.8rem;
+    line-height: 27px;
+    /* margin-bottom: 32px; */
+    margin-left: 10px;
+    font-weight: 200;
+}
+.eyDTileTypeSecondNumer{
+	display:flex;
+}
+
+      </style>
+      <script type="text/javascript"> 
+     
+         var oTile = new ey.cc.eydcc.controls.Tile({
+                         title: "Example",
+                         number:"53",
+                         infoText:"test",
+                         type:"type2",
+                         infoDesc:"users value",
+                         press:function(oEvent){
+                         	alert("muthu");
+                         }
+         });
+         var oTile1 = new ey.cc.eydcc.controls.Tile({
+                         title: "Example",
+                         number:"53",
+                         type:"type3",
+                         infoText:"test"
+         });
+         var oTile2 = new ey.cc.eydcc.controls.Tile({
+                         title: "Example",
+                         number:"53",
+                         infoText:"test"
+         }).addStyleClass("eyDTile2");
+         
+         
+          var oTile4 = new ey.cc.eydcc.controls.Tile({
+                         title: "Example",
+                         number:"53",
+                         infoText:"test",
+                         type:"type2",
+                         press:function(oEvent){
+                         	alert("muthu");
+                         }
+         });
+           var oTileContainer2 = new ey.cc.eydcc.controls.TileContainer({
+           	tiles:[oTile]
+           	
+           });
+           var oTileContainer = new ey.cc.eydcc.controls.TileContainer({
+           	tiles:[oTile4]
+           	
+           });
+           
+             var oTile7 = new ey.cc.eydcc.controls.Tile({
+                         title: "Example",
+                         number:"53",
+                         infoText:"test",
+                         type:"type4",
+                         press:function(oEvent){
+                         	alert("tilepress");
+                         }
+         });
+         
+          var hBox1=new sap.m.HBox({
+      	alignItems:"Start",
+      	justifyContent:"SpaceBetween",
+      	width:"100%",
+      	items:[oTile7]
+      }).addStyleClass('sapUiSmallMargin');
+          var hBox=new sap.m.HBox({
+      	alignItems:"Start",
+      	justifyContent:"SpaceBetween",
+      	width:"100%",
+      	items:[oTileContainer2,oTile7,oTile1,oTile2,oTileContainer]
+      }).addStyleClass('sapUiSmallMargin');
+      
+      
+         hBox.placeAt("content");
+         hBox1.placeAt("content");
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <h1 id="header">Test Page for <code> ey.cc.eydcc.controls.Tile</code></h1>
+      <div id="content"></div>
+   </body>
+</html>

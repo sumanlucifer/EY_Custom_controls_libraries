@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eycc.controls</title>
+      <base href="../../../../">
+      
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<style>
+		#content{
+			height : 200vh;
+		}
+		.fixedWH{
+			width  : 95vw;
+			height : 50vh;
+		}
+	</style>
+	
+      <script id="sap-ui-bootstrap"
+         data-sap-ui-libs="ey.cc.eycc,sap.m,sap.ui.layout,sap.f"
+         src="resources/sap-ui-core.js"
+         data-sap-ui-resourceroots='{
+			"eycc": "./"
+			}'
+         data-sap-ui-bindingSyntax="complex"
+         data-sap-ui-theme="sap_belize">
+      </script>
+      
+      <script type="text/javascript"> 
+      var obj = {
+      	type12:"Source",
+	nodes : [{
+					"key": "Alpha",
+					"pos": "80 80",
+					"size": "100 50",
+					"color": "#E8E8E8",
+					"textSuper":"10"
+					}, {
+						"key": "Beta",
+						"pos": "276 19",
+						"size": "100 50",
+						"color": "#E8E8E8",
+						"textSuper":"15"
+					}, {
+						"key": "Gamma",
+						"pos": "44 214",
+						"size": "100 50",
+						"color": "#E8E8E8",
+						"textSuper":"08"
+					}, {
+						"key": "Delta",
+						"pos": "239 171",
+						"size": "100 50",
+						"color": "#E8E8E8",
+						"textSuper":"04"
+				}], 
+			links:	[{
+					from: "Alpha",
+					to: "Beta",
+					text: "01 Days"
+				}, {
+					from: "Alpha",
+					to: "Gamma",
+					text: "05 Days"
+				}, {
+					from: "Gamma",
+					to: "Delta",
+					text: "08 Days"
+				}, {
+					from: "Delta",
+					to: "Alpha",
+					text: "10 Days"
+				}]
+      	}
+      	var model = new sap.ui.model.json.JSONModel(obj);
+      	sap.ui.xmlview({
+           viewName : "eycc.test.flowChart"
+        }).addStyleClass('fixedWH').placeAt("content").setModel(model);
+      </script>
+	</head>
+	<body class="sapUiBody" role="application">
+      <div id="content"></div>
+ 
+   </body>
+</html>

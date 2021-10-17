@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eydcc.controls.Panel</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eydcc,sap.m"
+         data-sap-ui-theme="sap_belize"
+         src="resources/sap-ui-core.js">
+      </script>
+      
+      <script type="text/javascript"> 
+          var data = {
+				names: [
+					{firstName: "Peter", lastName: "Mueller"},
+					{firstName: "Petra", lastName: "Maier"},
+					{firstName: "Thomas", lastName: "Smith"},
+					{firstName: "John", lastName: "Williams"},
+					{firstName: "Maria", lastName: "Jones"}
+				]
+			};
+			
+			// create a Model with this data
+		
+			var list = new sap.m.List({
+ 			});
+				var model = new sap.ui.model.json.JSONModel();
+			model.setData(data);
+			list.setModel(model);
+			// bind the List items to the data collection
+			list.bindItems({
+				path : "/names", 
+			 
+				template : new sap.m.StandardListItem({
+					title: "{lastName}",
+				 
+				 
+					press:function(evt){
+						var oBindingContext = evt.getSource().getBindingContext(); // evt.getSource() is the ListItem
+						page2.setBindingContext(oBindingContext); // make sure the detail page has the correct data context
+						app.to("page2");
+					}
+				})
+			});
+         var oPanel = new ey.cc.eydcc.controls.Panel({
+         	 expandable:true,
+         	 expanded:false,
+         headerToolbar : new sap.m.Toolbar({
+				design : sap.m.ToolbarDesign.Transparent,
+				content : [new sap.m.Title({
+					text : "Panel header"
+				}), new sap.m.ToolbarSpacer(), new sap.m.Link({
+					text : "Edit",
+				 
+					press : function() {
+						sap.m.MessageToast.show("Sorting-Grouping-Filtering popup will be shown on press.");
+					}
+				}).addStyleClass('sapUiTinyMarginEnd'),  new sap.m.Link({
+					text : "View Details",
+				 
+					press : function() {
+						sap.m.MessageToast.show("Sorting-Grouping-Filtering popup will be shown on press.");
+					}
+				}).addStyleClass('sapUiSmallMarginEnd') ]
+			}),
+                         content: [list 
+				]
+         });
+         oPanel.placeAt("content");
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <h1 id="header">Test Page for <code> ey.cc.eydcc.controls.Panel</code></h1>
+      <div id="content"></div>
+   </body>
+</html>

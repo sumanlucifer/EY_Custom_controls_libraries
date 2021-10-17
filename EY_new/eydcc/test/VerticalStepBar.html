@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eydcc.controls.VerticalStepBar</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eydcc"
+         data-sap-ui-theme="sap_belize"
+         src="resources/sap-ui-core.js">
+      </script>
+      
+      <script type="text/javascript"> 
+       var oVerticalStepBar = new ey.cc.eydcc.controls.VerticalStepBar({
+                      items:[
+                      	new ey.cc.eydcc.controls.VerticalStepItem({
+                         title: "Example",
+                         description:"test",
+                         linktext:"view details"
+         }).addStyleClass('current'),new ey.cc.eydcc.controls.VerticalStepItem({
+                         title: "Example",
+                         description:"test",
+                         linktext:"view details"
+         }).addStyleClass('is-done'),new ey.cc.eydcc.controls.VerticalStepItem({
+                         title: "Example",
+                         description:"test",
+                         linktext:"view details"
+         }),new ey.cc.eydcc.controls.VerticalStepItem({
+                         title: "Example",
+                         description:"test",
+                         linktext:"view details"
+         }),new ey.cc.eydcc.controls.VerticalStepItem({
+                         title: "Example",
+                         description:"test",
+                         linktext:"view details"
+         }),new ey.cc.eydcc.controls.VerticalStepItem({
+                         title: "Example",
+                         description:"test",
+                         linktext:"view details"
+         }),new ey.cc.eydcc.controls.VerticalStepItem({
+                         title: "Example",
+                         description:"test",
+                         linktext:"view details"
+         })
+         ,new ey.cc.eydcc.controls.VerticalStepItem({
+                         title: "Example",
+                         description:"test",
+                         linktext:"view details"
+         })
+]         });
+
+   var oVerticalStepBar1 = new ey.cc.eydcc.controls.VerticalStepBar({
+                      items:[
+                      	new ey.cc.eydcc.controls.VerticalStepItem({
+                      		design:"light",
+                         title: "Example"
+                       
+         }) ,new ey.cc.eydcc.controls.VerticalStepItem({
+         		design:"light",
+                         title: "Example"
+                         
+         }) 
+]         });
+         oVerticalStepBar.placeAt("content");
+         
+          oVerticalStepBar1.placeAt("content");
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      
+      <div id="content"></div>
+   </body>
+</html>

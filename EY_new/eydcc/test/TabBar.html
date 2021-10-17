@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eydcc.controls.TabBar</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eydcc,sap.m"
+         data-sap-ui-theme="sap_belize"
+         src="resources/sap-ui-core.js">
+      </script>
+      <script type="text/javascript"> 
+       var oModel = new sap.ui.model.json.JSONModel();
+		var mData = {
+			"items": [
+				{
+					"key": "DZ",
+					"text": "Algeria"
+				},
+				{
+					"key": "AR",
+					"text": "Argentina"
+				},
+				{
+					"key": "AU",
+					"text": "Australia"
+				},
+				{
+					"key": "AT",
+					"text": "Austria"
+				}
+]};
+
+oModel.setData(mData);
+	
+		var oItemTemplate = new sap.ui.core.Item({
+			key: "{key}",
+			text: "{text}"
+		});
+		var oSelect0 = new sap.m.Select({
+			id: "select_regular",
+			items: {
+				path: "/items",
+				template: oItemTemplate
+			} 
+		}).addStyleClass('sapUiSmallMarginEnd');
+		oSelect0.setModel(oModel);
+		var oSelect1 = new sap.m.Select({
+			 
+			items: {
+				path: "/items",
+				template: oItemTemplate
+			} 
+		}).addStyleClass('sapUiSmallMarginEnd');
+		oSelect1.setModel(oModel);
+		
+		var oSelect2 = new sap.m.Select({
+		 
+			items: {
+				path: "/items",
+				template: oItemTemplate
+			} 
+		}).addStyleClass('sapUiSmallMarginEnd');
+		oSelect2.setModel(oModel);
+			var oSelect3 = new sap.m.Select({
+		 
+			items: {
+				path: "/items",
+				template: oItemTemplate
+			} 
+		}).addStyleClass('sapUiSmallMarginEnd');
+		oSelect2.setModel(oModel);
+		  var oTabBar3 = new ey.cc.eydcc.controls.TabBar({
+		  	alignHeader:'left',
+           	alignTabContent:'middle',
+         	expand:true,
+         	press:function(oEvent){
+         		alert("muthu");
+         	},
+         	customHeader:[new sap.m.Text({text:'Sort By:'}).addStyleClass('sapUiSmallMarginEnd'),oSelect3],
+                        items:[
+                        	new ey.cc.eydcc.controls.TabBarItem({
+                        		text:"PYpy",
+                        	 
+                        		content:[new sap.m.Button({text:'muthu'})]
+                        	}),
+                        	new ey.cc.eydcc.controls.TabBarItem({
+                        		text:"Events",
+                        		content:[new sap.m.Text({text:'Text'})]
+                        	}),
+                        		new ey.cc.eydcc.controls.TabBarItem({
+                        		text:"Event Links",
+                        		content:[new sap.m.Label({text:'Label'})]
+                        	})
+                         ]
+         }).addStyleClass("sapUiSmallMargin");
+         var oTabBar = new ey.cc.eydcc.controls.TabBar({
+          	press:function(oEvent){
+                        		alert("muthu");	
+                        		},
+         	customHeader:[new sap.m.Text({text:'Sort By:'}).addStyleClass('sapUiSmallMarginEnd'),oSelect0],
+                        items:[
+                        	new ey.cc.eydcc.controls.TabBarItem({
+                        		text:"PYpy",
+                        	
+                        		content:[new sap.m.VBox({
+                        			items:[ new ey.cc.eydcc.controls.TileContainer({
+         	select:function(oEvent){
+         	alert('selectedTile: '+oEvent.getSource().getSelectedKey());	
+         	},
+                         tiles: [ new ey.cc.eydcc.controls.Tile({
+                         title: "Example",
+                         number:"53",
+                         infoText:"test",
+                         type:"type2",
+                         key:'tile1',
+                         press:function(oEvent){
+                         	alert("muthu");
+                         }
+         }), new ey.cc.eydcc.controls.Tile({
+                         title: "Example",
+                         number:"53",
+                         infoText:"test",
+                         type:"type2",
+                          key:'tile2',
+                         press:function(oEvent){
+                         	alert("muthu");
+                         }
+         }), new ey.cc.eydcc.controls.Tile({
+                         title: "Example",
+                         number:"53",
+                         infoText:"test",
+                         type:"type2",
+                          key:'tile3',
+                         press:function(oEvent){
+                         	alert("muthu");
+                         }
+         })]
+         }).addStyleClass('sapUiSmallMargin')]
+                        		})]
+                        	}),
+                        	new ey.cc.eydcc.controls.TabBarItem({
+                        		text:"Events",
+                        		content:[new sap.m.Text({text:'Text'})]
+                        	}),
+                        		new ey.cc.eydcc.controls.TabBarItem({
+                        		text:"Event Links",
+                        		content:[new sap.m.Label({text:'Label'})]
+                        	})
+                         ]
+         }).addStyleClass("sapUiSmallMargin");
+         
+           var oTabBar1 = new ey.cc.eydcc.controls.TabBar({
+           		alignHeader:'left',
+           	alignTabContent:'middle',
+           	expand:true,
+           	type:'black',
+         	customHeader:[new sap.m.Text({text:'Sort By:'}).addStyleClass('sapUiSmallMarginBeginEnd'),oSelect2],
+                        items:[
+                        	new ey.cc.eydcc.controls.TabBarItem({
+                        		text:"Process Interruption",
+                        		content:[new sap.m.Button({text:'muthu'})]
+                        	}),
+                        	new ey.cc.eydcc.controls.TabBarItem({
+                        		text:"Anamolies",
+                        		content:[new sap.m.Text({text:'Text'})]
+                        	}),
+                        		new ey.cc.eydcc.controls.TabBarItem({
+                        		text:"Event Links",
+                        		content:[new sap.m.Label({text:'Label'})]
+                        	})
+                         ]
+         }).addStyleClass("sapUiSmallMargin");
+         
+          
+         oTabBar.placeAt("content");
+         
+         oTabBar1.placeAt("content");
+          oTabBar3.placeAt("content");
+         
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <h1 id="header">Test Page for <code> ey.cc.eydcc.controls.TabBar</code></h1>
+      <div id="content"></div>
+   </body>
+</html>

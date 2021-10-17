@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Example - ey.cc.eycc.controls</title>
+    <base href="../../../../">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <style>
+        #content {
+            height: 30rem;
+        }
+    </style>
+    <script id="sap-ui-bootstrap" type="text/javascript" data-sap-ui-libs="ey.cc.eycc,sap.m" , "sap.ui.layout" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-bindingSyntax="complex" data-sap-ui-theme="sap_belize" data-sap-ui-resourceroots='{
+			"ey.cc.eycc": "./src/ey/cc/eycc"
+			}'>
+    </script>
+
+    <script type="text/javascript">
+        var oExample = new ey.cc.eycc.controls.OverlayPopover({
+        	enableToolBar: true,
+            title: "Modular Popover",
+            titleColor: "white",
+            content: [
+               new sap.m.List({
+     	 	mode : "SingleSelectMaster",
+     	 	width:"30rem",
+     	 	items : [
+     	 		new ey.cc.eycc.controls.HoverListItem({ 
+					title:'Placeholder1',
+					info : "Some informatime"
+				})
+				
+ 	 		]
+               })
+            ]
+        });
+        var oExample2 = new ey.cc.eycc.controls.OverlayPopover({
+            title: "Auto Close Popover with Padding",
+            autoClose: true,
+            content: [
+                new sap.m.Button(),
+                new sap.m.Select({
+                    width: "100%",
+                    items: [
+                        new sap.ui.core.Item({
+                            text: "Me"
+                        })
+                    ]
+                })
+            ]
+        }).addStyleClass('sapUiLargeMarginTop');
+        var oButton = new sap.m.Button({
+            text: "Open OverLay",
+            press: function(oEvent) {
+                Math.random() > .5 ? oExample.open() : oExample2.open()
+            }
+        });
+        oButton.placeAt("content");
+        oExample.placeAt("content");
+        oExample2.placeAt("content");
+    </script>
+</head>
+
+<body class="sapUiBody" role="application">
+    <div id="content"></div>
+</body>
+
+</html>

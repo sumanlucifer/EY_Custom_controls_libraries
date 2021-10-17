@@ -1,0 +1,38 @@
+
+.editor{
+  font-size : 1rem;
+  font-family:EYInterstate;
+  padding:10px;
+  width:auto;
+  color : #2e2e38C0;
+  min-width:10rem;
+  max-width : 30rem;
+  display:inline-block;
+  outline: 0px solid transparent;
+  border : 3px solid #2e2e3820 ;
+  border-radius:20px;
+}
+.editor:focus{
+  font-size : 1rem;
+  font-family:EYInterstate;
+  border : 2px solid #2e2e3850 ;
+}
+.editor:hover{
+/*   background:#ececec; */
+}
+
+[placeholder]:empty:focus::before {
+    content: "";
+}
+.placeholder{
+  display:block;
+  position:relative;
+  top : .75rem;
+  left : 2rem;
+  padding : 0px 5px 0px 5px ;
+  font-size : .90rem;
+  color : #2e2e38F0;
+  background: linear-gradient(transparent, transparent, #ffffff,#ffffff, transparent, transparent);
+  width:max-content;
+  font-family:EYInterstate;
+}

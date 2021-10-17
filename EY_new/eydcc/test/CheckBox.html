@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eydcc.controls.CheckBox</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eydcc,sap.m"
+         data-sap-ui-theme="sap_belize"
+         src="resources/sap-ui-core.js">
+      </script>
+      <style>
+      	.VBox{
+      		background:black;
+      	}
+      	
+      	.text{
+      		color:white !important;
+      	}
+      </style>
+      <script type="text/javascript"> 
+      var oApp = new sap.m.App("myApp", {initialPage:"myPage1"});
+
+ 
+
+	var oPage1 = new sap.m.Page("myPage1", {
+		title: "Custom CheckBox Control"
+	 
+	});
+	
+         var oCheckBox = new ey.cc.eydcc.controls.CheckBox({
+              selectable:false             
+         });
+ 	var example1Title = new sap.m.Text({
+		text:"Display Check Mark"
+	}).addStyleClass("sapUiSmallMarginBottom").addStyleClass("text");
+	 
+         
+         var example1=new sap.m.VBox({
+		alignItems:"Center",
+		justifyContent:"Center",
+		height:"200px",
+		width:"200px",
+		items:[
+			example1Title,
+		oCheckBox
+			]
+	}).addStyleClass("VBox").addStyleClass("sapUiResponsiveMargin");
+	
+ 
+	 var oCheckBox2 = new ey.cc.eydcc.controls.CheckBox({
+               selectable:true          
+         });
+ 	var example2Title = new sap.m.Text({
+		text:"Selectable Check Mark"
+	}).addStyleClass("sapUiSmallMarginBottom").addStyleClass("text");
+	 
+         
+         var example2=new sap.m.VBox({
+		alignItems:"Center",
+		justifyContent:"Center",
+		height:"200px",
+		width:"200px",
+		items:[
+			example2Title,
+		oCheckBox2
+			]
+	}).addStyleClass("VBox").addStyleClass("sapUiResponsiveMargin");
+	
+         
+         oPage1.addContent(example1).addContent(example2);
+         oApp.addPage(oPage1);
+	oApp.placeAt("content");
+         
+        
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+    
+      <div id="content"></div>
+   </body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Example - ey.cc.eycc.controls</title>
+    <base href="../../../../">
+    <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+    <!-- ********************************************************************** -->
+    <!-- SAPUI5 Bootstrap:                                                     -->
+    <!-- Extend the "libs" property if you like to import additional libraries  -->
+    <!-- ********************************************************************** -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <style>
+        #content {
+            height: 90em;
+        }
+    </style>
+
+    <script id="sap-ui-bootstrap" type="text/javascript" data-sap-ui-libs="ey.cc.eycc,sap.m" , "sap.ui.layout" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-bindingSyntax="complex" data-sap-ui-theme="sap_belize" data-sap-ui-resourceroots='{
+			"ey.cc.eycc": "./src/ey/cc/eycc"
+			}'>
+    </script>
+
+    <script type="text/javascript">
+        var statsByState = [{
+            "name": "Kane",
+            "department": "Product Management",
+            "salary": 740284,
+            "age": 89
+        }, {
+            "name": "Orv",
+            "department": "Human Resources",
+            "salary": 841342,
+            "age": 47
+        }, {
+            "name": "Antonina",
+            "department": "Marketing",
+            "salary": 361414,
+            "age": 22
+        }, {
+            "name": "Charmane",
+            "department": "Accounting",
+            "salary": 406305,
+            "age": 94
+        }, {
+            "name": "Marijo",
+            "department": "Research and Development",
+            "salary": 786471,
+            "age": 62
+        }, {
+            "name": "Kendra",
+            "department": "Services",
+            "salary": 611408,
+            "age": 56
+        }, {
+            "name": "Wayland",
+            "department": "Marketing",
+            "salary": 802110,
+            "age": 44
+        }, {
+            "name": "Nathanael",
+            "department": "Research and Development",
+            "salary": 21748,
+            "age": 16
+        }, {
+            "name": "Chet",
+            "department": "Product Management",
+            "salary": 549197,
+            "age": 57
+        }, {
+            "name": "Allister",
+            "department": "Product Management",
+            "salary": 121094,
+            "age": 25
+        }, {
+            "name": "Asia",
+            "department": "Accounting",
+            "salary": 547117,
+            "age": 97
+        }, {
+            "name": "Etti",
+            "department": "Accounting",
+            "salary": 277317,
+            "age": 81
+        }, {
+            "name": "Benson",
+            "department": "Business Development",
+            "salary": 138137,
+            "age": 4
+        }, {
+            "name": "Marline",
+            "department": "Engineering",
+            "salary": 338286,
+            "age": 54
+        }, {
+            "name": "Adolpho",
+            "department": "Legal",
+            "salary": 119483,
+            "age": 71
+        }, {
+            "name": "Bernardina",
+            "department": "Training",
+            "salary": 124976,
+            "age": 7
+        }, {
+            "name": "Vinny",
+            "department": "Legal",
+            "salary": 335372,
+            "age": 37
+        }, {
+            "name": "Emylee",
+            "department": "Support",
+            "salary": 922306,
+            "age": 81
+        }, {
+            "name": "Essy",
+            "department": "Sales",
+            "salary": 800180,
+            "age": 27
+        }, {
+            "name": "Marybelle",
+            "department": "Training",
+            "salary": 570206,
+            "age": 92
+        }, {
+            "name": "Marabel",
+            "department": "Training",
+            "salary": 385035,
+            "age": 1
+        }, {
+            "name": "Genvieve",
+            "department": "Training",
+            "salary": 201126,
+            "age": 2
+        }, {
+            "name": "Julee",
+            "department": "Support",
+            "salary": 370294,
+            "age": 44
+        }, {
+            "name": "Willy",
+            "department": "Product Management",
+            "salary": 597808,
+            "age": 34
+        }, {
+            "name": "Callean",
+            "department": "Training",
+            "salary": 862767,
+            "age": 87
+        }, {
+            "name": "Pedro",
+            "department": "Services",
+            "salary": 764559,
+            "age": 85
+        }, {
+            "name": "Lilah",
+            "department": "Accounting",
+            "salary": 838947,
+            "age": 66
+        }, {
+            "name": "Terrell",
+            "department": "Legal",
+            "salary": 73697,
+            "age": 13
+        }, {
+            "name": "Denise",
+            "department": "Legal",
+            "salary": 328236,
+            "age": 21
+        }, {
+            "name": "Vassily",
+            "department": "Accounting",
+            "salary": 312404,
+            "age": 70
+        }];
+        var oTreemapBasic = new ey.cc.eycc.controls.Treemap({
+            data: statsByState,
+            height: "25%",
+            width: "25%",
+            dimensions: ["name"],
+            color: ["#FFBB28"],
+            measures: ["age"],
+            title: "Basic"
+        }).addStyleClass('sapUiSmallMargin');
+        var oTreemapColorScale = new ey.cc.eycc.controls.Treemap({
+            data: statsByState,
+            height: "25%",
+            width: "25%",
+            dimensions: ["name"],
+            color: ["pink", "cyan"],
+            measures: ["salary"],
+            title: "Color Gradient"
+        }).addStyleClass('sapUiSmallMargin');
+        var oTreemapAdvanced = new ey.cc.eycc.controls.Treemap({
+            data: statsByState,
+            height: "25%",
+            width: "75%",
+            dimensions: ["department", "name"],
+            color: ["#00C49F"],
+            measures: ["salary", "age"],
+            title: "Grouping"
+        }).addStyleClass('sapUiSmallMargin');
+        var oPage = new sap.m.Page({
+            content: [
+                oTreemapBasic,
+                oTreemapColorScale,
+                oTreemapAdvanced
+            ]
+        });
+
+        oPage.placeAt('content');
+    </script>
+</head>
+
+<body class="sapUiBody" role="application">
+    <div id="content"></div>
+</body>
+
+</html>

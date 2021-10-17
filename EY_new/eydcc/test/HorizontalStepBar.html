@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eydcc.controls.HorizontalStepBar</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eydcc"
+         data-sap-ui-theme="sap_belize"
+         src="resources/sap-ui-core.js">
+      </script>
+      
+      <script type="text/javascript"> 
+      
+         
+          var oHorizontalStepBar = new ey.cc.eydcc.controls.HorizontalStepBar({
+                      items:[
+                      	new ey.cc.eydcc.controls.HorizontalStepItem({
+                     bottomtitle:"bottomTitle",
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         }),	new ey.cc.eydcc.controls.HorizontalStepItem({
+                     toptitle:"toptitle",
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         }),	new ey.cc.eydcc.controls.HorizontalStepItem({
+                     bottomtitle:"bottomTitle",
+                     bottomsubtitle:'test',
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         }),new ey.cc.eydcc.controls.HorizontalStepItem({
+                     bottomtitle:"bottomTitle",
+                     bottomsubtitle:'test',
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         }),new ey.cc.eydcc.controls.HorizontalStepItem({
+                     bottomtitle:"bottomTitle",
+                     bottomsubtitle:'test',
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         }),	new ey.cc.eydcc.controls.HorizontalStepItem({
+                     toptitle:"toptitle",
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         }),new ey.cc.eydcc.controls.HorizontalStepItem({
+                     bottomtitle:"bottomTitle",
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         }),	new ey.cc.eydcc.controls.HorizontalStepItem({
+                     toptitle:"toptitle",
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         })
+                      	]
+         });
+         
+         var oHorizontalStepBar1 = new ey.cc.eydcc.controls.HorizontalStepBar({
+                      items:[
+                      	new ey.cc.eydcc.controls.HorizontalStepItem({
+                     bottomtitle:"Project charter & sign off",
+                     imgText:"1",
+                     bottomsubtitle:"1st June",
+                     inlineBottomHorizontal:true,
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         }),	new ey.cc.eydcc.controls.HorizontalStepItem({
+                     bottomtitle:"Extraction & Execution",
+                     imgText:"2",
+                      bottomsubtitle:"8th June",
+                      inlineBottomHorizontal:true,
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         }),	new ey.cc.eydcc.controls.HorizontalStepItem({
+                     bottomtitle:"First draft discussion",
+                     bottomsubtitle:'test',
+                     inlineBottomHorizontal:true,
+                      bottomsubtitle:"15th June",
+                     imgText:"3",
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         }),new ey.cc.eydcc.controls.HorizontalStepItem({
+                     bottomtitle:"Finalise Insights",
+                     bottomsubtitle:'test',
+                     inlineBottomHorizontal:true,
+                      bottomsubtitle:"22nd June",
+                     imgText:"4",
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         }),new ey.cc.eydcc.controls.HorizontalStepItem({
+                     bottomtitle:"Deliverables",
+                     bottomsubtitle:'test',
+                     inlineBottomHorizontal:true,
+                      bottomsubtitle:"30th June",
+                     imgText:"5",
+                     src:"resources/ey/cc/eydcc/images/Execution.png"
+         })
+                      	]
+         });   
+         
+         
+         
+         oHorizontalStepBar.placeAt("content");
+           oHorizontalStepBar1.placeAt("content1");
+        
+        
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <h1 id="header">Test Page for <code> ey.cc.eydcc.controls.HorizontalStepBar</code></h1>
+      <div id="content" style="height:200px"></div>
+      <div id="content1" style="height:200px"></div>
+   </body>
+</html>

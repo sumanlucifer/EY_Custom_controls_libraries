@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eycc.controls</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="css/material_v1.css">
+	<style>
+		#content{
+			height : 100vh;
+		}
+	</style>
+	
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eycc,sap.m,sap.ui.table"
+         src="resources/sap-ui-core.js"
+         ata-sap-ui-bindingSyntax="complex"
+         data-sap-ui-theme="sap_belize">
+      </script>
+      
+      <script type="text/javascript"> 
+    	var model = new sap.ui.model.odata.v2.ODataModel('https://epoh534b67d1.us3.hana.ondemand.com/SmartDataInsight/Services/DashboardV2/Service/IR.xsodata');
+    	
+		 var pageTable = new ey.cc.eycc.controls.PageTable({ 
+			columns : [
+				{
+					name:"Name",
+					template:new sap.m.Text({
+						text: "{CompanyCode}"
+					}),
+					path:"CompanyCode",
+					width:"90rem"
+				},
+				{
+					name:"Summary",
+					template:new sap.m.Link({
+						text: "{ID}"
+					}),
+					path: "ID"
+				}
+			],
+			path : "/ApprovalDetailsBodyParameters(vApproverReviewID='34')/Results",
+			pageSize : 1
+		 });
+		 
+         var oPage = new sap.m.Page({
+         	content : [pageTable]
+         }).addStyleClass("pageHeaderSpacing");
+          oPage.setModel(model)
+     	 oPage.placeAt('content');
+        
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <div id="content"></div>
+   </body>
+</html>

@@ -1,0 +1,419 @@
+.eyDDialog, .eyDMessageDialog .eyDDialogScrollCont, .eyDDialogSection {
+	 box-sizing: border-box;
+}
+ .eyDDialog {
+	 background-clip: padding-box;
+	 min-height: 6rem;
+	 outline: none;
+	 overflow: hidden;
+	 position: absolute;
+	 opacity: 0;
+	 -webkit-transition: opacity .15s, transform 0.2s;
+	 transition: opacity .15s, transform 0.2s;
+	 transform: translate(-50%,-50%) scale(1);
+	 -webkit-transform: translate(-50%,-50%) scale(1) translateZ(0px);
+/*	 border-radius: 0.25rem;*/
+	 box-shadow: 0 1.25rem 5rem 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15)
+}
+ .eyDDialog:not(.eyDDialogHighPixelDensity) {
+	 -webkit-filter: blur(0);
+	 filter: blur(0);
+}
+ [dir="rtl"] .eyDDialog {
+	 left: 50%;
+}
+ [dir="rtl"] .eyDDialog.eyDDialogTouched {
+	 left: auto;
+}
+ .eyDDialog {
+	 max-width: 90%;
+}
+ .eyDDialog > .eyDDialogSection {
+	 max-width: 100%;
+}
+ .eyDDialog.eyDDialogWithSubHeader:not(.eyDDialog-NoHeader):not(.eyDDialog-NoFooter) {
+	 max-height: calc(100% - 9rem - 7%);
+}
+ .eyDDialog:not(.eyDDialog-NoHeader):not(.eyDDialog-NoFooter):not(.eyDDialogWithSubHeader) {
+	 max-height: calc(100% - 6rem - 7%);
+}
+ .eyDDialog.eyDDialog-NoHeader:not(.eyDDialog-NoFooter):not(.eyDDialogWithSubHeader) {
+	 max-height: calc(100% - 3rem - 7%);
+}
+ .eyDDialog:not(.eyDDialog-NoHeader).eyDDialog-NoFooter.eyDDialogWithSubHeader {
+	 max-height: calc(100% - 3rem - 7%);
+}
+ .eyDDialog.eyDDialog-NoHeader.eyDDialog-NoFooter.eyDDialogWithSubHeader {
+	 max-height: calc(100% - 3rem - 7%);
+}
+ .eyDDialog:not(.eyDDialog-NoHeader).eyDDialog-NoFooter:not(.eyDDialogWithSubHeader) {
+	 max-height: calc(100% - 3rem - 7%);
+}
+ .eyDDialog.eyDDialog-NoHeader.eyDDialog-NoFooter:not(.eyDDialogWithSubHeader) {
+	 max-height: calc(100% - 3rem);
+}
+ .sapUiSizeCompact .eyDDialog.eyDDialogWithSubHeader:not(.eyDDialog-NoHeader):not(.eyDDialog-NoFooter) {
+	 max-height: calc(100% - 7.5rem - 7%);
+}
+ .sapUiSizeCompact .eyDDialog:not(.eyDDialog-NoHeader):not(.eyDDialog-NoFooter):not(.eyDDialogWithSubHeader) {
+	 max-height: calc(100% - 5rem - 7%);
+}
+ .sapUiSizeCompact .eyDDialog.eyDDialog-NoHeader:not(.eyDDialog-NoFooter):not(.eyDDialogWithSubHeader) {
+	 max-height: calc(100% - 2.5rem - 7%);
+}
+ .sapUiSizeCompact .eyDDialog:not(.eyDDialog-NoHeader).eyDDialog-NoFooter.eyDDialogWithSubHeader {
+	 max-height: calc(100% - 2.5rem - 7%);
+}
+ .sapUiSizeCompact .eyDDialog.eyDDialog-NoHeader.eyDDialog-NoFooter.eyDDialogWithSubHeader {
+	 max-height: calc(100% - 2.5rem - 7%);
+}
+ .sapUiSizeCompact .eyDDialog:not(.eyDDialog-NoHeader).eyDDialog-NoFooter:not(.eyDDialogWithSubHeader) {
+	 max-height: calc(100% - 2.5rem - 7%);
+}
+ .sapUiSizeCompact .eyDDialog.eyDDialog-NoHeader.eyDDialog-NoFooter:not(.eyDDialogWithSubHeader) {
+	 max-height: calc(100% - 2.5rem);
+}
+ .eyDDialog .eyDDialogScrollCont > * {
+	 vertical-align: middle;
+}
+ .eyDDialog.eyDDialogStretched {
+	 transform: none;
+	 -webkit-transform: scale(1) translateZ(0px);
+	 top: 5% !important;
+	 bottom: 5% !important;
+	 left: 3.5% !important;
+	 right: 3.5% !important;
+	 max-height: none !important;
+	 max-width: none !important;
+	 height: auto !important;
+	 width: auto !important;
+	 min-width: 0 !important;
+	 min-height: 0 !important;
+}
+ html.sap-phone .eyDDialog.eyDDialogStretched {
+	 border: none;
+	 box-shadow: 0;
+	 border-radius: 0;
+	 top: 0 !important;
+	 bottom: 0 !important;
+	 left: 0 !important;
+	 right: 0 !important;
+}
+ html.sap-phone .eyDDialog {
+	 min-width: 18rem;
+	 overflow: hidden;
+}
+ html.sap-phone .eyDDialog > footer .sapMFooter-CTX {
+	 display: -webkit-box;
+	 display: -webkit-flex;
+	 display: flex;
+	 padding: 0 0.25rem;
+}
+ html.sap-phone .eyDDialog > footer .sapMFooter-CTX .sapMTBSpacer {
+	 display: none;
+}
+ html.sap-phone .eyDDialog > footer .sapMFooter-CTX .sapMBtn {
+	 -webkit-box-flex: 1;
+	 -webkit-flex: 1;
+	 flex: 1;
+	 min-width: 31%;
+}
+ html.sap-tablet .eyDDialog, html.sap-desktop .eyDDialog {
+	 min-width: 20rem;
+}
+ .eyDDialog .sapMIBar {
+	 position: relative;
+	 width: auto;
+}
+ .eyDDialog .eyDDialogSection {
+	 overflow: hidden;
+	 position: relative;
+}
+ .eyDDialogScroll {
+	 display: inline-block;
+	 height: auto;
+	 width: 100%;
+	 vertical-align: middle;
+}
+ .eyDDialog.eyDDialogVerticalScrollIncluded .eyDDialogScroll {
+	 width: auto;
+}
+ html[data-sap-ui-browser^="sf"] .eyDDialog.eyDDialogVerticalScrollIncluded .eyDDialogSection {
+	 overflow-y: overlay !important;
+}
+ .eyDDialogVerScrollDisabled .eyDDialogScroll {
+	 height: 100%;
+}
+ .eyDDialogHorScrollDisabled .eyDDialogScroll {
+	 display: block;
+	 width: 100%;
+}
+ .eyDDialogHidden {
+	 visibility: hidden;
+}
+ .eyDDialogBlockLayer {
+	 opacity: 0.6;
+}
+ .eyDDialogTransparent {
+	 opacity: 0;
+}
+ .eyDDialog.sapUiPopupWithPadding:not(.sapUiNoContentPadding).eyDDialogWithScrollCont .eyDDialogScrollCont {
+	 height: 100%;
+}
+ .eyDDialog.sapUiPopupWithPadding:not(.sapUiNoContentPadding) .eyDDialogScrollCont {
+	 padding: 1rem;
+}
+ .eyDDialog.sapUiPopupWithPadding:not(.sapUiNoContentPadding) .eyDDialogScrollCont.eyDDialogStretchContent {
+	 height: calc(100% - 2 * 1rem);
+}
+ .eyDDialogScrollCont.eyDDialogStretchContent {
+	 height: 100%;
+}
+ .eyDMessageDialog .eyDDialogScrollCont {
+	 box-sizing: border-box;
+	 padding: 1rem;
+}
+ .eyDDialogWithScrollCont .eyDDialogScroll {
+	 position: relative;
+}
+ .eyDDialogWithScrollCont .eyDDialogScrollCont {
+	 height: 100%;
+	 padding: 0;
+	 position: absolute;
+	 width: 100%;
+}
+ .sapMActionSheetDialog .eyDDialogScrollCont {
+	 padding: 0;
+}
+ .eyDDialogOpen {
+	 opacity: 1;
+	 transform: translate(-50%,-50%) scale(1);
+	 -webkit-transform: translate(-50%,-50%) scale(1) translateZ(0px);
+}
+ .eyDDialogBlockLayerAnimation {
+	 position: absolute;
+	 transition: opacity 0.2s linear;
+	 -webkit-transition: opacity 0.2s linear;
+}
+ .eyDDialog.eyDMessageDialog {
+	 font-size: 0.875rem;
+}
+ .eyDDialog > header.eyDDialogTitle, .eyDDialog > header.eyDDialogSubHeader {
+	 font-size: 1rem;
+}
+ .eyDDialog:not(.eyDDialogWithSubHeader) .eyDDialogSubHeader {
+	 display: none;
+}
+ .eyDDialogIcon ~ .eyDDialogTitle {
+	 display: inline;
+}
+ .eyDDialog .sapMIBar.sapMPageHeader::before {
+	 border-top: none;
+}
+ .eyDMessageDialog.sapMPopup-CTX > header.eyDDialogTitle {
+	 background-image: none;
+	 filter: none;
+}
+.eyDDialog.sapMPopup-CTX>header .sapMHeader-CTX, .eyDDialog.sapMPopup-CTX>header .sapMSubHeader-CTX {
+    background-color: #fff !important;
+}
+.eyDDialog:not(.eyDDialogWithSubHeader)>header>.sapMIBar, .eyDDialog>header:last-of-type .sapMIBar {
+    box-shadow: none;
+}
+ .eyDDialog > header.eyDDialogTitle .sapMTitle {
+	color: #666666;
+	 margin: 0;
+	 vertical-align: middle;
+}
+ .eyDDialog > header.eyDDialogTitle .sapMImg {
+	 height: 2.25rem;
+	 margin-right: 0.625rem;
+	 vertical-align: middle;
+	 width: 2.25rem;
+}
+ .eyDDialog > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+	 font-size: 1.25rem;
+	 margin-right: 0.5rem;
+	 vertical-align: middle;
+}
+ .sapMTB.sapMTBNoBorders {
+	 border-bottom: none;
+}
+ .eyDDialog > footer #dialogWithManyButtons-footer-overflowButton-inner {
+	 padding-left: 0;
+}
+ .eyDDialog > footer #dialogWithManyButtons-footer-overflowButton-img {
+	 position: static;
+}
+ .sapUiSizeCompact.eyDDialog, .sapUiSizeCompact .eyDDialog {
+	 min-height: 2.5rem;
+	 padding-bottom: 2.5rem;
+	 padding-top: 2.5rem;
+}
+ .sapUiSizeCompact.eyDDialog.eyDDialogWithSubHeader, .sapUiSizeCompact .eyDDialog.eyDDialogWithSubHeader {
+	 padding-top: 5rem;
+}
+ .sapUiSizeCompact.eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader, .sapUiSizeCompact .eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader {
+	 padding-top: 2.5rem;
+}
+ .sapUiSizeCompact.eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader > .eyDDialogSubHeader, .sapUiSizeCompact .eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader > .eyDDialogSubHeader {
+	 top: 0;
+}
+ .sapUiSizeCompact.eyDDialog > .eyDDialogTitle, .sapUiSizeCompact .eyDDialog > .eyDDialogTitle {
+	 height: 2.5rem;
+}
+ .sapUiSizeCompact.eyDDialog > .eyDDialogTitle .sapMHeader-CTX, .sapUiSizeCompact.eyDDialog > .eyDDialogTitle .sapMSubHeader-CTX, .sapUiSizeCompact .eyDDialog > .eyDDialogTitle .sapMHeader-CTX, .sapUiSizeCompact .eyDDialog > .eyDDialogTitle .sapMSubHeader-CTX {
+	 height: 2.5rem;
+	 padding-top: 0.25rem;
+	 padding-bottom: 0.25rem;
+	 box-sizing: border-box;
+}
+ .sapUiSizeCompact.eyDDialog > .eyDDialogSection, .sapUiSizeCompact .eyDDialog > .eyDDialogSection {
+	 min-height: 2.5rem;
+}
+ .sapUiSizeCompact.eyDDialog > footer, .sapUiSizeCompact .eyDDialog > footer {
+	 height: 2.5rem;
+}
+ .sapUiSizeCompact.eyDDialog > footer .sapMFooter-CTX, .sapUiSizeCompact .eyDDialog > footer .sapMFooter-CTX {
+	 height: 2.5rem;
+}
+ .sapUiSizeCompact.eyDDialog header.eyDDialogSubHeader, .sapUiSizeCompact .eyDDialog header.eyDDialogSubHeader {
+	 height: 2.5rem;
+	 top: 2.5rem;
+}
+ .sapUiSizeCompact.eyDDialog header.eyDDialogSubHeader .sapMIBar, .sapUiSizeCompact .eyDDialog header.eyDDialogSubHeader .sapMIBar {
+	 height: 2.5rem;
+}
+ .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg {
+	 height: 1.5rem;
+	 width: 1.5rem;
+}
+ .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapUiIcon, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapUiIcon {
+	 font-size: 1rem;
+	 height: 1.5rem;
+	 line-height: 1.5rem;
+	 width: 1rem;
+}
+ .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header:first-of-type .sapMHeader-CTX, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > footer:last-of-type .sapMFooter-CTX, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header:first-of-type .sapMHeader-CTX, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > footer:last-of-type .sapMFooter-CTX {
+	 height: 2.5rem;
+}
+ .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarLeft, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarRight, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarPH, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarLeft, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarRight, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg.eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarPH, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarLeft, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarRight, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > header:first-of-type .sapMHeader-CTX .sapMBarPH, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarLeft, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarRight, .sapUiSizeCompact.eyDDialog > header.eyDDialogTitle .sapMBarMiddle > .sapMBarPH > .sapMImg .eyDDialog > footer:last-of-type .sapMFooter-CTX .sapMBarPH {
+	 padding-bottom: 0.25rem;
+	 padding-top: 0.25rem;
+}
+ .eyDDialogResizing, .eyDDialogResizing * {
+	 -moz-user-select: none;
+	 -webkit-user-select: none;
+	 -ms-user-select: none;
+	 user-select: none;
+}
+ .eyDDialogTouched {
+	 transform: scale(1);
+	 -webkit-transform: scale(1) translateZ(0px);
+}
+ .sapDialogDisableTransition {
+	 transition: none;
+	 -webkit-transition: none;
+}
+ .eyDDialogResizeHandler {
+	 bottom: 0rem;
+	 cursor: se-resize;
+	 position: absolute;
+	 right: 0;
+	 width: .5rem;
+	 z-index: 2;
+	 line-height: 1rem;
+}
+ .eyDDialogResizeHandler:before {
+	 left: 0;
+	 position: relative;
+	 top: 0;
+}
+ .eyDDialog {
+	 box-sizing: content-box;
+	 min-height: 3rem;
+	 padding-bottom: 3rem;
+	 padding-top: 3rem;
+}
+ .eyDDialog.eyDDialog-NoFooter {
+	 padding-bottom: 0;
+}
+ .eyDDialog.eyDDialog-NoHeader {
+	 padding-top: 0;
+}
+ .eyDDialog.eyDDialogWithSubHeader {
+	 padding-top: 6rem;
+}
+ .eyDDialog.eyDDialogWithSubHeader.eyDDialogSubHeaderInfoBar {
+	 padding-top: 5rem;
+}
+ .eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader {
+	 padding-top: 3rem;
+}
+ .eyDDialog.eyDDialogWithSubHeader.eyDDialog-NoHeader > .eyDDialogSubHeader {
+	 top: 0;
+}
+ .eyDDialog > .eyDDialogTitle {
+	 height: 3rem;
+	 left: 0;
+	 position: absolute;
+	 right: 0;
+	 top: 0;
+}
+ .eyDDialog > .eyDDialogSection {
+	 height: 100%;
+	 min-height: 3rem;
+}
+ .eyDDialog > footer {
+	 bottom: 0;
+	 height: 3rem;
+	 left: 0;
+	 position: absolute;
+	 right: 0;
+}
+ .eyDDialog.eyDDialogDraggable > header {
+	 cursor: move;
+}
+ .eyDDialog header.eyDDialogSubHeader {
+	 cursor: default;
+	 height: 3rem;
+	 left: 0;
+	 position: absolute;
+	 right: 0;
+	 top: 3rem;
+	 z-index: 2;
+}
+ html[data-sap-ui-animation='off'] .eyDDialog, html[data-sap-ui-animation='off'] .eyDDialogBlockLayerAnimation {
+	 transition: none;
+}
+ .eyDDialog > .eyDDialogSection {
+	 background:#ffffff ;
+}
+ .eyDDialogWarning > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+	 color:#e78c07;
+}
+ .eyDDialogWarning > header:last-of-type .sapMIBar.sapMIBar {
+	 box-shadow: inset 0 -0.125rem #f9a429;
+}
+ .eyDDialogError > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+	 color:#bb0000;
+}
+ .eyDDialogError > header:last-of-type .sapMIBar.sapMIBar {
+	 box-shadow: inset 0 -0.125rem #ee0000;
+}
+ .eyDDialogSuccess > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+	 color:#2b7c2b ;
+}
+ .eyDDialogSuccess > header:last-of-type .sapMIBar.sapMIBar {
+	 box-shadow: inset 0 -0.125rem #38a238;
+}
+ .eyDDialogInformation > header.eyDDialogTitle .eyDDialogIcon.sapUiIcon {
+	 color:#427cac;
+}
+ .eyDDialogInformation > header:last-of-type .sapMIBar.sapMIBar {
+	 box-shadow: inset 0 -0.125rem #427cac;
+}
+ .eyDDialog .eyDDialogFirstFE, .eyDDialog .eyDDialogLastFE {
+	 font-size: 0;
+}
+ 

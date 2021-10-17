@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Example - ey.cc.eycc.controls</title>
+    <base href="../../../../">
+    <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+    <!-- ********************************************************************** -->
+    <!-- SAPUI5 Bootstrap:                                                     -->
+    <!-- Extend the "libs" property if you like to import additional libraries  -->
+    <!-- ********************************************************************** -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <style>
+        #content {
+            height: 90em;
+        }
+    </style>
+
+    <script id="sap-ui-bootstrap" type="text/javascript" data-sap-ui-libs="ey.cc.eycc,sap.m" , "sap.ui.layout" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-bindingSyntax="complex" data-sap-ui-theme="sap_belize" data-sap-ui-resourceroots='{
+			"ey.cc.eycc": "./src/ey/cc/eycc"
+			}'>
+    </script>
+
+    <script type="text/javascript">
+        var FeedArea = new ey.cc.eycc.controls.FeedArea({
+            width: "85%",
+            height: "20rem",
+            fontSize: "2rem",
+            text: 'Pre Content',
+            tagInvoked: function(oEvent) {
+                console.log(oEvemt)
+            }
+        }).addStyleClass('sapUiSmallMargin');
+        var oPage = new sap.m.Page({
+            content: [
+                FeedArea
+            ]
+        });
+
+        oPage.placeAt('content');
+    </script>
+</head>
+
+<body class="sapUiBody" role="application">
+    <div id="content"></div>
+</body>
+
+</html>

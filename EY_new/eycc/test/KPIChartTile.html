@@ -1,0 +1,651 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Example - ey.cc.eycc.controls</title>
+    <base href="../../../../">
+    <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+    <!-- ********************************************************************** -->
+    <!-- SAPUI5 Bootstrap:                                                     -->
+    <!-- Extend the "libs" property if you like to import additional libraries  -->
+    <!-- ********************************************************************** -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <style>
+        #content {
+            height: 90em;
+        }
+    </style>
+
+    <script id="sap-ui-bootstrap" type="text/javascript" data-sap-ui-libs="ey.cc.eycc,sap.m" , "sap.ui.layout" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-bindingSyntax="complex" data-sap-ui-theme="sap_belize" data-sap-ui-resourceroots='{
+			"ey.cc.eycc": "./src/ey/cc/eycc"
+			}'>
+    </script>
+
+    <script type="text/javascript">
+        var vb1 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area (with yGrid)",
+            zoomEnabled: true,
+            size: '4x2',
+            chartType: 'bar',
+            cardType: "chart",
+            xGrid:false,
+            yGrid:true,
+            showLegend:true,
+            measure: [
+                "Material Description",
+                "Old Material Number",
+                "Manufacturing Part Number"
+            ],
+            dimension: ["Dummy"],
+            data: [{
+                "Dummy": "",
+                "Material Description": 26535
+            }],
+            measureColour: ["#0088FEAB", "#00C49FAB", "#FFBB28AB", "#FF8042AB"]
+        }).addStyleClass('sapUiSmallMargin');
+        var vb2 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area (with xGrid, yGrid)",
+            size: '4x2',
+            chartType: 'bar',
+            measure: ["temp", "low"],
+            dimension: ["day"],
+            xGrid:true,
+            yGrid:true,
+            showLegend:true,
+            measureColour: ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"],
+            data: [{
+                "temp": 43,
+                "day": "Sunday",
+                "low": 22
+            }, {
+                "temp": 47,
+                "day": "Monday",
+                "low": 32
+            }, {
+                "temp": 54,
+                "day": "Tue",
+                "low": 12
+            }],
+            cardType: "chart"
+        }).addStyleClass('sapUiSmallMargin');
+
+        var vb2a = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area Scatter Chart(with xGrid)",
+            zoomEnabled: true,
+            size: '4x2',
+            chartType: 'scatter',
+            xGrid: true,
+            yGrid: false,
+            showLegend:true,
+            scatterLabel: "Scatter Chart Demo",
+            measure: ["DatasetA", "DatasetB"],
+            dimension: ["x", "x1"],
+            measureColour: ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"],
+            data: [{
+                x: 5,
+                DatasetA: 4,
+                x1: 6,
+                DatasetB: 5
+            }, {
+                x: 2,
+                DatasetA: 14,
+                x1: 2,
+                DatasetB: 1
+            }, {
+                x: 4,
+                DatasetA: 12,
+                x1: 9,
+                DatasetB: 2
+            }, {
+                x: 2,
+                DatasetA: 10,
+                x1: 6,
+                DatasetB: 9
+            }, {
+                x: 3,
+                DatasetA: 4,
+                x1: 1,
+                DatasetB: 5
+            }, {
+                x: 3,
+                DatasetA: 5,
+                x1: 6,
+                DatasetB: 2
+            }, {
+                x: 3,
+                DatasetA: 8,
+                x1: 6,
+                DatasetA: 3
+            }, {
+                x: 6,
+                DatasetA: 12,
+                x1: 6,
+                DatasetB: 1
+
+            }],
+            cardType: "chart"
+        }).addStyleClass('sapUiSmallMargin');
+        var vb3 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area",
+            size: '3x.5',
+            chartType: 'bar',
+            cardType: "info",
+           }).addStyleClass('sapUiSmallMargin');
+
+        var vb4 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area",
+            size: '3x.5',
+            chartType: 'bar',
+            cardType: "info",
+            info: 54
+        }).addStyleClass('sapUiSmallMargin');
+
+        var vb5 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area",
+            size: '3x.5',
+            chartType: 'bar',
+            cardType: "info",
+            info: '23,654 $ / year'
+        }).addStyleClass('sapUiSmallMargin');
+
+        var vb6 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area",
+            size: '3x1',
+            chartType: 'bar',
+            cardType: "numeric",
+            info: '23,654 $ / year'
+        })
+        var vb61 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area",
+            size: '3x1',
+            chartType: 'bar',
+            cardType: "numeric",
+            mesL: "105",
+            mesR: "1940",
+            labL: "Material Master having Safety Stock",
+            labR: "Material Master w/o Safety Stock",
+            info: '23,654 $ / year'
+        })
+
+        var vb7 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area",
+            size: '3x1.5',
+            chartType: 'bar',
+            cardType: "radial",
+            info: '23,654 $ / year',
+            radialPerc: "95",
+            radialColor: "#8ce8ad"
+        }).addStyleClass('sapUiSmallMargin');
+
+        var vb8 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area",
+            size: '10x1.5',
+            cardType: "radial",
+            mesL: '1123',
+            labL: 'My Details on the left side',
+            mesR: '6253',
+            labR: 'My Details on the right side',
+            radialPerc: "21",
+            radialColor: "#ffb46a"
+        }).addStyleClass('sapUiSmallMargin');
+
+        var vb9 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area",
+            size: '8x2',
+            cardType: "radialSummary",
+            mesL: '1123',
+            labL: 'My Details on the left side',
+            mesR: '6253',
+            labR: 'My Details on the right side',
+            radialPerc: "75",
+            radialColor: "#8ce8ad"
+        }).addStyleClass('sapUiSmallMargin');
+        var vb10 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area",
+            size: '3x1',
+            chartType: 'bar',
+            cardType: "numeric",
+            mesL: "105",
+            mesR: "1940",
+            labL: "Material Master having Safety Stock",
+            labR: "Material Master w/o Safety Stock",
+            info: '23,654 $ / year'
+        });
+        var vb11 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area",
+            size: '3x1',
+            chartType: 'bar',
+            cardType: "numeric",
+            mesL: "105",
+            mesR: "1940",
+            labL: "Material Master having Safety Stock",
+            labR: "Material Master w/o Safety Stock",
+            info: '23,654 $ / year'
+        });
+        var vb12 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Measue Block	",
+            size: '10x2',
+            cardType: "measureBlock",
+            mesL: '1123',
+            labL: 'My Details on the left side',
+            mesR: '6253',
+            labR: 'My Details on the right side',
+            radialPerc: "21",
+            radialColor: "#ffb46a",
+            measureBlock: [{
+                "text": "ROH - Raw Materials",
+                "value": "25"
+            }, {
+                "text": "HALB - Semi-fineshed Goods",
+                "value": "35"
+            }, {
+                "text": "HIBE - Operating Supplies",
+                "value": "60"
+            }, {
+                "text": "VERP - Packaging Goods",
+                "value": "75"
+            }, {
+                "text": "HAWA - Trading Goods",
+                "value": "95"
+            }]
+        });
+        var vb13 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Measue Block	",
+            size: '10x2',
+            cardType: "measureBlock",
+            mesL: '1123',
+            labL: 'My Details on the left side',
+            mesR: '6253',
+            labR: 'My Details on the right side',
+            radialPerc: "21",
+            radialColor: "#ffb46a",
+            progressVisible: false,
+            measureBlock: [{
+                "text": "ROH - Raw Materials",
+                "value": "25"
+            }, {
+                "text": "HALB - Semi-fineshed Goods",
+                "value": "35"
+            }, {
+                "text": "HIBE - Operating Supplies",
+                "value": "60"
+            }, {
+                "text": "VERP - Packaging Goods",
+                "value": "75"
+            }, {
+                "text": "HAWA - Trading Goods",
+                "value": "95"
+            }]
+        })
+
+        var vb14 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area Bubble Chart(without GridLines)",
+            zoomEnabled: true,
+            size: '4x2',
+            chartType: 'bubble',
+            xGrid:false,
+            yGrid:false,
+            measure: ["datasetA"],
+            radius: ["r"],
+            dimension: ["x"],
+            showLegend:true,
+            measureColour: ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"],
+            data: [{
+                "x": 1,
+                "datasetA": "2",
+                "r": 2
+            }, {
+                "x": 2,
+                "datasetA": "3",
+                "r": 20
+            }, {
+                "x": 3,
+                "datasetA": "4",
+                "r": 4
+            }],
+            cardType: "chart"
+        }).addStyleClass('sapUiSmallMargin');
+        var vb15 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area Filled Line Chart",
+            size: '4x2',
+            enableFilledLine: "start",
+            labels: ["Jan", "Feb", "Mar"],
+            xAxisLabel: "Month",
+            yAxisLabel: "Volume",
+            borderColor: ["rgba(135,206,235 ,1)"],
+            chartType: 'line',
+            xGrid:false,
+            yGrid:true,
+            showLegend:true,
+            measure: ["datasetA"],
+            labels: ["Jan", "Feb", "Mar"],
+            dimension: ["x"],
+            measureColour: ["rgba(173,216,230 ,1)", "#00C49F", "#FFBB28", "#FF8042"],
+            data: [{
+                "x": 1,
+                "datasetA": "2"
+            }, {
+                "x": 2,
+                "datasetA": "3"
+            }, {
+                "x": 3,
+                "datasetA": "4"
+            }],
+            cardType: "chart"
+        }).addStyleClass('sapUiSmallMargin');
+        var vb16 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area Filled Line Chart",
+            size: '4x2',
+            zoomDirection: 'y',
+            zoomEnabled: true,
+            enableFilledLine: "false",
+            labels: ["Jan", "Feb", "Mar"],
+            xAxisLabel: "Month",
+            yAxisLabel: "Volume",
+            borderColor: ["rgba(135,206,235 ,1)"],
+            chartType: 'line',
+            xGrid:false,
+            yGrid:true,
+            showLegend:true,
+            measure: ["datasetA"],
+            labels: ["Jan", "Feb", "Mar"],
+            dimension: ["x"],
+            measureColour: ["rgba(173,216,230 ,1)", "#00C49F", "#FFBB28", "#FF8042"],
+            data: [{
+                "x": 1,
+                "datasetA": "2"
+            }, {
+                "x": 2,
+                "datasetA": "3"
+            }, {
+                "x": 3,
+                "datasetA": "4"
+            }],
+            cardType: "chart"
+        }).addStyleClass('sapUiSmallMargin');
+        var vb17 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area Filled Doughnut Chart, cutOutPercentage = 90",
+            size: '4x2',
+            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            chartType: 'doughnut',
+            enableAxisLabels: false,
+            measure: ["datasetA"],
+            label: "Population (millions)",
+            measureColour: ["rgba(173,216,230 ,1)", "#00C49F", "#FFBB28", "#FF8042"],
+            data: [{
+                "datasetA": "2478"
+            }, {
+                "datasetA": "5267"
+            }, {
+                "datasetA": "734"
+            }, {
+                "datasetA": "784"
+            }, {
+                "datasetA": "433"
+            }],
+            cardType: "chart",
+            cutOutPercentage: 90
+        }).addStyleClass('sapUiSmallMargin');
+        var vb18 = new ey.cc.eycc.controls.KPIChartTile({
+            title: "Material Master Area Filled Doughnut Chart - Usage of 'cutOutPercentage= 10' property ",
+            size: '4x2',
+            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            chartType: 'doughnut',
+            enableAxisLabels: false,
+            measure: ["datasetA"],
+            label: "Population (millions)",
+            measureColour: ["rgba(173,216,230 ,1)", "#00C49F", "#FFBB28", "#FF8042"],
+            data: [{
+                "datasetA": "2478"
+            }, {
+                "datasetA": "5267"
+            }, {
+                "datasetA": "734"
+            }, {
+                "datasetA": "784"
+            }, {
+                "datasetA": "433"
+            }],
+            cardType: "chart",
+            cutOutPercentage: 10
+        }).addStyleClass('sapUiSmallMargin');
+        var vb19 = new sap.m.HBox({
+            // width: '50%',
+            items: [
+                new sap.m.VBox({
+                    width: '50%',
+                    items: [
+                        new ey.cc.eycc.controls.KPIChartTile({
+                            title: "Sample Chart Without Borders & fitting as per parent",
+                            size: '0x4',
+                            showBorder: false,
+                            fitToParent: true,
+                            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+                            chartType: 'doughnut',
+                            enableAxisLabels: false,
+                            measure: ["datasetA"],
+                            label: "Population (millions)",
+                            measureColour: ["rgba(173,216,230 ,1)", "#00C49F", "#FFBB28", "#FF8042"],
+                            data: [{
+                                "datasetA": "2478"
+                            }, {
+                                "datasetA": "5267"
+                            }, {
+                                "datasetA": "734"
+                            }, {
+                                "datasetA": "784"
+                            }, {
+                                "datasetA": "433"
+                            }],
+                            cardType: "chart",
+                            cutOutPercentage: 70
+                        })
+                    ]
+                }),
+                new sap.m.VBox({
+                    width: '50%',
+                    items: [
+                        new ey.cc.eycc.controls.KPIChartTile({
+                            title: "Material Master Area Scatter Chart",
+                            size: '0x4',
+                            showBorder: false,
+                            fitToParent: true,
+                            chartType: 'scatter',
+                            xGrid:false,
+        					yGrid:true,
+        					showLegend:true,
+                            scatterLabel: "Scatter Chart Demo",
+                            measure: ["DatasetA", "DatasetB"],
+                            dimension: ["x", "x1"],
+                            measureColour: ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"],
+                            data: [{
+                                x: 5,
+                                DatasetA: 4,
+                                x1: 6,
+                                DatasetB: 5
+                            }, {
+                                x: 2,
+                                DatasetA: 14,
+                                x1: 2,
+                                DatasetB: 1
+                            }, {
+                                x: 4,
+                                DatasetA: 12,
+                                x1: 9,
+                                DatasetB: 2
+                            }, {
+                                x: 2,
+                                DatasetA: 10,
+                                x1: 6,
+                                DatasetB: 9
+                            }, {
+                                x: 3,
+                                DatasetA: 4,
+                                x1: 1,
+                                DatasetB: 5
+                            }, {
+                                x: 3,
+                                DatasetA: 5,
+                                x1: 6,
+                                DatasetB: 2
+                            }, {
+                                x: 3,
+                                DatasetA: 8,
+                                x1: 6,
+                                DatasetA: 3
+                            }, {
+                                x: 6,
+                                DatasetA: 12,
+                                x1: 6,
+                                DatasetB: 1
+
+                            }],
+                            cardType: "chart"
+                        }),
+                    	new ey.cc.eycc.controls.KPIChartTile({
+                    		title: "Material Master Area Scatter Chart (Draggable)",
+                    		size: '0x4',
+                			showBorder: false,
+                    		zoomDirection : 'xy',
+                    		fitToParent: true,
+                    		chartType: 'scatter',
+                            zoomEnabled: true,
+                            draggable: true,
+                            xGrid:false,
+        					yGrid:true,
+        					showLegend:true,
+                            scatterLabel: "Scatter Chart Demo",
+                            measure: ["DatasetA", "DatasetB"],
+                            dimension: ["x", "x1"],
+                            measureColour: ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"],
+                            data: [{
+                                x: 5,
+                                DatasetA: 4,
+                                x1: 6,
+                                DatasetB: 5
+                            }, {
+                                x: 2,
+                                DatasetA: 14,
+                                x1: 2,
+                                DatasetB: 1
+                            }, {
+                                x: 4,
+                                DatasetA: 12,
+                                x1: 9,
+                                DatasetB: 2
+                            }, {
+                                x: 2,
+                                DatasetA: 10,
+                                x1: 6,
+                                DatasetB: 9
+                            }, {
+                                x: 3,
+                                DatasetA: 4,
+                                x1: 1,
+                                DatasetB: 5
+                            }, {
+                                x: 3,
+                                DatasetA: 5,
+                                x1: 6,
+                                DatasetB: 2
+                            }, {
+                                x: 3,
+                                DatasetA: 8,
+                                x1: 6,
+                                DatasetA: 3
+                            }, {
+                                x: 6,
+                                DatasetA: 12,
+                                x1: 6,
+                                DatasetB: 1
+
+                            }],
+                            cardType: "chart",
+                            onAreaSelection : function(oEvent){
+                          }
+                        }),
+                         new ey.cc.eycc.controls.KPIChartTile({
+                            title: "Scatter chart without Legend",
+                            size: '0x3',
+                            showBorder: false,
+                            fitToParent: true,
+                            chartType: 'scatter',
+                            xGrid:false,
+        					yGrid:true,
+        					showLegend:false,
+                            scatterLabel: "Scatter Chart Demo",
+                            measure: ["DatasetA", "DatasetB"],
+                            dimension: ["x", "x1"],
+                            showLegend:false,
+                            measureColour: ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"],
+                            data: [{
+                                x: 5,
+                                DatasetA: 4,
+                                x1: 6,
+                                DatasetB: 5
+                            }, {
+                                x: 2,
+                                DatasetA: 14,
+                                x1: 2,
+                                DatasetB: 1
+                            }, {
+                                x: 4,
+                                DatasetA: 12,
+                                x1: 9,
+                                DatasetB: 2
+                            }, {
+                                x: 2,
+                                DatasetA: 10,
+                                x1: 6,
+                                DatasetB: 9
+                            }, {
+                                x: 3,
+                                DatasetA: 4,
+                                x1: 1,
+                                DatasetB: 5
+                            }, {
+                                x: 3,
+                                DatasetA: 5,
+                                x1: 6,
+                                DatasetB: 2
+                            }, {
+                                x: 3,
+                                DatasetA: 8,
+                                x1: 6,
+                                DatasetA: 3
+                            }, {
+                                x: 6,
+                                DatasetA: 12,
+                                x1: 6,
+                                DatasetB: 1
+
+                            }],
+                            cardType: "chart"
+                        })
+                    ]
+                }),
+            ]
+        });
+        var oPage = new sap.m.Page({
+            content: [
+                vb1, vb2, vb3, vb4, vb5, vb6, vb61, vb7, vb8, vb9, vb10, vb11, vb12, vb13, vb14, vb15, vb16, vb2a, vb17, vb18, vb19
+            ]
+        });
+
+        oPage.placeAt('content');
+    </script>
+</head>
+
+<body class="sapUiBody" role="application">
+    <div id="content"></div>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eydcc.controls.EYButton</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+     
+     <style>
+   
+
+
+
+.eyTooltip .EYButtonTooltiptext {
+   visibility: hidden;
+    background-color: black;
+    width: auto;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    padding:5px;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.eyTooltip .EYButtonTooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.eyTooltip:hover .EYButtonTooltiptext {
+  visibility: visible;
+}
+
+     </style>
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eydcc,sap.m"
+         data-sap-ui-theme="sap_belize"
+         src="resources/sap-ui-core.js">
+      </script>
+      
+      <script type="text/javascript"> 
+      
+        //  var hBox=new sap.m.HBox({justifyContent:"SpaceAround"});
+         var oEYButton = new ey.cc.eydcc.controls.EYButton({
+         	id:"EYNewBtn",
+                        // text: "",
+                         subtext:"subTextPart",
+                         height:"4.3rem",
+                         width:"4.3rem",
+                         background:"rgba(196, 196, 205, 0.35)",
+                         padding:"14px",
+                        // border:"1px solid",
+                         borderRadius:"10px",
+                         justifyContent:"Center",
+                         
+                        // icon:"sap-icon://accelerated",
+                        icon:"resources/ey/cc/eydcc/images/ic_search.svg",
+                         press:function(){
+                         	alert(this.getText() + this.getSubtext())
+                         }
+         });
+          var oEYButton5 = new ey.cc.eydcc.controls.EYButton({
+         	id:"EYNewBtn5",
+                        // text: "",
+                         subtext:"subTextPart",
+                         height:"4.3rem",
+                         width:"4.3rem",
+                         background:"rgba(196, 196, 205, 0.35)",
+                         padding:"14px",
+                        // border:"1px solid",
+                         borderRadius:"10px",
+                         justifyContent:"Center",
+                         
+                        // icon:"sap-icon://accelerated",
+                        icon:"sap-icon://navigation-down-arrow",
+                         press:function(){
+                         	alert(this.getText() + this.getSubtext())
+                         }
+         });
+         
+          var oEYButton2 = new ey.cc.eydcc.controls.EYButton({
+         	id:"EYNewBtn2",
+                         text: "Create",
+                         subtext:"subTextPart",
+                         height:"2.500rem",
+                       //  width:"4.3rem",
+                         background:"#FFE500",
+                         padding:"0 10px 0px 10px",
+                        // border:"1px solid",
+                        // borderRadius:"10px",
+                         justifyContent:"Center",
+                         
+                        // icon:"sap-icon://accelerated",
+                       // icon:"https://webidetesting0060997-dlxpbtfsyu.dispatcher.us3.hana.ondemand.com/~1562570664000~/webapp/icons/OrderToCashIcon.svg",
+                         press:function(){
+                         	alert(this.getText() + this.getSubtext())
+                         }
+         });
+         var oEYButton3 = new ey.cc.eydcc.controls.EYButton({
+         	id:"EYNewBtn3",
+                         text: "New",
+                         subtext:"subTextPart",
+                         height:"1.8rem",
+                       //  width:"4.3rem",
+                         background:"#34C768",
+                         padding:"0 10px 0 10px",
+                         border:"1px solid #ababab",
+                         borderRadius:"1.5rem",
+                         justifyContent:"Center",
+                         textColor:"#FFF",
+                         textLineHeight:"1.8rem",
+                         
+                        // icon:"sap-icon://accelerated",
+                       // icon:"https://webidetesting0060997-dlxpbtfsyu.dispatcher.us3.hana.ondemand.com/~1562570664000~/webapp/icons/OrderToCashIcon.svg",
+                         press:function(){
+                         	alert(this.getText() + this.getSubtext())
+                         }
+         });
+      //   hBox.addItem(oEYButton);
+       //  hBox.addItem(oEYButton2);
+       //   hBox.addItem(oEYButton3);
+        oEYButton.placeAt("content");
+         oEYButton2.placeAt("content");
+         oEYButton3.placeAt("content");
+         oEYButton5.placeAt("content");
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <h1 id="header">Test Page for <code> ey.cc.eydcc.controls.EYButton</code></h1>
+      <div id="content"></div>
+   </body>
+</html>

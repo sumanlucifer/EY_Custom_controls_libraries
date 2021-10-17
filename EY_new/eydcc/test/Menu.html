@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eydcc.controls.Menu</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eydcc,sap.m"
+         data-sap-ui-theme="sap_belize"
+         src="resources/sap-ui-core.js">
+      </script>
+      
+      <script type="text/javascript"> 
+      
+     var menu=new ey.cc.eydcc.controls.Menu({
+                         title: "Example",
+                         id:"raj5",
+                         items:[new ey.cc.eydcc.controls.MenuItem({
+                  text:"Client Profiling",
+                  press:function(){
+                  	menu.close();
+                  }
+                    
+         }),new ey.cc.eydcc.controls.MenuItem({
+                  text:"Client Profiling",
+                  press:function(){
+                  	menu.close();
+                  }
+                    
+         })]
+         });
+        var oBtn = new sap.m.Button({
+                         text: "Open Menu",
+                         press:function(oEvent){
+                 
+         
+         
+        
+         menu.open();
+                         }
+         });
+         var oBtnclose = new sap.m.Button({
+                         text: "Close Menu",
+                         press:function(oEvent){
+                 
+         
+         
+        
+         menu.close();
+                         }
+         });
+          menu.placeAt("content");
+         oBtn.placeAt("header");
+             oBtnclose.placeAt("header");
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+    <div id="header"> </div>
+      <div id="content"></div>
+   </body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - eymap.eymap.controls.EYMapNew</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eydcc"
+         data-sap-ui-theme="sap_bluecrystal"
+         src="resources/sap-ui-core.js">
+      </script>
+      <style>
+               .eyMapDiv .sapUiVbmAnalyticMap{
+               width:100% !important;
+               } 
+      .eyMapDiv    .viz-plot-background{
+                              fill:transparent !important;
+               }
+               .eyMapDiv li{
+                              display: flex;
+    justify-content: space-between;
+    padding-bottom: 19px;
+           padding-right: 20px;
+               }
+               
+          .eyHeaderText{
+          	  font-family: EYInterstate !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+          }
+          .footerVBox{
+          	border-top: 1px solid #E5E5E5
+          }
+          .eyFooterText{
+          	
+          	  font-family: EYInterstate !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+          
+          }
+             
+
+               .eymarkedText::before{
+               	content:"";
+               	width: 60%;
+    border-bottom: solid 3px #FFE500;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1;
+    margin-top: 2px; 
+               }
+      .eyMapDiv    .rectangle {
+                              height: 21px;
+                              width: 39px;
+                              border-radius: 11.5px;
+                              background-color: #60E6E1;
+                              text-align:center;
+                              
+                              color:#fff;
+               }
+               
+               .checkmark {
+cursor:pointer;
+    display:inline-block;
+    /*width: 22px;*/
+    height:22px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    padding-right: 10px;
+    margin-right: 20px;
+}
+
+.checkmark_circle {
+    position: absolute;
+    width:22px;
+    height:22px;
+    background-color: black;
+    border-radius:12px;
+    border:1px solid black;
+    left:0;
+    top:0;
+}
+.uncheck_circle {
+    position: absolute;
+    width:22px;
+    height:22px;
+    background-color: white;
+    border-radius:12px;
+    border:1px solid #C4C4CD;
+    left:0;
+    top:0;
+}
+
+.checkmark_stem {
+    position: absolute;
+    width:2px;
+    height:13px;
+    background-color:#fff;
+    left:11px;
+    top:4px;
+}
+
+.checkmark_kick {
+    position: absolute;
+    width:6px;
+    height:2px;
+    background-color:#fff;
+    left:6px;
+    top:15px;
+}
+.eychartPopUpText{
+	font-size:12px !important;
+	font-family: EYInterstateLight !important;
+}
+.eychartPopTextMinwidth{
+	min-width:28px;
+}
+
+               
+      </style>
+      
+      <script type="text/javascript"> 
+      var dummyData={
+               companies : [{
+						variations: 10,
+						Anomalies: 8,
+						ProcessIn: 7,
+						Incomplete: 6,
+						position: '78.9629;20.5937;0',
+						radius: 15,
+						country:"India",
+						cycleTime:200,
+						frequency:400,
+						netValue:2300,
+							cycleTimeRadius:0.4* 200,
+								frequencyRadius:0.4 * 400,
+								netValueRadius:0.06 * 2300
+						
+					}, {
+						variations: 15,
+						Anomalies: 5,
+						ProcessIn: 3,
+						Incomplete: 5,
+						position: '-119.4179;36.7783;0',
+						radius: 25,country:"US",
+						cycleTime:100,
+						frequency:500,
+						netValue:300,
+						
+							cycleTimeRadius:0.4* 100,
+								frequencyRadius:0.4 *500,
+								netValueRadius:0.06 * 300
+					}, {
+						variations: 13,
+						Anomalies: 3,
+						ProcessIn: 5,
+						Incomplete: 4,
+						position: '-0.1278;51.5074;0',
+						radius: 5, country:"France",
+						cycleTime:150,
+						frequency:340,
+						netValue:4567,
+							cycleTimeRadius:0.4* 150,
+								frequencyRadius:0.4 * 340,
+								netValueRadius:0.06 * 4567
+					}, {
+						variations: 5,
+						Anomalies: 4,
+						ProcessIn: 1,
+						Incomplete: 3,
+						position: '-63.6167;-38.4161;0',
+						radius: 9,country:"Algeria",
+						cycleTime:600,
+						frequency:300,
+						netValue:1100,
+						cycleTimeRadius:0.4* 600,
+								frequencyRadius:0.4 * 300,
+								netValueRadius:0.006 * 1100
+					}
+					//n>+ve ,e>+ve,w>-ve,s>-ve
+				]
+};
+
+
+         var oEYMapNew1 = new ey.cc.eydcc.controls.GMAP({});
+          var joinModel = new sap.ui.model.json.JSONModel();
+                                             joinModel.setData(dummyData);
+
+        
+
+/* var oItemTemplate = 
+            new sap.ui.vbm.Container({ 
+               position: '15;15;0', 
+               item:
+      //Container content
+      new sap.suite.ui.microchart.HarveyBallMicroChart({
+         size: "S",
+         total: 100,
+         totalScale:"Mrd",
+         showTotal: false,
+         items: [ 
+         new sap.suite.ui.microchart.HarveyBallMicroChartItem({
+            fraction: 63,
+            fractionScale: "Mrd",
+            color: "Good"
+         })]
+      })
+      //End content
+            })*/
+                                             
+oEYMapNew1.bindAggregation("varItems", "/companies",
+function(){
+               
+      /*  var oVizFrame = new sap.viz.ui5.controls.VizFrame({
+          'width': '100px',
+          'height': '100px',
+          'vizType' : 'pie',
+           legendVisible:false,
+          'vizProperties' : {
+          
+            plotArea: {dataLabel : {
+               visible: true,
+                type : 'value',
+                
+                //renderer: function(pieDataLabel){pieDataLabel.text = pieDataLabel.ctx.Revenue;}
+            },
+            background :{
+              
+                color:"red"
+              }
+            }
+          }          
+        });
+  
+
+      //  var oJsonModel = new sap.ui.model.json.JSONModel(oData);
+          var dataset = new sap.viz.ui5.data.FlattenedDataset({
+            dimensions: [
+                {name: 'Country', value: "{Country}"}
+            ],
+            measures: [
+                {name: 'Revenue', value: '{revenue}'}
+            ],
+            data: [
+                {'Country': "Canada", 'revenue': 410.87},
+                {'Country': "China", 'revenue': 338.29},
+                {'Country': "France", 'revenue': 487.66},
+                {'Country': "Germany", 'revenue': 470.23},
+                {'Country': "India", 'revenue': 170.93},
+                {'Country': "United States", 'revenue': 905.08}
+                                      ]
+        });
+        oVizFrame.setDataset(dataset);
+       // oVizFrame.setModel(oJsonModel);
+        var feedPrimaryValues = new sap.viz.ui5.controls.common.feeds.FeedItem({
+        'uid' : "size",
+        'type' : "Measure",
+        'values' : ["Revenue"]
+        }), feedAxisLabels = new sap.viz.ui5.controls.common.feeds.FeedItem({
+        'uid' : "color",
+        'type' : "Dimension",
+        'values' : ["Country"]
+        });
+
+        oVizFrame.addFeed(feedPrimaryValues);
+        oVizFrame.addFeed(feedAxisLabels);*/
+               
+               
+               
+               return new sap.ui.vbm.Container({ 
+               position: '{position}', 
+           //  item:oVizFrame
+      //Container content
+     /* new sap.suite.ui.microchart.HarveyBallMicroChart({
+         size: "S",
+         total: 100,
+         totalScale:"Mrd",
+         showTotal: false,
+         items: [ 
+         new sap.suite.ui.microchart.HarveyBallMicroChartItem({
+            fraction: 63,
+            fractionScale: "Mrd",
+            color: "Good"
+         })]
+      })*/
+      //End content
+            })}
+);
+oEYMapNew1.setModel(joinModel);
+oEYMapNew1.placeAt("content");
+//oVizFrame.placeAt("content");
+
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+       <div id="content"></div>
+   </body>
+</html>

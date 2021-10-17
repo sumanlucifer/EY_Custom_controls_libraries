@@ -1,0 +1,40 @@
+ 
+.eyText{
+	 display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    font-size: 0.875rem;
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    
+    
+}
+.eyTooltip .EYButtonTooltiptext {
+   visibility: hidden;
+    background-color: black;
+    width: auto;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    padding:5px;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.eyTooltip .EYButtonTooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.eyTooltip:hover .EYButtonTooltiptext {
+  visibility: visible;
+}

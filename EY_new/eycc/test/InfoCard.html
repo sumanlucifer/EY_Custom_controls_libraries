@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eycc.controls</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="css/material_v1.css">
+	<style>
+		#content{
+			height : 30rem;
+		}
+	</style>
+	
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eycc,sap.m,sap.ui.layout"
+         src="resources/sap-ui-core.js"
+         ata-sap-ui-bindingSyntax="complex"
+         data-sap-ui-theme="sap_belize">
+      </script>
+      
+      <script type="text/javascript"> 
+      
+         
+     	 new sap.m.HBox({
+     	 	justifyContent  : "Center",
+     	 	items : [
+     	 		new ey.cc.eycc.controls.InfoCard({ 
+					icon:'https://www.ey.com/ecimages/EY-logo-li-150x80.png',
+					title : 'Relationship',
+					description : 'Description - Relationship refers to the connect of data within the system. This incorporates the Hierarchy, Org structure and interlinking of the identified master data'
+				}),
+				new ey.cc.eycc.controls.InfoCard({ 
+					icon:'https://about.canva.com/wp-content/uploads/sites/3/2016/08/Band-Logo.png',
+					title : 'Relationship',
+					description : 'Description - Relationship refers to the connect of data within the system. This incorporates the Hierarchy, Org structure and interlinking of the identified master data'
+				}),
+				new ey.cc.eycc.controls.InfoCard({ 
+					icon:'https://about.canva.com/wp-content/uploads/sites/3/2016/08/Band-Logo.png',
+					title : 'Relationship',
+					description : 'Description - Relationship refers to the connect of data within the system. This incorporates the Hierarchy, Org structure and interlinking of the identified master data'
+				})
+ 	 		]
+     	 }).addStyleClass('sapUiLargeMargin').placeAt('content');
+         	
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <div id="content"></div>
+   </body>
+</html>

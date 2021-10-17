@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>QUnit TestSuite for ey.cc.eydcc</title>
+    <script type="text/javascript" src="../../resources/sap/ui/qunit/qunit-redirect.js"></script>
+</head>
+<body>
+<script>
+    /**
+     * Method that is called by the Selenium/QUnit framework to retrieve the test suites.
+     */
+    function suite() {
+        var sTestPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/") + 1);
+        var suite = new top.jsUnitTestSuite();
+
+        suite.addTestPage(sTestPath + "controls/Example.qunit.html");
+       	suite.addTestPage(sTestPath + "controls/EYPage.qunit.html");
+		suite.addTestPage(sTestPath + "controls/GMAP.qunit.html");
+		suite.addTestPage(sTestPath + "controls/GmapChart.qunit.html");
+		suite.addTestPage(sTestPath + "controls/EYHome.qunit.html");
+		return suite;
+    }
+</script>
+</body>
+</html>

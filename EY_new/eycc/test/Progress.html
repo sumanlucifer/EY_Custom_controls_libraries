@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Example - ey.cc.eycc.controls</title>
+    <base href="../../../../">
+    <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+    <!-- ********************************************************************** -->
+    <!-- SAPUI5 Bootstrap:                                                     -->
+    <!-- Extend the "libs" property if you like to import additional libraries  -->
+    <!-- ********************************************************************** -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <style>
+        #content {
+            height: 30rem;
+        }
+    </style>
+
+    <script id="sap-ui-bootstrap" type="text/javascript" data-sap-ui-libs="ey.cc.eycc,sap.m" , "sap.ui.layout" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-bindingSyntax="complex" data-sap-ui-theme="sap_belize" data-sap-ui-resourceroots='{
+		"ey.cc.eycc": "./src/ey/cc/eycc"
+		}'>
+    </script>
+
+    <script type="text/javascript">
+        var vb = new ey.cc.eycc.controls.Progress({
+            width: "100%",
+            percentage: "45",
+            height: "2rem",
+            text: "My Progress indicator",
+            color: "#f57e42"
+        }).addStyleClass('sapUiLargeMarginTop');
+        var vb2 = new ey.cc.eycc.controls.Progress({
+            width: "100%",
+            percentage: "65",
+            height: "16px",
+            text: "",
+            color: "#1e90ff"
+        }).addStyleClass('sapUiSmallMargin');
+        var vb3 = new ey.cc.eycc.controls.Progress({
+            width: "100%",
+            percentage: "65",
+            height: "16px",
+            text: "Wolla@!!",
+            color: "#1e90ff"
+        }).addStyleClass('sapUiSmallMargin');
+        var vb3 = new ey.cc.eycc.controls.Progress({
+            width: "50%",
+            percentage: "75",
+            height: "18px",
+            color: "green"
+        }).addStyleClass('sapUiSmallMargin');
+
+        var oPage = new sap.m.Page({
+            content: [
+                vb.clone(),
+                new sap.m.HBox({
+                    items: [
+                        vb.clone(),
+                        new sap.m.VBox({
+                            width: "60%",
+                            items: [
+                                vb,
+                                new sap.m.Label({
+                                    text: "VB can be used in toolbar"
+                                }).addStyleClass('sapUiSmallMargin')
+                            ]
+                        }),
+                    ]
+                }),
+                vb2, vb3,
+                new sap.m.VBox({
+                    alignItems: "Center",
+                    items: [
+                        new sap.m.Text({
+                            text: "Fert-Finished Goods"
+                        }),
+                        new sap.m.Text({
+                            text: "86%"
+                        }),
+                        new ey.cc.eycc.controls.Progress({
+                            width: "100%",
+                            percentage: "75",
+                            height: "8px",
+                            color: "green"
+                        })
+                    ]
+                })
+            ]
+        });
+
+        oPage.placeAt('content');
+    </script>
+</head>
+
+<body class="sapUiBody" role="application">
+    <div id="content"></div>
+</body>
+
+</html>

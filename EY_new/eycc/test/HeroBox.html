@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Example - ey.cc.eycc.controls</title>
+      <base href="../../../../">
+      <!--[if lte IE 9]><script type="text/javascript">
+         (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+         })();
+      </script><![endif]-->
+      <!-- ********************************************************************** -->
+      <!-- SAPUI5 Bootstrap:                                                     -->
+      <!-- Extend the "libs" property if you like to import additional libraries  -->
+      <!-- ********************************************************************** -->
+      
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<style>
+		#content{
+			height : 30rem;
+		}
+	</style>
+	
+      <script id="sap-ui-bootstrap" 
+         type="text/javascript"
+         data-sap-ui-libs="ey.cc.eycc,sap.m"
+         src="resources/sap-ui-core.js"
+         ata-sap-ui-bindingSyntax="complex"
+         data-sap-ui-theme="sap_belize">
+      </script>
+      
+      <script type="text/javascript"> 
+      
+    	 var vb = new ey.cc.eycc.controls.VerticalBar({
+        	 height: "3rem",
+        	 width:"10px"
+		 }).addStyleClass('sapUiTinyMargin');
+         var oPage = new sap.m.Page({
+         	customHeader : new sap.m.Toolbar({
+         		content : [
+     				new sap.m.ToolbarSpacer({}),
+     				vb,
+     				new sap.m.Label({text:"VB can be used in toolbar"})
+     			]
+         	}),
+         	content : [
+         		new ey.cc.eycc.controls.HeroBox({
+ 					bgImage  :'https://img.freepik.com/free-vector/technology-background-with-gradient-colors_23-2147837710.jpg',
+         			content : [
+     					new sap.m.HBox({
+		         			items : [
+		     					new sap.m.VBox({width:"60%"}),
+		     					new sap.m.HBox({
+		     						items : [
+		 								new  ey.cc.eycc.controls.VerticalBar({
+											height: "3rem",
+											width:"5px"
+										}),
+										new sap.m.Label({text:"VB can be used in toolbar"}).addStyleClass('sapUiSmallMargin')
+		 							]
+		     					}).addStyleClass('sapUiLargeMargin')
+		     				]
+		         		})
+     				]
+         		})	
+     		]
+         });
+         
+     	 oPage.placeAt('content');
+         	
+         
+      </script>
+   </head>
+   <body class="sapUiBody" role="application">
+      <div id="content"></div>
+   </body>
+</html>
